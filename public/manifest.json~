@@ -1,18 +1,18 @@
 {
-	"name": "Specify inventory scanner",
-	"short_name": "Specify",
+	"name": "PWA Barcode Scanner",
+	"short_name": "BarScan",
 	"icons": [{
-			"src": "/icons/android-chrome-192x192.png",
-			"sizes": "192x192",
+			"src": "/icons/icon_196x196.png",
+			"sizes": "196x196",
 			"type": "image/png"
 		},
 		{
-			"src": "/icons/android-chrome-256x256.png",
+			"src": "/icons/icon_296x296.png",
 			"sizes": "256x256",
 			"type": "image/png"
     },
     {
-			"src": "/icons/android-chrome-512x512.png",
+			"src": "/icons/icon_512x512.png",
 			"sizes": "512x512",
 			"type": "image/png"
 		}
