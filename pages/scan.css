@@ -10,7 +10,7 @@
     flex-shrink: 0;
 }
 .demo-container {
-    max-width: 1600px;
+    min-width: 1600px;
     width: calc(100% - 16px);
     margin: 0 auto;
 }
@@ -28,3 +28,9 @@
 .demo-content h3 {
     margin-top: 48px;
 }  
+
+@media screen and (max-width: 767px){
+    .mdl-cell--3-col-phone {
+        width: calc(21% - 8px);
+    }
+}
