@@ -41,58 +41,119 @@
   <link rel="canonical" href="http://www.example.com/">
   -->
 
+  <!-- Material Design-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-amber.min.css" /> 
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
   <!-- Material Design Icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- custom css -->
+  <link rel="stylesheet" href="/index.css" type="text/css">
 
   <!-- import zUIx library (v 0.4.9-54) -->
   <script src="js/zuix.min.js"></script>
   <script src="js/zuix-bundler.min.js"></script>
 
+  <script src="//zuixjs.github.io/zuix/js/zuix.min.js"></script>
+
+  <!-- InstaScan -->
+  <script type="text/javascript" src="instascan.min.js"></script>
+
   <!-- main app script -->
   <script src="index.js" defer></script>
 
 </head>
-<!-- load the 'header_auto_hide' on the body -->
+
+
+
 <body>
 
-<!-- The header with profile icon button for opening the drawer layout (side menu panel) -->
+<!-- The header with profile icon button for opening the drawer layout (side menu panel) 
 <header data-ui-include="layout/header"
         data-ui-options="options.headerBar"
-        data-ui-field="header-bar"></header>
+        data-ui-field="header-bar"></header -->
+
+<header>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
+        mdl-layout--fixed-tabs">
+        <header class="mdl-layout__header mdl-color--grey-900">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span aria-expanded="false">
+                    <div><img class="mdl-layout__drawer-button mdl-button--icon" id="pulse" role="button" tabindex="0"
+                            src="/images/noun_profile_1776214.svg" alt="profile by mikicon from the Noun Project">
+                    </div>
+                </span>
+                <span class="mdl-layout-title">Specify</span>
+                <div class="mdl-layout-spacer"></div>
+                <button class="mdl-button mdl-js-button night-mode">
+                <span id="bulb" class="mdi mdi-lightbulb-on-outline material-icons md-24">tungsten</span>
+                </button>
+            </div>
+            <!-- Tabs -->
+            <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--blue-grey-800">
+                <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Scan</a>
+                <a href="#fixed-tab-2" class="mdl-layout__tab">My Inventory</a>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Specify</span>
+            <div data-ui-include="shared/main_menu" data-ui-loaded="true" data-ui-component="shared/main_menu" data-ui-context="zuix-ctx-9"></div>
+        </div>
+        <main class="mdl-layout__content">
+            <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+            <div class="page-content"><!-- Your content goes here --></div>
+            </section>
+            <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+            <div class="page-content"><!-- Your content goes here --></div>
+            </section>
+        </main>
+    </div>
+</header>
 
 <main data-ui-field="pages">
-
-  <!-- HOME -->
-  <section data-ui-include="pages/home"></section>
-
-  <!-- SEARCH -->
-  <section data-ui-include="pages/search"></section>
-
-  <!-- NOTIFICATIONS -->
-  <section data-ui-include="pages/notifications"></section>
-
   <!-- ABOUT -->
-  <section data-ui-include="pages/about" layout="column top-center"></section>
+  <section data-ui-include="pages/about"></section>
 
+  <!-- SCAN -->
 </main>
 
 <!-- The footer with toolbar buttons -->
 <footer data-ui-include="layout/footer"
-        data-ui-options="options.footerBar"
-        data-ui-field="footer-bar"></footer>
+data-ui-options="options.footerBar"
+data-ui-field="footer-bar"></footer>
 
-<!-- The DrawerLayout for side menu panel -->
+<!-- The DrawerLayout for side menu panel 
 <div data-ui-load="@lib/controllers/drawer_layout"
      data-ui-options="options.drawerLayout"
      class="drawer"
      draggable="false">
-  <!-- Add Navigation Drawer content -->
+  Add Navigation Drawer content 
   <div data-ui-include="shared/main_menu"></div>
-</div>
+</div>-->
 
-<noscript>
+<!--noscript>
   Turn on JavaScript to access this site content.
-</noscript>
+</noscript-->
+
+<script type="text/javascript">
+  let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+  scanner.addListener('scan', function (content) {
+    console.log(content);
+  });
+  Instascan.Camera.getCameras().then(function (cameras) {
+    if (cameras.length > 0) {
+      scanner.start(cameras[0]);
+    } else {
+      console.error('No cameras found.');
+    }
+  }).catch(function (e) {
+    console.error(e);
+  });
+</script>
+  
 
 </body>
 </html>

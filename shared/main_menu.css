@@ -21,7 +21,7 @@ hr {
   height: 64px;
   background: #f5f8fa;
   border-radius: 50%;
-  border: solid 1px #00aced;
+  border: solid 1px #caa052;
   overflow: hidden;
   cursor: pointer;
 }
@@ -71,10 +71,53 @@ hr {
     display: -ms-flexbox;
     display: flex;
 }
+.options button:hover {
+  text-decoration: underline;
+  text-decoration-color: #caa052;
+}
 .options button i {
   font-size: 200%;
   color: darkgray;
 }
 .options button span {
   margin-left: 8px;
+}
+
+/* MDL menu styles */
+
+
+.mdl-avatar-dropdown {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.demo-navigation {
+  flex-grow: 1;
+}
+nav a {
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.56);
+}
+.mdl-navigation .mdl-navigation__link {
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.56);
+}
+
+.mdl-navigation__link:hover {
+  background-color: #ffd180;
+  color: #102027;
+}
+.mdl-navigation__link .material-icons {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.56);
+  margin-right: 32px;
+}
+.mdl-navigation__link .material-icons:hover {
+  color: #ffffff;
 }
