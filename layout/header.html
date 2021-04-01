@@ -1,33 +1,37 @@
-<div class="header">
-  <div class="profile pulse">
-    <img alt="Profile Icon" src="images/profile_icon.png">
-  </div>
-  <div data-ui-field="header-box" layout="row center-center">
-    <div class="title">
-      Home
+<header>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
+        mdl-layout--fixed-tabs">
+        <header class="mdl-layout__header mdl-color--grey-900">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span aria-expanded="false">
+                    <div><img class="mdl-layout__drawer-button mdl-button--icon" id="pulse" role="button" tabindex="0"
+                            src="/images/noun_profile_1776214.svg" alt="profile by mikicon from the Noun Project">
+                    </div>
+                </span>
+                <span class="mdl-layout-title">Specify</span>
+                <div class="mdl-layout-spacer"></div>
+                <button class="mdl-button mdl-js-button night-mode">
+                <span id="bulb" class="mdi mdi-lightbulb-on-outline material-icons md-24">tungsten</span>
+                </button>
+            </div>
+            <!-- Tabs -->
+            <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--blue-grey-800">
+                <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Scan</a>
+                <a href="#fixed-tab-2" class="mdl-layout__tab">My Inventory</a>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Specify</span>
+            <div data-ui-include="shared/main_menu" data-ui-loaded="true" data-ui-component="shared/main_menu" data-ui-context="zuix-ctx-9"></div>
+        </div>
+        <main class="mdl-layout__content">
+            <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+            <div class="page-content"><!-- Your content goes here --></div>
+            </section>
+            <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+            <div class="page-content"><!-- Your content goes here --></div>
+            </section>
+        </main>
     </div>
-    <div data-ui-load="shared/input_box"></div>
-    <div class="title">
-      Notifications
-    </div>
-    <div class="title">
-      Messages
-    </div>
-  </div>
-</div>
-<div data-ui-field="header-tools">
-  <div class="topics" data-ui-load="@lib/controllers/view_pager" data-ui-options="options.topicIndicator">
-    <div>
-      Inventory
-    </div>
-    <div>
-     Scan
-    </div>
-    <div>
-      Europe
-    </div>
-    <div>
-      Travel
-    </div>
-  </div>
-</div>
+</header>
