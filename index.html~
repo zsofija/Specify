@@ -41,58 +41,73 @@
   <link rel="canonical" href="http://www.example.com/">
   -->
 
-  <!-- Material Design Icons -->
+  <!-- Material Design-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-amber.min.css" /> 
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+
+  <!-- custom css -->
+  <link rel="stylesheet" href="/index.css" type="text/css">
 
   <!-- import zUIx library (v 0.4.9-54) -->
   <script src="js/zuix.min.js"></script>
   <script src="js/zuix-bundler.min.js"></script>
 
+  <script src="//zuixjs.github.io/zuix/js/zuix.min.js"></script>
+
+  <!-- include showdown for markdown rendering -->
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
+
+  <!-- InstaScan -->
+  <script type="text/javascript" src="js/instascan.min.js"></script>
+
   <!-- main app script -->
   <script src="index.js" defer></script>
 
 </head>
-<!-- load the 'header_auto_hide' on the body -->
+
+
+
 <body>
 
 <!-- The header with profile icon button for opening the drawer layout (side menu panel) -->
 <header data-ui-include="layout/header"
         data-ui-options="options.headerBar"
-        data-ui-field="header-bar"></header>
+        data-ui-field="header-bar"></header
+
 
 <main data-ui-field="pages">
-
-  <!-- HOME -->
-  <section data-ui-include="pages/home"></section>
-
-  <!-- SEARCH -->
-  <section data-ui-include="pages/search"></section>
-
-  <!-- NOTIFICATIONS -->
-  <section data-ui-include="pages/notifications"></section>
-
   <!-- ABOUT -->
-  <section data-ui-include="pages/about" layout="column top-center"></section>
+  <section data-ui-include="pages/about"></section>
 
+  <!-- SCAN -->
+  <!-- 
+  section data-ui-include="pages/scan"></section>
+  -->
 </main>
 
 <!-- The footer with toolbar buttons -->
+<!--
 <footer data-ui-include="layout/footer"
-        data-ui-options="options.footerBar"
-        data-ui-field="footer-bar"></footer>
-
-<!-- The DrawerLayout for side menu panel -->
+data-ui-options="options.footerBar"
+data-ui-field="footer-bar"></footer>
+-->
+<!-- The DrawerLayout for side menu panel 
 <div data-ui-load="@lib/controllers/drawer_layout"
      data-ui-options="options.drawerLayout"
      class="drawer"
      draggable="false">
-  <!-- Add Navigation Drawer content -->
+  Add Navigation Drawer content 
   <div data-ui-include="shared/main_menu"></div>
-</div>
+</div>-->
 
-<noscript>
+<!--noscript>
   Turn on JavaScript to access this site content.
-</noscript>
+</noscript-->
+
+
+  
 
 </body>
 </html>

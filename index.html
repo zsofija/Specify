@@ -54,7 +54,9 @@
   <script src="js/zuix.min.js"></script>
   <script src="js/zuix-bundler.min.js"></script>
 
-  <script src="//zuixjs.github.io/zuix/js/zuix.min.js"></script>
+
+  <!-- include showdown for markdown rendering -->
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
 
   <!-- InstaScan -->
   <script type="text/javascript" src="js/instascan.min.js"></script>
@@ -74,47 +76,39 @@
         data-ui-field="header-bar"></header
 
 
-
 <main data-ui-field="pages">
   <!-- ABOUT -->
   <section data-ui-include="pages/about"></section>
 
   <!-- SCAN -->
+ 
+  <section data-ui-include="pages/scan"></section>
+  
+  <div data-ui-load="pages/scan"></div>
+
+
 </main>
 
 <!-- The footer with toolbar buttons -->
+
 <footer data-ui-include="layout/footer"
 data-ui-options="options.footerBar"
 data-ui-field="footer-bar"></footer>
 
-<!-- The DrawerLayout for side menu panel 
+<!-- The DrawerLayout for side menu panel -->
 <div data-ui-load="@lib/controllers/drawer_layout"
      data-ui-options="options.drawerLayout"
      class="drawer"
      draggable="false">
-  Add Navigation Drawer content 
+<!--  Add Navigation Drawer content -->
   <div data-ui-include="shared/main_menu"></div>
-</div>-->
+</div>
 
 <!--noscript>
   Turn on JavaScript to access this site content.
 </noscript-->
 
-<script type="text/javascript">
-  let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
-  scanner.addListener('scan', function (content) {
-    console.log(content);
-  });
-  Instascan.Camera.getCameras().then(function (cameras) {
-    if (cameras.length > 0) {
-      scanner.start(cameras[0]);
-    } else {
-      console.error('No cameras found.');
-    }
-  }).catch(function (e) {
-    console.error(e);
-  });
-</script>
+
   
 
 </body>

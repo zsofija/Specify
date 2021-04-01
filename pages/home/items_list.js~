@@ -7,8 +7,7 @@ zuix.controller(function(cp) {
   cp.create = function() {
     let url = cp.view().attr('data-o-rss');
     // Use a proxy to prevent CORS policy restrictions errors
-    //url = '//cors-anywhere.herokuapp.com/'+url;
-    
+    url = '//cors-anywhere.herokuapp.com/'+url;
     fetchList(url);
   };
 
