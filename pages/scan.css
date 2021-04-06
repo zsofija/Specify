@@ -29,6 +29,8 @@
     margin-top: 48px;
 }  
 
+.iconify { width: 200px; height: 200px; }
+
 @media screen and (max-width: 767px){
     .mdl-cell--3-col-phone {
         width: calc(21% - 8px);

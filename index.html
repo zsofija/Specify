@@ -43,8 +43,9 @@
 
   <!-- Material Design-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-amber.min.css" /> 
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-amber.min.css">
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  
 
 
   <!-- custom css -->
@@ -53,16 +54,19 @@
   <!-- import zUIx library (v 0.4.9-54) -->
   <script src="js/zuix.min.js"></script>
   <script src="js/zuix-bundler.min.js"></script>
-
+  
 
   <!-- include showdown for markdown rendering -->
- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
 
   <!-- InstaScan -->
   <script type="text/javascript" src="js/instascan.min.js"></script>
 
+  <!-- Iconofy-->
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+  
   <!-- main app script -->
-  <script src="index.js" defer></script>
+  <script src="index.js" defer type="text/javascript"></script>
 
 </head>
 
@@ -70,43 +74,43 @@
 
 <body>
 
-<!-- The header with profile icon button for opening the drawer layout (side menu panel) -->
-<header data-ui-include="layout/header"
-        data-ui-options="options.headerBar"
-        data-ui-field="header-bar"></header
-
+<!-- The header with profile icon button for opening the drawer layout (side menu panel) data-ui-options="options.headerBar"-->
+<header data-ui-field="header-bar"
+            data-ui-include="layout/header"
+            data-ui-context="header"></header>
 
 <main data-ui-field="pages">
   <!-- ABOUT -->
-  <section data-ui-include="pages/about"></section>
+      <section data-ui-include="pages/about"></section>
 
   <!-- SCAN -->
- 
-  <section data-ui-include="pages/scan"></section>
-  
-  <div data-ui-load="pages/scan"></div>
+      <section data-ui-include="pages/scan"
+              data-ui-component="pages/scan"></section>
+      <!--div data-ui-load="pages/scan"></div-->
 
 
 </main>
 
-<!-- The footer with toolbar buttons -->
+<!-- The footer with toolbar buttons data-ui-options="options.footerBar"-->
 
 <footer data-ui-include="layout/footer"
-data-ui-options="options.footerBar"
-data-ui-field="footer-bar"></footer>
+        data-ui-field="footer-bar"></footer>
 
-<!-- The DrawerLayout for side menu panel -->
+<!--The DrawerLayout for side menu panel
 <div data-ui-load="@lib/controllers/drawer_layout"
      data-ui-options="options.drawerLayout"
      class="drawer"
      draggable="false">
-<!--  Add Navigation Drawer content -->
+  Add Navigation Drawer content 
   <div data-ui-include="shared/main_menu"></div>
-</div>
+</div>-->
+
+ 
 
 <!--noscript>
   Turn on JavaScript to access this site content.
 </noscript-->
+
 
 
   

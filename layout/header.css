@@ -22,7 +22,7 @@
   font-size: 180%;
 }
 
-.profile {
+/*.profile {
   position: absolute;
   left: 20px; top: 8px;
   width: 42px;
@@ -36,7 +36,7 @@
 .profile img {
   margin-left: -2px;
   height: 44px;
-}
+}*/
 
 .topics {
   width: 100%;
@@ -63,6 +63,11 @@
   padding-left: 72px;
   padding-right: 16px;
   height: 100%;
+}
+
+
+.mdl-layout__tab-bar {
+  height: 55px;
 }
 
 /* Pulse Animation from https://codepen.io/olam/pen/zcqea */

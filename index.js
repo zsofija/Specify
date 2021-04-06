@@ -7,6 +7,8 @@ let topicButtons;
 
 zuix.using('script', './service-worker.js');
 zuix.using('style', '//zuixjs.github.io/zkit/css/flex-layout-attribute.min.css');
+zuix.using('style', '//code.getmdl.io/1.3.0/material.red-amber.min.css');
+zuix.using('style', '//fonts.googleapis.com/icon?family=Material+Icons');
 zuix.using('style', './index.css');
 
 zuix.$.find('.profile').on('click', function() {
@@ -114,3 +116,5 @@ function showPage(i) {
 
 // Turn off debug output
 window.zuixNoConsoleOutput = true;
+
+
