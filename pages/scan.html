@@ -8,15 +8,27 @@
         <h5 data-ui-field="subtitle">Scan barcode</h5>
         <span class="iconify" data-icon="mdi:barcode-scan" data-inline="false"></span>
         <video id="preview"></video>
+             <!-- Camera -->
+                  <section id="camera">       
+                    <!-- Camera sensor -->
+                      <canvas id="camera--sensor"></canvas>        
+                    <!-- Camera view -->
+                      <video id="camera--view" autoplay playsinline></video>        
+                    <!-- Camera output -->
+                      <img src="//:0" alt="" id="camera--output">        
+                       
+                  </section>
+
+
         <h5 data-ui-field="subtitle">OR</h5>
         <form action="#">
-          <div data-ui-field="textfield" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <div data-ui-field="numerical-input" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
             <label class="mdl-textfield__label" for="sample4">Input barcode</label>
             <span class="mdl-textfield__error">Input is not a number!</span>
           </div>
         </form>
-        <button data-ui-field="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        <button data-ui-field="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="camera--trigger">
            Scan item
         </button>
 
@@ -38,5 +50,35 @@
   }).catch(function (e) {
     console.error(e);
   });
+
+
+  // Camera //
+  // Set constraints for the video stream
+  var constraints = { video: { facingMode: "user" }, audio: false };// Define constants
+  const cameraView = document.querySelector("#camera--view"),
+      cameraOutput = document.querySelector("#camera--output"),
+      cameraSensor = document.querySelector("#camera--sensor"),
+      cameraTrigger = document.querySelector("#camera--trigger")// Access the device camera and stream to cameraView
+  function cameraStart() {
+      navigator.mediaDevices
+          .getUserMedia(constraints)
+          .then(function(stream) {
+          track = stream.getTracks()[0];
+          cameraView.srcObject = stream;
+      })
+      .catch(function(error) {
+          console.error("Oops. Something is broken.", error);
+      });
+  }
+// Take a picture when cameraTrigger is tapped
+  cameraTrigger.onclick = function() {
+      cameraSensor.width = cameraView.videoWidth;
+      cameraSensor.height = cameraView.videoHeight;
+      cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
+      cameraOutput.src = cameraSensor.toDataURL("image/webp");
+      cameraOutput.classList.add("taken");
+  };
+// Start the video stream when the window loads
+  window.addEventListener("load", cameraStart, false);
 </script>
 </main>

@@ -1,0 +1,20 @@
+.mdl-card {
+    width: 350px;
+    height: 450px;
+}
+
+.mdl-card--border {
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+
+a, p {
+    font-size: 1rem;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.button_small {
+    font-size: 12px;
+}
