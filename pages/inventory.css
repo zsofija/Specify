@@ -1,0 +1,48 @@
+.mdl-grid {
+    justify-content: center;
+    margin-top: 25vh;
+}
+.mdl-cell--12-col {
+    display: grid;
+    justify-content: center;
+}
+
+.mdl-list {
+    width: 650px;
+}
+.mdl-list__item {
+    padding-top: 0;
+}
+
+.mdl-list__item-avatar {
+    height: 55px;
+    width: 45px;
+    border-radius: 10%;
+    object-fit: cover;
+}
+.mdl-list__item--two-line .mdl-list__item-primary-content {
+    line-height: 30px;
+}
+
+.mdl-list__item-secondary-info {
+    padding-right: 42px;
+}
+.edit {
+    padding-left: 30px;
+}
+
+
+@media screen and (max-width: 767px){
+    .mdl-list__item--two-line .mdl-list__item-primary-content {
+        line-height: 28px;
+    }
+    .mdl-list__item-secondary-info {
+        padding-right: 20px;
+    }
+    .edit {
+        padding-left: 15px;
+    }
+    .mdl-list__item {
+        font-size: 14px;
+    }
+}

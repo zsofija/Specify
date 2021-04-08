@@ -1,0 +1,54 @@
+<div class="mdl-grid">
+    <div class="mdl-color-text--grey-600 mdl-cell mdl-cell--12-col">
+        <h3 data-ui-field="title">My Inventory</h3>
+        <div class="mdl-cell mdl-cell--12-col ">
+            <form action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                <label class="mdl-button mdl-js-button mdl-button--accent mdl-button--fab mdl-button--mini-fab" for="search_item">
+                    <i class="material-icons">search</i>
+                </label>
+                <div class="mdl-textfield__expandable-holder">
+                    <input class="mdl-textfield__input" type="text" id="search_item">
+                    <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
+                </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <ul class="mdl-list">
+        <!--First list item with secondary info-->
+        <li data-ui-field="first-list-item" class="mdl-list__item mdl-list__item--two-line">
+        <span class="mdl-list__item-primary-content">
+            <img data-ui-field="product-image" class="mdl-list__item-avatar"src="https://static.openfoodfacts.org/images/products/807/680/951/3753/front_fr.123.400.jpg"></img>
+            <span data-ui-field="product-name">Pesto alla Genovese</span>
+            <span data-ui-field="barcode" class="mdl-list__item-sub-title">8076809513753</span>
+        </span>
+        <span class="mdl-list__item-secondary-content">
+            <span data-ui-field="secondary-info" class="mdl-list__item-secondary-info">In Stock</span>
+            <span data-ui-field="in-stock" class="mdl-list__item-secondary-action">48<a class="mdl-list__item-secondary-action edit" href="#"><i class="material-icons">edit</i></a></span>
+        </span>
+        </li>
+        <!-- Other list items from template-->
+        <li data-ui-include="templates/list_item" class="mdl-color--amber-50">
+        <span><img data-ui-field="product-image" src="https://static.openfoodfacts.org/images/products/841/007/649/0711/front_nb.12.400.jpg"></img></span>
+            <span data-ui-field="product-name">Spice Mix for Fajitas</span>
+            <span data-ui-field="barcode">8410076490711</span>
+        </span>
+        <span class="mdl-list__item-secondary-content">
+            <span data-ui-field="in-stock">23<a class="edit" href="#"><i class="material-icons">edit</i></a></span>
+        </span>
+        </span>
+        </li>
+        <li data-ui-include="templates/list_item">
+            <span><img data-ui-field="product-image" src="https://static.openfoodfacts.org/images/products/705/933/007/1610/front_nb.19.400.jpg"></img></span>
+            <span data-ui-field="product-name">Økologisk Kokosmelk</span>
+            <span data-ui-field="barcode">7059330071610</span>
+            </span>
+            <span class="mdl-list__item-secondary-content">
+            <span data-ui-field="in-stock">31<a class="edit" href="#"><i class="material-icons">edit</i></a></span>
+            </span>
+            </span>
+        </li>
+    </ul>
+</div>
