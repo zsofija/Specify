@@ -1,0 +1,12 @@
+.mdl-grid.center-items {
+    justify-content: center;
+    align-items: center;
+    margin-top: 26vh;
+}
+@media screen and (max-width: 767px){
+    .mdl-cell--12-col-phone {
+        width: 100%;
+        margin-left: 0;
+        padding: 0;
+    }
+}

@@ -1,11 +1,13 @@
 <!-- We should find out how to hide header and footer on this page-->
+
 <section class="mdl-grid center-items">
     <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-phone mdl-cell--middle">
         <div class="mdl-card mdl-shadow--6dp">
             <div class="mdl-card__title mdl-color--primary mdl-color-text--white wordCarousel">
                 <div>
-                    <ul class="flip2">
-                        <h2 data-ui-field="title" class="mdl-card__title-text">Login</h2>
+                    <ul class="flip3"> <!-- reverse order -->
+                        <h2 data-ui-field="title" class="mdl-card__title-text">Register</h2>
+                        <h2 data-ui-field="title" class="mdl-card__title-text">Login /</h2>
                         <h3 class="mdl-card__title-text">Welcome back!</h3>
                     </ul>
                 </div>
@@ -16,18 +18,12 @@
                         <input class="mdl-textfield__input" id="email" />
                         <label class="mdl-textfield__label" for="email">Email</label>
                     </div>
-                    <div data-ui-field="textfield" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="password" id="password" />
-                        <label class="mdl-textfield__label" for="password">Password</label>
-                    </div>
                 </form>
             </div>
             <div class="mdl-card__actions mdl-card--border">
                 <div class="mdl-grid">
                     <div class="mdl-cell mdl-cell--12-col">
-                        <a data-ui-field="link_text" onClick='' class="mdl-color-text--primary"
-                            style="float: right">Forgot
-                            Password?</a>
+                        <p data-ui-field="text" class="mdl-color-text--primary">Enter your email and we will send you a verification code</p>
                     </div>
                 </div>
                 <button data-ui-field="button"
@@ -39,11 +35,18 @@
                         <p data-ui-field="text" class="mdl-color-text--primary">New User?<button
                                 data-ui-field="button_small"
                                 class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect button_small"
-                                style="float:right">Set up account </button></p>
+                                style="float:right">Set Up Account </button></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- <script>
+    function myFunction() {
+      document.getElementById("header-bar").style.visibility = "hidden";
+    }
+</script> -->
+
     
