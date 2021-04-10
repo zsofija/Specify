@@ -4,11 +4,12 @@
     justify-content: center;
 }
 .card-square.mdl-card {
-    width: 450px;
-    height: 450px;
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
   }
 .card-square > .mdl-card__title {
-    height: 140px;
+    /* height: 140px; */
     display: grid;
     justify-content: center;
     align-content: center;   
@@ -99,19 +100,68 @@ width: 190px;
 }
 
 @media screen and (max-width: 767px){
+    .mdl-layout {
+        width: 100vw;
+        height: 100%;
+    }
+    .container {
+        margin-top: 15vh;
+    }
     
     .card-square.mdl-card {
-        width: 100%;
-        height: auto;
+        width: 100vw;
+        height: auto;  
     }
-    .mdl-cell--7-col-phone {
-        width: 60%;
-        margin-left: 0;
-        padding: 0;
+    .mdl-shadow--2dp {
+        box-shadow: none;
     }
-    .mdl-cell--3-col-phone {
-        width: 30%;
-        margin-left: 0;
-        padding: 0;
+    .mdl-cell--12-col-phone.mdl-cell--12-col-phone {
+        width: calc(100% - 16px)
+    }
+    .mdl-cell--10-col-phone.mdl-cell--10-col-phone {
+        width: calc(80% - 16px);
+    }
+    .mdl-cell--2-col-phone.mdl-cell--2-col-phone {
+        width: calc(20% - 16px);
+    }
+    .mdl-cell--3-col-phone.mdl-cell--3-col-phone {
+        width: calc(30% - 16px);
+    }
+    .mdl-cell--4-col-phone.mdl-cell--4-col-phone {
+        width: calc(40% - 16px);
+    }
+    
+    #circle {
+        margin-left: 20px;
+    }
+    #calendar {
+        margin-left: 10px;
+    }
+    .date_input {
+        width: 150px;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .mdl-cell--12-col-tablet.mdl-cell--12-col-tablet {
+        width: calc(100% - 16px)
+    }
+    .mdl-cell--10-col-tablet.mdl-cell--10-col-tablet {
+        width: calc(80% - 16px);
+    }
+    .mdl-cell--2-col-tablet.mdl-cell--2-col-tablet {
+        width: calc(20% - 16px);
+    }
+    .mdl-cell--3-col-tablet.mdl-cell--3-col-tablet {
+        width: calc(30% - 16px);
+    }
+    .mdl-cell--4-col-tablet.mdl-cell--4-col-tablet {
+        width: calc(40% - 16px);
+    }
+    #circle {
+        margin-left: 50px;
+    }
+    
+    .date_input {
+        width: 170px;
     }
 }
