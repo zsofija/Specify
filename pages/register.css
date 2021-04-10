@@ -1,8 +1,10 @@
-.mdl-grid.center-items {
-    justify-content: center;
-    align-items: center;
-    margin-top: 26vh;
-  }
+.mdl-layout {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin-top: 26vh;
+}
+
 .mdl-card {
     width: 350px;
     height: 450px;
@@ -39,9 +41,28 @@ h3 {
 }
 
 @media screen and (max-width: 767px){
-  .mdl-cell--12-col-phone {
-    width: 100%;
-    margin-left: 0;
-    padding: 0;
+  .mdl-layout {
+    width: 100vw;
+    height: 100%;
   }
+  .mdl-card {
+    width: 100vw;
+    height: auto;  
+  }
+  .mdl-card__supporting-text {
+    padding: 40px;
+    width: 100%;
+  }
+  .mdl-cell--12-col-phone.mdl-cell--12-col-phone {
+      width: 100%;
+      margin-left: 0;
+      padding: 0;
+  }
+  .mdl-cell--4-col-phone.mdl-cell--4-col-phone {
+    width: calc(40% - 16px);
+  }
+  .mdl-card.mdl-shadow--6dp { 
+      box-shadow: none;
+  }
+  
 }

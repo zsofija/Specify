@@ -1,9 +1,9 @@
-.mdl-grid.center-items {
+.mdl-layout {
+    display: grid;
     justify-content: center;
     align-items: center;
     margin-top: 26vh;
-  }
-
+}
 .mdl-card {
     width: 350px;
     height: 450px;
@@ -38,9 +38,21 @@ a:hover {
 
 
 @media screen and (max-width: 767px){
+    .mdl-layout {
+        width: 100vw;
+        height: 100%;
+    }
+    .mdl-card {
+        width: 100vw;
+        height: auto;  
+    }
     .mdl-cell--12-col-phone {
         width: 100%;
         margin-left: 0;
         padding: 0;
     }
+    .mdl-card.mdl-shadow--6dp { 
+        box-shadow: none;
+    }
+    
 }
