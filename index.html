@@ -81,32 +81,37 @@
             data-ui-context="header"></header>
             
 
-<main data-ui-field="pages" class="mdl-layout mdl-js-layout">
-  <section data-ui-include="templates/product_card"></section>
-  <!--INVENTORY-->
-  <section data-ui-include="pages/inventory"></section>
+<main id="main_content" data-ui-field="pages" class="mdl-layout mdl-js-layout">
+
+  <!-- NOTIFICATIONS-->
+    <!-- <section data-ui-include="pages/notifications"></section>
+    <section data-ui-include="templates/product_card"></section> -->
+  <!--INVENTORY
+  <section data-ui-include="pages/inventory"></section> -->
   <!-- LOGIN -->
-    <section data-ui-include="pages/login"></section>
-  <!-- REGISTER-->
-    <section data-ui-include="pages/register"></section>
-  <!-- REGISTER-II -->
-    <section data-ui-include="pages/register_company"></section>
-  <!-- VERIFY -->
-  <section data-ui-include="pages/verify_email"></section>
-  <!-- ABOUT 
+  <section id="login" data-ui-include="pages/login"></section>
+  <!-- REGISTER
+    <section id="register" data-ui-include="pages/register"></section>-->
+  <!--REGISTER-Company 
+    <section id="company" data-ui-include="pages/register_company"></section>-->
+  <!--VERIFY
+    <section id="verify" data-ui-include="pages/verify_email"></section-->
+  <!--ABOUT 
       <section data-ui-include="pages/about"></section>-->
 
   <!-- SCAN 
       <section data-ui-include="pages/scan"
               data-ui-component="pages/scan"></section>-->
       <!--div data-ui-load="pages/scan"></div-->
+  
+  
 
 
 </main>
 
 <!-- The footer with toolbar buttons data-ui-options="options.footerBar"-->
 
-<footer data-ui-include="layout/footer"
+<footer id="footer" data-ui-include="layout/footer"
         data-ui-field="footer-bar"></footer>
 
 <!--The DrawerLayout for side menu panel
@@ -124,7 +129,29 @@
   Turn on JavaScript to access this site content.
 </noscript-->
 
+<script>
+  const pageBody = document.querySelector('body');
+  const headerBar = document.querySelector('header');
+  const mainContent = document.querySelector('main');
+  const loginPage = document.getElementById('login');
+  const footerBar = document.querySelector('footer');
+  const regPage = document.getElementById('register');
+  const regCompany = document.getElementById('company');
+  const verifyPage = document.getElementById('verify');
+  let logReg = [loginPage, regPage, regCompany, verifyPage];
+  
 
+  pageBody.onload = function() {
+    let mainChildren = Array.from(mainContent.childNodes);
+
+    if (logReg.filter(value => mainChildren.includes(value)).length > 0) {
+        headerBar.remove();
+        footerBar.remove();
+    }
+        
+  }
+
+</script>
 
   
 
