@@ -2,28 +2,42 @@
     <div>Notifications</div> <i class="material-icons">notifications</i>
 </div> -->
 
-<div class="mdl-grid mdl-layout mdl-js-layout">
-    <div class="mdl-color-text--grey-600 mdl-cell mdl-cell--12-col">
-        <h3 data-ui-field="title">Notifications</h3>
-            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-                <div class="mdl-card mdl-cell mdl-cell--12-col">
-                    <div class="mdl-card__title mdl-cell mdl-cell--12-col">
-                        <span>S</span>
-                        <div class="mdl-cell mdl-cell--7-col">
-                            <h5>Specify inventory</h5>
-                        </div>
-                        <div class="mdl-cell mdl-cell--5-col">
-                            <p id="notification-time">now</p>
-                        </div>
-                    </div>
-                    
-                  <div class="mdl-card__supporting-text">
-                    <h4>Time to order</h4>
-                    Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse. Pariatur occaecat nisi laboris tempor laboris eiusmod qui id Lorem esse commodo in. Exercitation aute dolore deserunt culpa consequat elit labore incididunt elit anim.
-                  </div>
-                  <div class="mdl-card__actions">
-                    <a href="#" class="mdl-button"></a>
-                  </div>
+<div class="mdl-layout mdl-js-layout">
+    <ul class="mdl-list mdl-grid">
+        <li data-ui-include="templates/alert_notice">
+            <div>
+                <span>S</span>
+                <div>
+                    <h6>Specify inventory</h6>
                 </div>
-            </section>
+                <div>
+                    <p data-ui-field="note-time" id="notification-time">now</p>
+                </div>
+            </div>
+            <div>
+                <h5 data-ui-field="note-heading">Time to order!</h5>
+            </div>
+            <div>
+                <p data-ui-field="note-text">You are running low on <span data-ui-field="product_name">Thai Peanut Noodle kit</span></p>  
+            </div>
+        </li>
+        <li data-ui-include="templates/reminder_notice">
+            <div>
+                <span>S</span>
+                <div>
+                    <h6>Specify inventory</h6>
+                </div>
+                <div>
+                    <p data-ui-field="note-time" id="notification-time">now</p>
+                </div>
+            </div>
+            <div>
+                <h5 data-ui-field="note-heading">Item for sale!</h5>
+            </div>
+            <div>
+                <p data-ui-field="note-text">Expiration date coming up for <span data-ui-field="product_name">Thai Peanut Noodle kit</span>put it up for sale</p>  
+            </div>
+        </li>
+    </ul>
+</div>
 

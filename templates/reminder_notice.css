@@ -1,0 +1,89 @@
+.mdl-list__item{
+    border-radius: 20px;
+    
+}
+.mdl-list__item-primary-content {
+    align-items: baseline; 
+    flex-grow: 0;
+    line-height: normal;
+    margin-top: -15px !important;
+    margin-bottom: 2px !important;
+}
+#reminder {
+    width: 25px;
+    height: 25px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    background: green;
+    border: 1px solid green;
+    border-radius: 20%;
+    padding: 15px;
+     
+}
+h6 {
+    text-transform: uppercase;
+    font-weight: lighter;
+    color: #9e9e9e;
+    letter-spacing: normal;
+}
+#notification-time {
+    font-weight: lighter;
+    color: #9e9e9e;
+    text-align: right;
+    font-size: 1rem;
+}
+h5 {
+    text-transform: uppercase;
+    letter-spacing: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-top: 0px !important;
+}
+p {
+    font-size: 1.1rem;
+}
+
+@media screen and (max-width: 767px){
+    .mdl-layout {
+        width: 100vw;
+        height: 100%;
+        margin-top: 0;
+    }
+    .mdl-list {
+        width: 100vw;
+    }
+    
+    .mdl-cell--12-col-phone.mdl-cell--12-col-phone {
+        width: calc(100% - 16px)
+    }
+    .mdl-cell--9-col-phone.mdl-cell--9-col-phone {
+        width: calc(80% - 16px);
+    }
+    .mdl-cell--3-col-phone.mdl-cell--3-col-phone {
+        width: calc(30% - 16px);
+    }
+    #reminder {
+        width: 20px;
+        height: 20px;
+        font-size: 18px;
+    }
+    h5, h6, p {
+        font-size: 1rem;
+    }
+    #notification-time {
+        font-size: 0.9rem;
+    }
+    .mdl-list__item-primary-content {
+        margin-top: -20px !important;
+        margin-bottom: 2px !important;
+    }
+    .mdl-list__item {
+        padding: 5px !important;
+    }
+    
+}

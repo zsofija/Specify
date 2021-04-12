@@ -1,44 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=David+Libre:wght@500&family=Open+Sans:ital@1&display=swap');
 
-/* .message {
-    color: darkgrey;
-    min-height: 100vh;
-    width: 100vw;
-    font-size: 200%;
+.mdl-grid {
+    justify-content: center;  
 }
-.message i {
-    margin-left: 16px;
-    color: darkgrey;
-    font-size: 150%;
-} */
-
-.mdl-layout {
-    
-    margin-top: 30vh;
-}
-.mdl-card {
+.mdl-list {
     width: 650px;
+    height: auto;
+    margin-top: 18vh;
+    row-gap: 10px;
+    
 }
-span {
-    width: 40px;
-    height: 40px;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    font-family: 'Lato', sans-serif;
-    font-size: 24px;
-    background: red;
-    border: 1px solid red;
-    border-radius: 10%;
-    padding: 15px;
-    margin-right: 10px; 
+.mdl-list__item{
+    border-radius: 20px;
+    
 }
-h5 {
-    text-transform: uppercase;
-    font-weight: lighter;
-    color: gray;
-}
-#notification-time {
-    font-weight: lighter;
-    color: gray;
+
+@media screen and (max-width: 767px){
+    .mdl-layout {
+        width: 100vw;
+        height: 100%;
+        margin-top: 0;
+    }
+    .mdl-list {
+        width: 100vw;
+    }
+    
 }
