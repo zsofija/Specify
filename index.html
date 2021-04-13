@@ -83,25 +83,27 @@
 
 <main id="main_content" data-ui-field="pages" class="mdl-layout mdl-js-layout">
 
-  <!-- NOTIFICATIONS-
-    <section data-ui-include="pages/notifications"></section>
-    <section data-ui-include="templates/product_card"></section>-->
-  <!--INVENTORY
-  <section data-ui-include="pages/inventory"></section> -->
+  <!-- NOTIFICATIONS-->
+    <section id="notifications" data-ui-include="pages/notifications"></section>
+  <!--EDIT-product-->
+    <section id="edit" data-ui-include="pages/edit"></section>
+  <!--INVENTORY-->
+  <section id="inventory" data-ui-include="pages/inventory"></section>
   <!-- LOGIN -->
   <section id="login" data-ui-include="pages/login"></section>
-  <!-- REGISTER
-    <section id="register" data-ui-include="pages/register"></section>-->
-  <!--REGISTER-Company 
-    <section id="company" data-ui-include="pages/register_company"></section>-->
-  <!--VERIFY
-    <section id="verify" data-ui-include="pages/verify_email"></section-->
-  <!--ABOUT 
-      <section data-ui-include="pages/about"></section>-->
+  <!--VERIFY-->
+  <section id="verify" data-ui-include="pages/verify_email"></section>
+  <!-- REGISTER-->
+    <section id="register" data-ui-include="pages/register"></section>
+  <!--REGISTER-Company--> 
+    <section id="company" data-ui-include="pages/register_company"></section>
+  
+  <!--ABOUT--> 
+      <section id="about" data-ui-include="pages/about"></section>
 
-  <!-- SCAN 
-      <section data-ui-include="pages/scan"
-              data-ui-component="pages/scan"></section>-->
+  <!-- SCAN-->
+      <section id="scan" data-ui-include="pages/scan"
+              data-ui-component="pages/scan"></section>
       <!--div data-ui-load="pages/scan"></div-->
   
   
@@ -132,24 +134,50 @@
 <script>
   const pageBody = document.querySelector('body');
   const headerBar = document.querySelector('header');
-  const mainContent = document.querySelector('main');
-  const loginPage = document.getElementById('login');
   const footerBar = document.querySelector('footer');
-  const regPage = document.getElementById('register');
-  const regCompany = document.getElementById('company');
-  const verifyPage = document.getElementById('verify');
-  let logReg = [loginPage, regPage, regCompany, verifyPage];
-  
+  // const mainContent = document.querySelector('main');
+
+  const pages ={"login":document.getElementById("login"),
+                "register": document.getElementById("register"),
+                "verify": document.getElementById("verify"),
+                "company": document.getElementById("company"),
+                "scan": document.getElementById("scan"),
+                "edit": document.getElementById("edit"),
+                "inventory": document.getElementById("inventory"),
+                "notifications": document.getElementById("notifications"),
+                "about": document.getElementById("about")};
+  const no_header =["login", "register", "verify", "company"];
+
+  function select_page(name){
+    for (let page_name in pages){
+      if (page_name == name)
+        pages[page_name].style.display='inline';
+      else
+        pages[page_name].style.display="none"
+    }
+    if (no_header.includes(name)){
+        headerBar.style.display="none";
+        footerBar.style.display="none";
+
+    } else {
+        headerBar.style.display="block";
+        footerBar.style.display="block";
+      // headerBar.remove();
+      // footerBar.remove();
+    }
+  }
 
   pageBody.onload = function() {
-    let mainChildren = Array.from(mainContent.childNodes);
-
-    if (logReg.filter(value => mainChildren.includes(value)).length > 0) {
-        headerBar.remove();
-        footerBar.remove();
-    }
-        
+    select_page("login");
   }
+  //   let mainChildren = Array.from(mainContent.childNodes);
+
+  //   if (logReg.filter(value => mainChildren.includes(value)).length > 0) {
+  //       headerBar.remove();
+  //       footerBar.remove();
+  //   }
+        
+  // }
 
 </script>
 

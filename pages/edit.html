@@ -1,0 +1,43 @@
+<div class="container  mdl-layout mdl-js-layout mdl-grid">
+    <div class="card-square mdl-card mdl-shadow--2dp mdl-grid">
+            <!-- <h2 class="mdl-card__title-text mdl-color-text--blue-grey-800">Edit Item</h2> -->
+        <div class="mdl-card__title mdl-card--expand mdl-color--amber-A100 mdl-cell mdl-cell--12-col">
+            <div data-ui-field="barcode_img"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Example_barcode.svg" alt="" id="barcode_img"></div>
+            <span class="mdl-chip mdl-color--amber-50">
+                <span data-ui-field="barcode" class="mdl-chip__text">1234567890128</span>
+            </span>
+        </div>
+        <div class="mdl-card__supporting-text mdl-grid mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+            <div class="mdl-cell mdl-cell--10-col mdl-cell--10-col-tablet mdl-cell--10-col-phone mdl-cell--middle">
+                <h4 data-ui-field="product_name" class="mdl-card__title-text subtitle">Thai Peanut Noodle kit</h4>
+                <p data-ui-field="details_text">Brands: Thai Kitchen</p>
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-phone mdl-cell--middle"><img data-ui-field="product-image" class="product_image"src="https://static.openfoodfacts.org/images/products/073/762/806/4502/front_en.6.400.jpg"></img></div>  
+        </div>
+        <div class="mdl-card__actions mdl-card--border ">
+            <div class="mdl-grid mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+                <span data-ui-field="current-stock" class="mdl-badge mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-phone" data-badge="23">Stock<br>Current</span>
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-cell--3-col-phone" >
+                    <form data-ui-field="new-quantity" id="circle" class="mdl-color--accent" action="#">
+                        <div class="mdl-textfield mdl-js-textfield">
+                          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="new">
+                          <label class="mdl-textfield__label" for="new">New:</label>
+                          <span class="mdl-textfield__error">Input is not a number!</span>
+                        </div>
+                      </form>
+                </div>
+                <div class="mdl-cell mdl-cell--5-col mdl-cell--4-col-tablet mdl-cell--4-col-phone" id="calendar">
+                    <form data-ui-field="calendar"action="#">
+                        <label class="date_label" for="expiration">Expiration Date</label>
+                        <input class="date_input" type="date" name="expiration" id="expiration">
+                    </form>
+                </div>
+                
+        </div>
+        <div class="mdl-card__actions mdl-card--border mdl-grid mdl-cell mdl-cell--12-col mdl-cell--12-col-phone card-button">
+        <a data-ui-field="button" class="mdl-button mdl-button--colored mdl-button--raised mdl-js-button mdl-js-ripple-effect">
+            Update
+        </a>
+        
+    </div>
+</div>

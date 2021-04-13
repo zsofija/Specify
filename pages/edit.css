@@ -1,0 +1,167 @@
+.container {
+    margin-top: 25vh;
+    display: grid;
+    justify-content: center;
+}
+.card-square.mdl-card {
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+  }
+.card-square > .mdl-card__title {
+    /* height: 140px; */
+    display: grid;
+    justify-content: center;
+    align-content: center;   
+}
+.mdl-card__title-text {
+    align-self: flex-start;
+    color: inherit;
+}
+
+#barcode_img { 
+    width: 240px;
+    height: 100px;
+   
+    float: center;
+}
+.mdl-chip {
+    display: grid;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 5px;  
+}
+
+.mdl-chip__text {
+    font-size: 1.3rem;
+    font-weight: bolder;
+}
+.subtitle {
+    font-size: 18px;
+}
+
+.product_image {
+    height: 55px;
+    width: 50px;
+    border-radius: 10%;
+    object-fit: cover;
+}
+#circle {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin-left: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mdl-textfield__input {
+    text-align: center; 
+    font-weight: bolder;
+}
+.mdl-textfield__label {
+    text-align: center; 
+}
+span, label {
+    font-family:"Helvetica","Arial",sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #77777f;
+    line-height: 20px;
+}
+.card-button {
+    justify-content: center;
+}
+
+/* Date picker*/
+#calendar {
+    margin-left: 40px;
+}
+[type="date"] {
+    background: url('https://api.iconify.design/mdi:calendar-month-outline.svg?color=%23ffca28&height=22') 97% 50% no-repeat ;
+  }
+  [type="date"]::-webkit-inner-spin-button {
+    display: none;
+  }
+  [type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+  
+  
+.date_label {
+display: block;
+}
+.date_input {
+border-radius: 5px;
+background-color: #ffffff;
+padding: 3px 5px;
+box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.041);
+width: 190px;
+}
+
+@media screen and (max-width: 767px){
+    .mdl-layout {
+        width: 100vw;
+        height: 100%;
+    }
+    .container {
+        margin-top: 15vh;
+    }
+    
+    .card-square.mdl-card {
+        width: 100vw;
+        height: auto;  
+    }
+    .mdl-shadow--2dp {
+        box-shadow: none;
+    }
+    .mdl-cell--12-col-phone.mdl-cell--12-col-phone {
+        width: calc(100% - 16px)
+    }
+    .mdl-cell--10-col-phone.mdl-cell--10-col-phone {
+        width: calc(80% - 16px);
+    }
+    .mdl-cell--2-col-phone.mdl-cell--2-col-phone {
+        width: calc(20% - 16px);
+    }
+    .mdl-cell--3-col-phone.mdl-cell--3-col-phone {
+        width: calc(30% - 16px);
+    }
+    .mdl-cell--4-col-phone.mdl-cell--4-col-phone {
+        width: calc(40% - 16px);
+    }
+    
+    #circle {
+        margin-left: 20px;
+    }
+    #calendar {
+        margin-left: 10px;
+    }
+    .date_input {
+        width: 150px;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .mdl-cell--12-col-tablet.mdl-cell--12-col-tablet {
+        width: calc(100% - 16px)
+    }
+    .mdl-cell--10-col-tablet.mdl-cell--10-col-tablet {
+        width: calc(80% - 16px);
+    }
+    .mdl-cell--2-col-tablet.mdl-cell--2-col-tablet {
+        width: calc(20% - 16px);
+    }
+    .mdl-cell--3-col-tablet.mdl-cell--3-col-tablet {
+        width: calc(30% - 16px);
+    }
+    .mdl-cell--4-col-tablet.mdl-cell--4-col-tablet {
+        width: calc(40% - 16px);
+    }
+    #circle {
+        margin-left: 50px;
+    }
+    
+    .date_input {
+        width: 170px;
+    }
+}
