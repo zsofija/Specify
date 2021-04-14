@@ -146,7 +146,7 @@
                 "inventory": document.getElementById("inventory"),
                 "notifications": document.getElementById("notifications"),
                 "about": document.getElementById("about")};
-  const no_header =["login", "register", "verify", "company"];
+  const no_header =["login", "register", "verify", "company", "inventory"];
 
   function select_page(name){
     for (let page_name in pages){
@@ -158,10 +158,12 @@
     if (no_header.includes(name)){
         headerBar.style.display="none";
         footerBar.style.display="none";
+        pageBody.setAttribute('class', 'withBackground');
 
     } else {
         headerBar.style.display="block";
         footerBar.style.display="block";
+        pageBody.removeAttribute('class', 'withBackground');
      
     }
   }
