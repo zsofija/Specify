@@ -1,9 +1,15 @@
-.mdl-layout {
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+/* .mdl-layout {
   display: grid;
   justify-content: center;
   align-items: center;
   margin-top: 14vh;
-}
+} */
 
 .mdl-card {
     width: 350px;
@@ -12,6 +18,10 @@
 
 .mdl-card--border {
     border-top: 1px solid rgba(0,0,0,.1);
+}
+.mdl-card__supporting-text {
+  padding: 30px; /* was 40*/
+  width: 100%;
 }
 
 .wordCarousel div {
@@ -41,18 +51,20 @@ h3 {
 }
 
 @media screen and (max-width: 767px){
-  .mdl-layout {
+  /* .mdl-layout {
     width: 100vw;
     height: 100%;
+  } */
+  .mdl-card {
+    width: 94vw; /* or 100vw*/
+    height: auto;  
   }
-  
   .mdl-card__supporting-text {
-    padding: 40px;
+    padding: 30px; /* was 40*/
     width: 100%;
   }
   .mdl-cell--12-col-phone.mdl-cell--12-col-phone {
       width: 100%;
-      margin-left: 0;
       padding: 0;
   }
   .mdl-cell--4-col-phone.mdl-cell--4-col-phone {

@@ -135,6 +135,7 @@
   const pageBody = document.querySelector('body');
   const headerBar = document.querySelector('header');
   const footerBar = document.querySelector('footer');
+  // const tabBar = document.getElementsByClassName('mdl-layout__tab-bar');
   // const mainContent = document.querySelector('main');
 
   const pages ={"login":document.getElementById("login"),
@@ -146,7 +147,9 @@
                 "inventory": document.getElementById("inventory"),
                 "notifications": document.getElementById("notifications"),
                 "about": document.getElementById("about")};
-  const no_header =["login", "register", "verify", "company", "inventory"];
+  const no_header =["login", "register", "verify", "company"];
+  const no_tabs =["inventory"];
+  const no_background=["inventory", "edit", "notifications", "about"];
 
   function select_page(name){
     for (let page_name in pages){
@@ -158,20 +161,34 @@
     if (no_header.includes(name)){
         headerBar.style.display="none";
         footerBar.style.display="none";
-        pageBody.setAttribute('class', 'withBackground');
 
+    
     } else {
         headerBar.style.display="block";
         footerBar.style.display="block";
-        pageBody.removeAttribute('class', 'withBackground');
      
     }
+
+    if (no_background.includes(name)){
+      pageBody.removeAttribute('class', 'withBackground');
+
+    } else {
+      pageBody.setAttribute('class', 'withBackground');
+    }
+
+    if (no_tabs.includes(name)){
+      headerBar.style.display="none";
+    }
+
+    
   }
+  
 
   pageBody.onload = function() {
     select_page("login");
   }
-  
+
+ 
 
 </script>
 

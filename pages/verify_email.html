@@ -1,38 +1,40 @@
-<section class="mdl-layout mdl-js-layout mdl-grid">
-    <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-phone mdl-cell--middle">
-        <div class="mdl-card mdl-shadow--6dp">
-            <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
-                <h2 data-ui-field="title" class="mdl-card__title-text">Verify email</h2>    
-            </div>
-            <div class="mdl-card__supporting-text">
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--12-col">
-                        <p data-ui-field="text" class="mdl-color-text--primary">Please input PIN received by email</p>
-                    </div>
+<div class="wrapper">
+    <section class="mdl-grid">
+        <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-phone mdl-cell--middle">
+            <div class="mdl-card mdl-shadow--6dp">
+                <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
+                    <h2 data-ui-field="title" class="mdl-card__title-text">Verify email</h2>    
                 </div>
-                <form action="#">
-                    <div data-ui-field="numerical-input1" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="pin">
-                        <label class="mdl-textfield__label" for="pin">4-digit PIN</label>
-                        <span class="mdl-textfield__error">Input is not a number!</span>
+                <div class="mdl-card__supporting-text">
+                    <div class="mdl-grid">
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <p data-ui-field="text" class="mdl-color-text--primary">Please input PIN received by email</p>
+                        </div>
                     </div>
-                </form>
-            </div>
-            <div class="mdl-card__actions mdl-card--border">
-                
-                <button data-ui-field="button"
-                    class="mdl-cell mdl-cell--12-col mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-color-text--white" onclick="select_page('inventory')">
-                    Verify
-                </button>
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--12-col">
-                        <p data-ui-field="text" class="mdl-color-text--primary">Haven't received?<button
-                                data-ui-field="button_small"
-                                class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect button_small"
-                                style="float:right">Send again </button></p>
+                    <form action="#">
+                        <div data-ui-field="numerical-input1" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="pin">
+                            <label class="mdl-textfield__label" for="pin">4-digit PIN</label>
+                            <span class="mdl-textfield__error">Input is not a number!</span>
+                        </div>
+                    </form>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    
+                    <button data-ui-field="button"
+                        class="mdl-cell mdl-cell--12-col mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-color-text--white" onclick="select_page('inventory')">
+                        Verify
+                    </button>
+                    <div class="mdl-grid">
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <p data-ui-field="text" class="mdl-color-text--primary">Haven't received?<button
+                                    data-ui-field="button_small"
+                                    class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect button_small"
+                                    style="float:right">Send again </button></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+</div>
