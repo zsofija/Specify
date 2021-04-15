@@ -88,24 +88,25 @@
   <!--EDIT-product-->
     <section id="edit" data-ui-include="pages/edit"></section>
   <!--INVENTORY-->
-  <section id="inventory" data-ui-include="pages/inventory"></section>
+    <section id="inventory" data-ui-include="pages/inventory"></section>
   <!-- LOGIN -->
-  <section id="login" data-ui-include="pages/login"></section>
+    <section id="login" data-ui-include="pages/login"></section>
   <!--VERIFY-->
-  <section id="verify" data-ui-include="pages/verify_email"></section>
+    <section id="verify" data-ui-include="pages/verify_email"></section>
   <!-- REGISTER-->
     <section id="register" data-ui-include="pages/register"></section>
   <!--REGISTER-Company--> 
     <section id="company" data-ui-include="pages/register_company"></section>
   
   <!--ABOUT--> 
-      <section id="about" data-ui-include="pages/about"></section>
+    <section id="about" data-ui-include="pages/about"></section>
 
   <!-- SCAN-->
       <section id="scan" data-ui-include="pages/scan"
               data-ui-component="pages/scan"></section>
       <!--div data-ui-load="pages/scan"></div-->
-  
+  <!-- ANALYTICS-->
+    <section id="analytics" data-ui-include="pages/analytics"></section>
   
 
 
@@ -146,10 +147,11 @@
                 "edit": document.getElementById("edit"),
                 "inventory": document.getElementById("inventory"),
                 "notifications": document.getElementById("notifications"),
-                "about": document.getElementById("about")};
+                "about": document.getElementById("about"),
+                "analytics": document.getElementById("analytics")};
   const no_header =["login", "register", "verify", "company"];
   const no_tabs =["inventory"];
-  const no_background=["inventory", "edit", "notifications", "about"];
+  const no_background=["inventory", "edit", "notifications", "about", "analytics"];
 
   function select_page(name){
     for (let page_name in pages){

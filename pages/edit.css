@@ -7,7 +7,7 @@
     width: 500px;
     height: 500px;
     border-radius: 10px;
-  }
+}
 .card-square > .mdl-card__title {
     /* height: 140px; */
     display: grid;

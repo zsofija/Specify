@@ -1,0 +1,102 @@
+<div class="wrapper">
+    <div class="mdl-grid">
+        <div class="card-square mdl-card mdl-shadow--2dp mdl-grid">
+                <!-- <h2 class="mdl-card__title-text mdl-color-text--blue-grey-800">Edit Item</h2> -->
+            <div class="mdl-card__title mdl-color--amber-A100 mdl-cell mdl-cell--12-col">
+                <div id="searchfield">
+                    <form action="#">
+                        <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="text" id="searchbar">
+                        <label class="mdl-textfield__label" for="searchbar">Search...</label>
+                        </div>
+                        <button class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">search</i>
+                        </button>
+                    </form>
+                </div>
+                <div id="chips">
+                    <span class="mdl-chip mdl-chip--deletable mdl-color--accent">
+                        <span class="mdl-chip__text">Quantity</span>
+                        <button type="button" class="mdl-chip__action"><i class="material-icons">cancel</i></button>
+                    </span>
+                    <button type="button" class="mdl-chip mdl-color--accent">
+                        <span class="mdl-chip__text">Exp. date</span>
+                    </button>
+                    <button type="button" class="mdl-chip mdl-color--accent">
+                        <span class="mdl-chip__text">Order date</span>
+                    </button>
+                </div>
+            </div>
+                
+            <div class="mdl-card__supporting-text mdl-cell mdl-cell--12-col mdl-cell--12-col-phone">
+                <ul class="mdl-cell mdl-cell--12-col mdl-cell--12-col-phone">
+                    <li data-ui-include="templates/list_item" class="mdl-cell--12-col">
+                        <span>
+                            <img data-ui-field="product-image" src="https://static.openfoodfacts.org/images/products/073/762/806/4502/front_en.6.400.jpg"></img>
+                            <span data-ui-field="product-name">Thai Peanut Noodle kit</span>
+                            <span data-ui-field="barcode">1234567890128</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <span data-ui-field="in-stock">33<a class="edit" href="#" onclick="select_page('edit')"><i class="material-icons">edit</i></a></span>
+                        </span>
+                    </li>
+                </ul>
+                <img id="chart" src="/images/noun_Area Chart_2346117.svg"></img>
+                <ul class="mdl-cell mdl-cell--12-col mdl-cell--12-col-phone">
+                    <li data-ui-include="templates/list_item" class="mdl-cell--12-col">
+                        <span>
+                            <img data-ui-field="product-image" src="https://static.openfoodfacts.org/images/products/073/762/806/4502/front_en.6.400.jpg"></img>
+                            <span data-ui-field="product-name">Thai Peanut Noodle kit</span>
+                            <span data-ui-field="barcode">1234567890128</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <span data-ui-field="in-stock">23<a class="edit" href="#" onclick="select_page('edit')"><i class="material-icons">edit</i></a></span>
+                        </span>
+                    </li>
+                </ul> 
+                 
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-phone">
+    <svg fill="#ffd180">
+        <use xlink:href="#chart"/>
+    </svg>
+</div> -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 1600">
+    <defs>
+      <g id="chart">
+        <g id="Gridlines">
+          <line fill="#888888" stroke="#888888" stroke-miterlimit="10" x1="0" y1="27.3" x2="468.3" y2="27.3" />
+          <line fill="#888888" stroke="#888888" stroke-miterlimit="10" x1="0" y1="66.7" x2="468.3" y2="66.7" />
+          <line fill="#888888" stroke="#888888" stroke-miterlimit="10" x1="0" y1="105.3" x2="468.3" y2="105.3" />
+          <line fill="#888888" stroke="#888888" stroke-miterlimit="10" x1="0" y1="144.7" x2="468.3" y2="144.7" />
+          <line fill="#888888" stroke="#888888" stroke-miterlimit="10" x1="0" y1="184.3" x2="468.3" y2="184.3" />
+        </g>
+        <g id="Numbers">
+          <text transform="matrix(1 0 0 1 485 29.3333)" fill="#888888" font-family="'Roboto'" font-size="9">500</text>
+          <text transform="matrix(1 0 0 1 485 69)" fill="#888888" font-family="'Roboto'" font-size="9">400</text>
+          <text transform="matrix(1 0 0 1 485 109.3333)" fill="#888888" font-family="'Roboto'" font-size="9">300</text>
+          <text transform="matrix(1 0 0 1 485 149)" fill="#888888" font-family="'Roboto'" font-size="9">200</text>
+          <text transform="matrix(1 0 0 1 485 188.3333)" fill="#888888" font-family="'Roboto'" font-size="9">100</text>
+          <text transform="matrix(1 0 0 1 0 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">1</text>
+          <text transform="matrix(1 0 0 1 78 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">2</text>
+          <text transform="matrix(1 0 0 1 154.6667 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">3</text>
+          <text transform="matrix(1 0 0 1 232.1667 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">4</text>
+          <text transform="matrix(1 0 0 1 309 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">5</text>
+          <text transform="matrix(1 0 0 1 386.6667 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">6</text>
+          <text transform="matrix(1 0 0 1 464.3333 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">7</text>
+        </g>
+        <g id="Layer_5">
+          <polygon opacity="0.36" stroke-miterlimit="10" points="0,223.3 48,138.5 154.7,169 211,88.5
+          294.5,80.5 380,165.2 437,75.5 469.5,223.3 	"/>
+        </g>
+        <g id="Layer_4">
+          <polygon stroke-miterlimit="10" points="469.3,222.7 1,222.7 48.7,166.7 155.7,188.3 212,132.7
+          296.7,128 380.7,184.3 436.7,125 	"/>
+        </g>
+      </g>
+    </defs>
+  </svg>
