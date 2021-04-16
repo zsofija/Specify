@@ -1,8 +1,17 @@
 
-.mdl-grid {
+.wrapper {
+    display: flex;
+    align-items: center;
     justify-content: center;
-    margin-top: 10vh;
+    height: 100vh;
 }
+
+
+/* .mdl-grid {
+    justify-content: center;
+    /* margin-top: 10vh;   
+} */
+
 .mdl-cell--12-col {
     display: grid;
     justify-content: center;
@@ -37,6 +46,10 @@
 
 
 @media screen and (max-width: 767px){
+    .mdl-list {
+        width: 380px;
+    }
+
     .mdl-list__item--two-line .mdl-list__item-primary-content {
         line-height: 28px;
     }

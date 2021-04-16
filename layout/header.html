@@ -1,55 +1,21 @@
-
 <header id="header-bar">
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
-        mdl-layout--fixed-tabs">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header mdl-color--grey-900">
             <div class="mdl-layout__header-row">
-                <!-- Title -->
-                <span aria-expanded="false">
-                    <div><img class="mdl-layout__drawer-button mdl-button--icon" id="pulse" role="button" tabindex="0"
-                            src="/images/noun_profile_1776214.svg" alt="profile by mikicon from the Noun Project">
-                    </div>
-                </span>
                 <span class="mdl-layout-title">Specify</span>
                 <div class="mdl-layout-spacer"></div>
-                <button class="mdl-button mdl-js-button night-mode">
-                <span id="bulb" class="mdi mdi-lightbulb-on-outline material-icons md-24">tungsten</span>
+                <button id="demo-menu-lower-right"
+                        class="mdl-button mdl-js-button mdl-button--icon">
+                <i class="material-icons">more_vert</i>
                 </button>
-            </div>
-            <!-- Tabs -->
-            <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--blue-grey-800">
-                <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Scan</a>
-                <a href="#fixed-tab-2" class="mdl-layout__tab">My Inventory</a>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect ripple_material_light mdl-color--grey-900"
+                    for="demo-menu-lower-right">
+                <li class="mdl-menu__item"><img class="icon" src="/images/inventory_24dp.svg">Inventory<div class="borderBottom"></div></li>
+                <li class="mdl-menu__item"><img class="icon" src="/images/notifications_active_24dp.svg">Notifications<div class="borderBottom"></div></li>
+                <li class="mdl-menu__item"><img class="icon" src="/images/equalizer_24dp.svg">Analytics<div class="borderBottom"></div></li>
+                <li class="mdl-menu__item"><img class="icon" src="/images/settings_24dp.svg">Settings<div class="borderBottom"></div></li>
+                </ul>
             </div>
         </header>
-        <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">Specify</span>
-            <div data-ui-include="shared/main_menu" data-ui-loaded="true" data-ui-component="shared/main_menu" data-ui-context="zuix-ctx-9"></div>
-        </div>
-        <main class="mdl-layout__content">
-            <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
-            <div class="page-content"><!-- Your content goes here --></div>
-            </section>
-            <section class="mdl-layout__tab-panel" id="fixed-tab-2">
-            <div class="page-content"><!-- Your content goes here --></div>
-            </section>
-        </main>
     </div>
-</header>  
-
-
-    
-    
-     
-
-
-
-
-<!-- FAB 
-<div data-ui-include="shared/button_menu"
-     data-ui-field="footer-bar"></div>
-
-<div data-ui-include="pages/splash"
-     data-ui-field="splash-screen"
-     data-ui-priority="-1"
-     layout="row center-center"></div>-->
+</header>
