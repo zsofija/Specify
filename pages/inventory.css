@@ -1,21 +1,68 @@
+.demo-ribbon {
+    width: 100%;
+    margin-top: 6vh;
+    height: 20vh;
+    background-color: #37474f;
+    flex-shrink: 0;
+}
+
 
 .wrapper {
     display: flex;
-    align-items: center;
+    margin-top: -18vh;
     justify-content: center;
-    height: 100vh;
+    /* align-items: center; */  
 }
-
 
 .mdl-grid {
     justify-content: center;
-    /* margin-top: 10vh;*/   
+      
 }
-
 .mdl-cell--12-col {
     display: grid;
     justify-content: center;
+    /* text-align: center; */
 }
+
+
+#ascending {
+    position: fixed;
+    left: 660px;   
+}
+#descending {
+    position: fixed;
+    right: 660px;
+}
+#sortby {
+    position: fixed;
+    left: 920px;
+}
+.mdl-button:hover {
+    background-color: transparent;
+}
+#sortby .tooltiptext {
+    visibility: hidden;
+    width: 60px;
+    color: #fdd740b9;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    font-size: 0.9rem;
+    text-transform: lowercase;
+    
+    /* Position the tooltip */
+    z-index: 10;
+    position: fixed;
+    top: 150px;
+    left: 940px;
+  }
+  
+  #sortby:hover .tooltiptext {
+    visibility: visible;
+  }
+
+
+
 
 .mdl-list {
      width: 650px;
@@ -48,6 +95,10 @@
     display: flex;
     align-items: center;
 }
+h3 {
+    margin-top: 15px; /*20*/
+    margin-bottom: 10px;
+}
 a {
     text-decoration: none;
 }
@@ -55,6 +106,7 @@ a {
     text-align: right;
     margin-right: -212px;
     margin-bottom: -37px;
+    padding-top: 25px;
     font-size: 1rem;
 }
 
@@ -96,8 +148,10 @@ i.md40px {
     
 }
 .swiperight {
-    margin-left: 0;
-    transform: translateX(60px);
+    margin-left: 0px;
+    margin-right: -15px;
+    transform: translateX(10px);
+    transition: all 400ms;
 }
 
 
@@ -114,9 +168,22 @@ i.md40px {
     } */
     #stock {
         margin-right: -80px;
+        padding-top: 15px;
         
     }
     .mdl-list__item {
         font-size: 14px;
+    }
+    #ascending {
+        position: fixed;
+        left: 5px;   
+    }
+    #descending {
+        position: fixed;
+        right: 5px;
+    }
+    #sortby {
+        position: fixed;
+        left: 40%;
     }
 }
