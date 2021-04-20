@@ -3,32 +3,44 @@
     <div class="mdl-grid">
         <div class="mdl-color-text--grey-600 mdl-cell mdl-cell--12-col">
             <h3 data-ui-field="title">My Inventory</h3>
+            <h6 id="stock">In Stock</h6>
         </div>
-
+        
         <ul class="mdl-list">
             <!--First list item with secondary info-->
+            <div class="gesture" data-ui-field="list-item" data-ui-load="@lib/controllers/gesture_helper"
+                  data-ui-options="gesture_options">
             <li data-ui-field="first-list-item" class="mdl-list__item mdl-list__item--two-line">
-            <span class="mdl-list__item-primary-content">
-                <img data-ui-field="product-image" class="mdl-list__item-avatar"src="https://static.openfoodfacts.org/images/products/807/680/951/3753/front_fr.123.400.jpg"></img>
-                <span data-ui-field="product-name">Pesto alla Genovese</span>
-                <span data-ui-field="barcode" class="mdl-list__item-sub-title">8076809513753</span>
-            </span>
-            <span class="mdl-list__item-secondary-content">
-                <span data-ui-field="secondary-info" class="mdl-list__item-secondary-info">In Stock</span>
-                <span data-ui-field="in-stock" class="mdl-list__item-secondary-action">48<a class="mdl-list__item-secondary-action edit" href="#" onclick="select_page('edit')"><i class="material-icons">edit</i></a></span>
-            </span>
+                <span class="mdl-list__item-primary-content">
+                    <img data-ui-field="product-image" class="mdl-list__item-avatar"src="https://static.openfoodfacts.org/images/products/807/680/951/3753/front_fr.123.400.jpg"></img>
+                    <span data-ui-field="product-name">Pesto alla Genovese</span>
+                    <span data-ui-field="barcode" class="mdl-list__item-sub-title">8076809513753</span>
+                </span>
+                <span class="mdl-list__item-secondary-content">
+                    <span class="secondary-info"></span>
+                    <span data-ui-field="in-stock" class="mdl-list__item-secondary-action">48<i class="material-icons md40px">chevron_left</i></span>
+                </span>
+                <div data-ui-field="swipe-menu" class="hidden-options"><a href="#" onclick="select_page('edit')"><i class="material-icons mdl-color-text--grey-900">edit</i></a></div>
             </li>
+            
+           </div>
             <!-- Other list items from template-->
+            <div class="gesture" data-ui-field="list-item" data-ui-load="@lib/controllers/gesture_helper"
+                  data-ui-options="gesture_options">
             <li data-ui-include="templates/list_item" class="mdl-color--amber-50">
-            <span>
-                <img data-ui-field="product-image" src="https://static.openfoodfacts.org/images/products/841/007/649/0711/front_nb.12.400.jpg"></img>
-                <span data-ui-field="product-name">Spice Mix for Fajitas</span>
-                <span data-ui-field="barcode">8410076490711</span>
-            </span>
-            <span class="mdl-list__item-secondary-content">
-                <span data-ui-field="in-stock">23<a class="edit" href="#" onclick="select_page('edit')"><i class="material-icons">edit</i></a></span>
-            </span>
+              <span>
+                  <img data-ui-field="product-image" src="https://static.openfoodfacts.org/images/products/841/007/649/0711/front_nb.12.400.jpg"></img>
+                  <span data-ui-field="product-name">Spice Mix for Fajitas</span>
+                  <span data-ui-field="barcode">8410076490711</span>
+              </span>
+              <span class="mdl-list__item-secondary-content">
+                  <span data-ui-field="in-stock">23<i class="material-icons md40px">chevron_left</i></span>
+              </span>
+              <div data-ui-field="swipe-menu" class="hidden-options"><a href="#" onclick="select_page('edit')"><i class="material-icons mdl-color-text--grey-900">edit</i></a></div>
             </li>
+            </div>
+            <div class="gesture" data-ui-field="list-item" data-ui-load="@lib/controllers/gesture_helper"
+                  data-ui-options="gesture_options">
             <li data-ui-include="templates/list_item">
                 <span>
                     <img data-ui-field="product-image" src="https://static.openfoodfacts.org/images/products/705/933/007/1610/front_nb.19.400.jpg"></img>
@@ -36,10 +48,103 @@
                     <span data-ui-field="barcode">7059330071610</span>
                 </span>
                 <span class="mdl-list__item-secondary-content">
-                    <span data-ui-field="in-stock">31<a class="edit" href="#" onclick="select_page('edit')"><i class="material-icons">edit</i></a></span>
+                    <span data-ui-field="in-stock">31<i class="material-icons md40px">chevron_left</i></span>
                 </span>
+                <div data-ui-field="swipe-menu" class="hidden-options"><a href="#" onclick="select_page('edit')"><i class="material-icons mdl-color-text--grey-900">edit</i></a></div>
             </li>
+          </div>
         </ul>
     </div>
 </div>
+
+<!-- <a class="edit" href="#" onclick="select_page('edit')"><i class="material-icons">edit</i></a> -->
+
+<script>
+
+// const listItem = document.getElementsByClassName('gesture');
+// const hiddenElement = document.getElementsByClassName('hidden-options');
+
+// const unorderedList = document.querySelector('ul');
+// const collection = unorderedList.children;
+// let position = ['left', 'center', 'right'];
+// function touchscreen_move(item){
+//   for (let list_item in collection) {
+//     if collection[list_item]
+//   }
+
+// }
+
+function swipe_item(item_index,direction){
+  let gestureElements = document.getElementsByClassName('gesture');
+  let hiddenElements = document.getElementsByClassName('hidden-options');
+  if (direction == 'left'){
+    gestureElements[item_index].setAttribute("class", "swipeleft");
+    hiddenElements[item_index].classList.toggle('shown-options');
+  } else if (direction == 'right'){
+    gestureElements[item_index].classList.remove("class", "swipeleft");
+    hiddenElements[item_index].classList.toggle('shown-options');
+  }
+}
+
+// pageBody.onload = function() {
+  //  let gestureElements = document.getElementsByClassName('gesture');
+  //  let hiddenElements = document.getElementsByClassName('hidden-options');
+  const listItem = document.getElementsByClassName('gesture');
+  const hiddenElement = document.getElementsByClassName('hidden-options');
+   var gesture_options = {
+        ready: function() {
+          // register event callbacks
+          this.on('gesture:swipe', function(e, tp) {
+            swipe_item(1,tp.direction)
+            
+              // gestureElements[i].setAttribute("class", "swipeleft");
+              // hiddenElements[j].classList.toggle('shown-options');
+              // swipe_item(1,"left")
+
+              // listItem.item(0).setAttribute("class", "swipeleft");
+              // hiddenElement.item(0).classList.toggle('shown-options');
+
+          });
+        }
+      }
+
+  
+
+
+
+
+
+  // for (let item_index=0; item_index < gestureElements.length; item_index++){
+    // var gesture_options = {
+    //     ready: function() {
+    //       // register event callbacks
+    //       this.on('gesture:touch', function(e, tp) {
+    //         // select_page("edit");
+    //       }).on('gesture:pan', function(e, tp) {
+    //         // select_page("edit");
+    //       }).on('gesture:release', function(e, tp) {
+    //         // TODO: handle release
+    //       }).on('gesture:tap', function(e, tp) {
+    //         // select_page("edit");
+    //       }).on('gesture:swipe', function(e, tp) {
+    //         alert("ASD");
+    //           swipe_item(0,tp.direction);
+              
+    //       });
+    //     }
+    //   }
+  // }
+// }
+
+
+//   
+//     for (let i=0; i < gestureElements.length; i++){
+//       let gestureElement = gestureElements[i];
+//       for (let j=0; hiddenElements.length; j++) {
+//         let hiddenElement = hiddenElements[j];
+
+//         
+
+    
+</script>
 

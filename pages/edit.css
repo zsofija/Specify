@@ -25,11 +25,8 @@
     color: inherit;
 }
 
-#barcode_img { 
-    width: 240px;
-    height: 100px;
-   
-    float: center;
+#scan {
+    width: 30px !important;
 }
 .mdl-chip {
     display: grid;

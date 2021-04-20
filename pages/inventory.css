@@ -7,10 +7,10 @@
 }
 
 
-/* .mdl-grid {
+.mdl-grid {
     justify-content: center;
-    /* margin-top: 10vh;   
-} */
+    /* margin-top: 10vh;*/   
+}
 
 .mdl-cell--12-col {
     display: grid;
@@ -18,7 +18,9 @@
 }
 
 .mdl-list {
-    width: 650px;
+     width: 650px;
+    /* min-width: 650px;
+    max-width: 690px; */
 }
 .mdl-list__item {
     padding-top: 0;
@@ -33,15 +35,69 @@
     border-radius: 10%;
     object-fit: cover;
 }
+
 .mdl-list__item--two-line .mdl-list__item-primary-content {
     line-height: 30px;
 }
-
-.mdl-list__item-secondary-info {
-    padding-right: 42px;
+.mdl-list__item-secondary-content {
+    display: flex;
+    align-items: center;
+    padding-top: 17px;
 }
-.edit {
-    padding-left: 30px;
+.mdl-list__item-secondary-action {
+    display: flex;
+    align-items: center;
+}
+a {
+    text-decoration: none;
+}
+#stock {
+    text-align: right;
+    margin-right: -212px;
+    margin-bottom: -37px;
+    font-size: 1rem;
+}
+
+/* .secondary-info {
+     padding-right: 6px; 
+} */
+
+i.md40px {
+    font-size: 40px;
+    margin-right: 0; /*-31px; or -30*/
+    color:#fdd740;
+}
+/* .gesture {
+    min-width: 640px;
+    max-width: 690px;
+} */
+
+.hidden-options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 72px;
+    width: 70px;
+    margin-top: 16px;
+    margin-right: -91px; /*-51px;*/
+    background-color: #fdd740;
+    /* transform: translateX(-40px) */
+}
+.shown-options {
+    margin-right: -15px;
+}
+  
+
+/* Swipe class for gesture helper */
+.swipeleft {
+    margin-left: -5px;
+    transform: translateX(-5px);
+    transition: all 500ms;
+    
+}
+.swiperight {
+    margin-left: 0;
+    transform: translateX(60px);
 }
 
 
@@ -53,11 +109,12 @@
     .mdl-list__item--two-line .mdl-list__item-primary-content {
         line-height: 28px;
     }
-    .mdl-list__item-secondary-info {
-        padding-right: 20px;
-    }
-    .edit {
-        padding-left: 15px;
+    /* .mdl-list__item-secondary-info {
+        padding-right: 5px;
+    } */
+    #stock {
+        margin-right: -80px;
+        
     }
     .mdl-list__item {
         font-size: 14px;
