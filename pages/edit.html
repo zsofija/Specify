@@ -3,19 +3,47 @@
         <div class="card-square mdl-card mdl-shadow--2dp mdl-grid">
                 <!-- <h2 class="mdl-card__title-text mdl-color-text--blue-grey-800">Edit Item</h2> -->
             <div class="mdl-card__title mdl-card--expand mdl-color--amber-A100 mdl-cell mdl-cell--12-col">
-                <button id="scan" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                    <img src="/images/barcode-scan.png">
-                  </button>
-                <span class="mdl-chip mdl-color--amber-50">
-                    <span data-ui-field="barcode" class="mdl-chip__text">1234567890128</span>
-                </span>
+                <div class="mdl-cell mdl-cell--10-col mdl-cell--10-col-tablet mdl-cell--10-col-phone">
+                    <h4 data-ui-field="product_name" class="mdl-card__title-text subtitle">Thai Peanut Noodle kit</h4>
+                    <span data-ui-field="barcode" class="mdl-color-text--blue-grey-800"><img src="/images/barcode.svg" class="mini-icon">1234567890128</span>
+                    <p data-ui-field="details_text">Brands: Thai Kitchen</p>
+                    <div data-ui-field="category" id="select_category" class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
+                            <label for="select_box_category" class="mdl-selectfield__label"><i class="material-icons">category</i>Category:</label>
+                            <select id="select_box_category" name="select_box_category" class="mdl-selectfield__select">
+                                <option value=""></option>
+                                <option value="1">dairy</option>
+                                <option value="2">bakery</option>
+                                <option value="3">fruit</option>
+                                <option value="4">vegetables</option>
+                                <option value="5">meat</option>
+                                <option value="6">fish & seafood</option>
+                                <option value="7">vegetarian</option>
+                                <option value="8">vegan</option>
+                                <option value="9">frozen food</option>
+                                <option value="10">ready meals</option>
+                                <option value="11">drinks</option>
+                                <option value="12">snacks & sweets</option>
+                                <option value="13">cupboard foods</option>
+                                <option value="14">cooking ingredients</option>
+                                <option value="15">exotic food</option>
+                            </select>
+                            
+                    </div>
+                    
+                    
+                
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-phone"><img data-ui-field="product-image" class="product_image"src="https://static.openfoodfacts.org/images/products/073/762/806/4502/front_en.6.400.jpg"></img></div> 
+                <!-- <span class="mdl-chip mdl-color--amber-50">
+                    <span  class="mdl-chip__text"></span>
+                </span> -->
+                
             </div>
             <div class="mdl-card__supporting-text mdl-grid mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-                <div class="mdl-cell mdl-cell--10-col mdl-cell--10-col-tablet mdl-cell--10-col-phone mdl-cell--middle">
-                    <h4 data-ui-field="product_name" class="mdl-card__title-text subtitle">Thai Peanut Noodle kit</h4>
-                    <p data-ui-field="details_text">Brands: Thai Kitchen</p>
-                </div>
-                <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-phone mdl-cell--middle"><img data-ui-field="product-image" class="product_image"src="https://static.openfoodfacts.org/images/products/073/762/806/4502/front_en.6.400.jpg"></img></div>  
+                <p>On sale</p><label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
+                    <input type="checkbox" id="switch-1" class="mdl-switch__input" checked>
+                    <span class="mdl-switch__label"></span>
+                  </label>
             </div>
             <div class="mdl-card__actions mdl-card--border ">
                 <div class="mdl-grid mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
@@ -45,3 +73,10 @@
         </div>
     </div>
 <!-- </div> -->
+
+<!-- <button id="scan" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+    <img src="/images/barcode-scan.png">
+  </button> -->
+<script>
+    
+</script>

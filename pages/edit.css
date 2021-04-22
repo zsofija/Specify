@@ -16,18 +16,19 @@
 }
 .card-square > .mdl-card__title {
     /* height: 140px; */
-    display: grid;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-    align-content: center;   
+    /* align-content: center;    */
 }
 .mdl-card__title-text {
     align-self: flex-start;
     color: inherit;
 }
 
-#scan {
+/* #scan {
     width: 30px !important;
-}
+} */
 .mdl-chip {
     display: grid;
     justify-content: center;
@@ -42,12 +43,24 @@
 .subtitle {
     font-size: 18px;
 }
+p {
+    margin: 0 0 0;
+}
+h4 {
+    font-weight: bolder;
+}
+i, label {
+    color: black !important;
+}
 
 .product_image {
-    height: 55px;
-    width: 50px;
+    /* height: 85px; */
+    width: 80px;
     border-radius: 10%;
     object-fit: cover;
+}
+.mini-icon {
+    padding-right: 4px;
 }
 #circle {
     border-radius: 50%;
