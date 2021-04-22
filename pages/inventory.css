@@ -1,15 +1,7 @@
-.demo-ribbon {
-    width: 100%;
-    margin-top: 6vh;
-    height: 20vh;
-    background-color: #37474f;
-    flex-shrink: 0;
-}
-
 
 .wrapper {
     display: flex;
-    margin-top: -18vh;
+    margin-top: 5vh;
     justify-content: center;
     /* align-items: center; */  
 }
@@ -21,21 +13,66 @@
 .mdl-cell--12-col {
     display: grid;
     justify-content: center;
+    background-color: #37474f;
+    width: 100vw;
     /* text-align: center; */
 }
 
 
+
 #ascending {
     position: fixed;
-    left: 660px;   
+    left: 34.5vw; /*660px;*/
 }
+#ascending .tooltiptext {
+    visibility: hidden;
+    width: 60px;
+    color: #fdd740b9;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    font-size: 0.9rem;
+    text-transform: lowercase;
+    
+    /* Position the tooltip */
+    z-index: 10;
+    position: fixed;
+    top: 14.85vh; /* 130 -> 145*/
+    left: 35vw; /*670px;*/
+}  
+#ascending:hover .tooltiptext {
+    visibility: visible;
+}
+
 #descending {
     position: fixed;
-    right: 660px;
+    right: 34.5vw; /*660px;*/
 }
+#descending .tooltiptext {
+    visibility: hidden;
+    width: 60px;
+    color: #fdd740b9;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    font-size: 0.9rem;
+    text-transform: lowercase;
+    
+    /* Position the tooltip */
+    z-index: 10;
+    position: fixed;
+    top: 14.85vh;
+    right: 32.5vw; /*620px;*/
+}
+  
+#descending:hover .tooltiptext {
+    visibility: visible;
+
+}
+
 #sortby {
     position: fixed;
-    left: 920px;
+    left: 48vw; /*920px;*/
 }
 .mdl-button:hover {
     background-color: transparent;
@@ -53,13 +90,13 @@
     /* Position the tooltip */
     z-index: 10;
     position: fixed;
-    top: 150px;
-    left: 940px;
-  }
+    top: 14.85vh;
+    left: 49.5vw; /*950px;*/
+}
   
-  #sortby:hover .tooltiptext {
+#sortby:hover .tooltiptext {
     visibility: visible;
-  }
+}
 
 
 
@@ -95,18 +132,22 @@
     display: flex;
     align-items: center;
 }
-h3 {
-    margin-top: 15px; /*20*/
-    margin-bottom: 10px;
+h4 {
+    margin-top: 20px; /*15*/
+    margin-bottom: 20px; /*10px with h3*/
+    text-transform: lowercase;
+    font-style: italic;
+    font-weight: bolder;
+    
 }
 a {
     text-decoration: none;
 }
 #stock {
     text-align: right;
-    margin-right: -212px;
+    margin-right: -245px; /*-212px;*/
     margin-bottom: -37px;
-    padding-top: 25px;
+    padding-top: 35px;
     font-size: 1rem;
 }
 
@@ -167,9 +208,8 @@ i.md40px {
         padding-right: 5px;
     } */
     #stock {
-        margin-right: -80px;
-        padding-top: 15px;
-        
+        margin-right: -110px; /* was -80px; with h4*/
+        /* padding-top: 30px;    */
     }
     .mdl-list__item {
         font-size: 14px;
@@ -185,5 +225,77 @@ i.md40px {
     #sortby {
         position: fixed;
         left: 40%;
+    }
+    #ascending .tooltiptext {
+        top: 131px;
+        left: 15px;
+    }
+    #sortby .tooltiptext {
+        top: 133px;
+        left: 47%;
+    } 
+    #descending .tooltiptext {
+        top: 131px;
+        right: 15px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .wrapper {
+        margin-top: 4vh;
+    }
+    #sortby {
+        position: fixed;
+        left: 46vw;
+    }
+    #ascending .tooltiptext {
+        top: 135px;
+        left: 35.7vw; /*670px;*/
+    }
+    #sortby .tooltiptext {
+        top: 135px;
+        left: 49.5vw; /*950px;*/
+    } 
+    #descending .tooltiptext {
+        top: 135px;
+        right: 29.7vw; /*620px;*/
+    }
+}
+@media only screen and (max-height: 914px) and (min-width: 1920px) {
+    #ascending .tooltiptext {
+        top: 135px;
+        left: 35vw; /*670px;*/
+    }
+    #sortby .tooltiptext {
+        top: 135px;
+        left: 49.5vw; /*950px;*/
+    } 
+    #descending .tooltiptext {
+        top: 135px;
+        right: 32.5vw; /*620px;*/
+    }
+}
+@media only screen and (max-height: 650px) and (min-width: 1920px) {
+    .wrapper {
+        display: flex;
+        margin-top: 6vh;
+    }
+}
+@media only screen and (max-height: 510px) and (min-width: 1920px) {
+    .wrapper {
+        display: flex;
+        margin-top: 7vh;
+    }
+    #ascending .tooltiptext {
+        top: 125px;
+        left: 35vw; /*670px;*/
+    }
+    #sortby .tooltiptext {
+        top: 125px;
+        left: 49.5vw; /*950px;*/
+    } 
+    #descending .tooltiptext {
+        top: 125px;
+        right: 32.5vw; /*620px;*/
     }
 }
