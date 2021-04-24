@@ -1,13 +1,49 @@
-/* .wrapper {
+.header {
+    position: fixed;
+    top: 57px;
     display: flex;
+    flex-direction: row;
+    /* margin-top: 6vh; */
     align-items: center;
     justify-content: center;
-    height: 100vh;
-} */
+    background-color: #37474f;
+    background-size: 100vw 108px;
+    width: 100vw;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    z-index: 10;
+    /* margin-bottom: 5px; */
+}
+h4 {
+    margin-top: 20px; /*15*/
+    margin-bottom: 20px; /*10px with h3*/
+    text-transform: lowercase;
+    font-style: italic;
+    font-weight: bolder;  
+}
+.header i {
+    color: #fdd740 !important;
+}
+#back {
+    position: fixed;
+    left: 38%;
+    padding: 0;
+}
+#delete {
+    position: fixed;
+    right: 38%;
+    padding: 0;
+}
+
+
+
 .container {
-    margin-top: 25vh;
+    /* margin-top: 15vh; */
     display: grid;
     justify-content: center;
+    align-content: center;
+    height: 100vh;
 }
 .card-square.mdl-card {
     width: 500px;
@@ -15,11 +51,9 @@
     border-radius: 10px;
 }
 .card-square > .mdl-card__title {
-    /* height: 140px; */
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /* align-content: center;    */
 }
 .mdl-card__title-text {
     align-self: flex-start;
@@ -29,32 +63,19 @@
 /* #scan {
     width: 30px !important;
 } */
-.mdl-chip {
-    display: grid;
-    justify-content: center;
-    margin-top: 20px;
-    padding: 5px;  
-}
-
-.mdl-chip__text {
-    font-size: 1.3rem;
-    font-weight: bolder;
-}
 .subtitle {
     font-size: 18px;
+    font-weight: bolder;
 }
 p {
     margin: 0 0 0;
-}
-h4 {
-    font-weight: bolder;
+    color: black !important;
 }
 i, label {
     color: black !important;
 }
 
 .product_image {
-    /* height: 85px; */
     width: 80px;
     border-radius: 10%;
     object-fit: cover;
@@ -62,11 +83,67 @@ i, label {
 .mini-icon {
     padding-right: 4px;
 }
+
+/* Second section with switch and calendar*/
+.mdl-card__supporting-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#sale-switch {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 5px;
+}
+#discount-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#sale-switch p {
+    padding-left: 10px;  
+}
+#discount-text p {
+    padding-right: 10px; 
+}
+.switch input {
+    position: absolute;
+    opacity: 0;
+}
+.switch {
+    display: inline-block;
+    font-size: 20px; /* 1 */
+    height: 1em;
+    width: 2em;
+    background: #BDB9A6;
+    border-radius: 1em;
+}
+  
+.switch div {
+    height: 1em;
+    width: 1em;
+    border-radius: 1em;
+    background: #FFF;
+    box-shadow: 0 0.1em 0.3em rgba(0,0,0,0.3);
+    -webkit-transition: all 300ms;
+       -moz-transition: all 300ms;
+            transition: all 300ms;
+}
+  
+.switch input:checked + div {
+    background-color: #f44336;
+    -webkit-transform: translate3d(100%, 0, 0);
+       -moz-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+}
+  
+
 #circle {
     border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    margin-left: 40px;
+    height: 40px;
+    width: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,23 +153,21 @@ i, label {
     font-weight: bolder;
 }
 .mdl-textfield__label {
-    text-align: center; 
+    text-align: center;
+    color: #f44336 !important; 
+    font-weight: 800 !important;
 }
 span, label {
     font-family:"Helvetica","Arial",sans-serif;
     font-size: 14px;
-    font-weight: 400;
-    color: #77777f;
+    /* color: #77777f; */
     line-height: 20px;
 }
-.card-button {
-    justify-content: center;
+label {
+    font-weight: bolder;
 }
-
 /* Date picker*/
-#calendar {
-    margin-left: 40px;
-}
+
 [type="date"] {
     background: url('https://api.iconify.design/mdi:calendar-month-outline.svg?color=%23ffca28&height=22') 97% 50% no-repeat ;
   }
@@ -103,9 +178,10 @@ span, label {
     opacity: 0;
   }
   
-  
 .date_label {
     display: block;
+    padding-bottom: 10px;
+    text-align: center;
 }
 .date_input {
     border-radius: 5px;
@@ -115,13 +191,55 @@ span, label {
     width: 190px;
 }
 
+/* Third section */
+.stock-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#centered {
+    position: absolute;
+    padding-bottom: 10px;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.on-stock {
+    padding-top: 20px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mdl-card__actions .mdl-cell {
+    margin-bottom: 0px;
+}
+
+/* + Button */
+.card-button {
+    justify-content: center;
+}
+
+
+
 @media screen and (max-width: 767px){
+    #back {
+        left: 10px;
+    }
+    #delete {
+        right: 10px; 
+    }
+
     .mdl-layout {
         width: 100vw;
-        height: 100%;
+        margin-top: 1vh; /* 2vh*/
+        /* height: 100%; */
     }
     .container {
-        margin-top: 15vh;
+        /* margin-top: 15vh; mobile */
     }
     
     .card-square.mdl-card {
@@ -147,12 +265,6 @@ span, label {
         width: calc(40% - 16px);
     }
     
-    #circle {
-        margin-left: 20px;
-    }
-    #calendar {
-        margin-left: 10px;
-    }
     .date_input {
         width: 150px;
     }
@@ -173,11 +285,35 @@ span, label {
     .mdl-cell--4-col-tablet.mdl-cell--4-col-tablet {
         width: calc(40% - 16px);
     }
-    #circle {
-        margin-left: 50px;
-    }
     
     .date_input {
         width: 170px;
+    }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 667px) and (max-device-height: 667px) {
+    .mdl-layout {
+        width: 100vw;
+        margin-top: 7vh; 
+    }
+}
+/* Extra small mobile */
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) {
+    .mdl-layout {
+        width: 100vw;
+        margin-top: 8vh; 
+    }
+    .mdl-card__supporting-text, .mdl-card__actions {
+        margin: 5px;
+        padding: 3px; /*5*/
+    }
+    .mdl-card__title {
+        margin: -5px;
+        padding: 10px;
+    }
+    .mdl-cell--12-col-phone.mdl-cell--12-col-phone {
+        width: 100vw;
+    }
+    .product_image {
+        width: 75px;
     }
 }

@@ -19,6 +19,7 @@
 }
 
 
+/* Page header */
 
 #ascending {
     position: fixed;
@@ -99,7 +100,7 @@
 }
 
 
-
+/* List */
 
 .mdl-list {
      width: 650px;
@@ -196,6 +197,7 @@ i.md40px {
 }
 
 
+
 @media screen and (max-width: 767px){
     .mdl-list {
         width: 380px;
@@ -213,6 +215,10 @@ i.md40px {
     }
     .mdl-list__item {
         font-size: 14px;
+    }
+    h4 {
+        margin-top: 30px;
+        margin-bottom: 10px;
     }
     #ascending {
         position: fixed;
@@ -297,5 +303,17 @@ i.md40px {
     #descending .tooltiptext {
         top: 125px;
         right: 32.5vw; /*620px;*/
+    }
+}
+/* Extra small mobile */
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) {
+    .mdl-list {
+        width: 320px;
+    }
+    #stock {
+        margin-right: -85px;
+    }
+    .mdl-list__item--two-line .mdl-list__item-primary-content {
+        line-height: 18px;
     }
 }
