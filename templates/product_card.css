@@ -51,7 +51,7 @@ i, label {
     justify-content: center;
     align-items: center;
 }
-#sale-switch {
+#sale_switch {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -62,7 +62,7 @@ i, label {
     flex-direction: row;
     align-items: center;
 }
-#sale-switch p {
+#sale_switch p {
     padding-left: 10px;  
 }
 #discount-text p {
@@ -197,10 +197,15 @@ label {
     
     .card-square.mdl-card {
         width: 100vw;
-        height: auto;  
+        height: auto;
+        border-radius: 0px;
+        padding: 0; /*for full width on small screens */
     }
     .mdl-shadow--2dp {
         box-shadow: none;
+    }
+    .card-square > .mdl-card__title {
+        margin: 0; /*for full width on small screens */
     }
     .mdl-cell--12-col-phone.mdl-cell--12-col-phone {
         width: calc(100% - 16px)
@@ -243,23 +248,38 @@ label {
         width: 170px;
     }
 }
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (min-device-height: 812px) {
+/* @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (min-device-height: 812px) {
     .mdl-layout {
         width: 100vw;
-        margin-top: -3vh; 
+        margin-top: -3.2vh; 
+    }
+} */
+/* Pixel 2, Iphone 6/7/8 Plus */
+@media only screen and (min-device-width: 411px) and (max-device-width: 736px) and (max-device-height: 736px) {
+    .mdl-layout {
+        width: 100vw;
+        margin-top: 0vh; 
     }
 }
+/* Iphone 6/7/8 */
 @media only screen and (min-device-width: 320px) and (max-device-width: 667px) and (max-device-height: 667px) {
     .mdl-layout {
         width: 100vw;
-        margin-top: 7vh; 
+        margin-top: 5vh; 
+    }
+}
+/*  Moto G4, Galaxy S5 */
+@media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (max-device-height: 640px) {
+    .mdl-layout {
+        width: 100vw;
+        margin-top: 7vh;
     }
 }
 /* Extra small mobile */
 @media only screen and (min-device-width: 320px) and (max-device-height: 568px) {
     .mdl-layout {
         width: 100vw;
-        margin-top: 8vh; 
+        margin-top: 6vh; /*7 if h4 line height is default (32px)*/ 
     }
     .mdl-card__supporting-text, .mdl-card__actions {
         margin: 5px;
@@ -267,13 +287,42 @@ label {
     }
     .mdl-card__title {
         margin: -5px;
-        padding: 10px;
+        padding: 7px; /*10px;*/
     }
     .mdl-cell--12-col-phone.mdl-cell--12-col-phone {
         width: 100vw;
     }
     .product_image {
         width: 75px;
+    }
+    p, span, label {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .subtitle {
+        font-size: 16px;
+    }
+}
+/* Extra Large mobile - Pixel 2 XL*/
+@media only screen and (min-device-width: 411px) and (min-device-height: 823px) and (max-device-height: 823px) {
+    .mdl-layout {
+        width: 100vw;
+        margin-top: 3vh; 
+    }
+    .mdl-cell {
+        margin: 10px;
+        padding: 12px;
+    }
+}
+/* Extra Large mobile - Iphone X*/
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (min-device-height: 812px) {
+    .mdl-layout {
+        width: 100vw;
+        margin-top: 0.5vh; /* was 1.5 vh but Pixel 2XL is not working*/
+    }
+    .mdl-cell {
+        margin: 10px;
+        padding: 10px;
     }
 }
 /* @media only screen and (max-height: 770px) and (min-width: 1920px) {
