@@ -2,42 +2,112 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 100vh; 
 }
+
+/* Page header */
+.header {
+    position: fixed;
+    top: 57px;
+    display: flex;
+    flex-direction: row;
+    /* margin-top: 6vh; */
+    align-items: center;
+    justify-content: center;
+    background-color: #37474f;
+    background-size: 100vw 108px;
+    width: 100vw;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    z-index: 10;
+    /* margin-bottom: 5px; */
+}
+h4 {
+    margin-top: 20px; /*15*/
+    margin-bottom: 20px; /*10px with h3*/
+    text-transform: lowercase;
+    font-style: italic;
+    font-weight: bolder;  
+}
+.header i {
+    color: #fdd740 !important;
+}
+#back {
+    position: fixed;
+    left: 38%;
+    padding: 0;
+}
+#delete {
+    position: fixed;
+    right: 38%;
+    padding: 0;
+}
+
+
+/* Card */
+
 .card-square.mdl-card {
     width: 600px;
     height: 600px;
     border-radius: 10px;
 }
+/* First card section */
 .mdl-card__title {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    max-height: 150px;
+    /* max-height: 150px; */
     margin-bottom: 0;
 }
 #searchfield {
     background-color: #fff;
     padding: 0 20px;
     border-radius: 50px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
+}
+.mdl-textfield {
+    padding-bottom: 9px; /* padding: 10px 0*/
+    padding-top: 15px;
 }
 
 .mdl-chip {
     margin-right: 5px;
+    height: 26px;
+    line-height: 26px;
+    font-weight: bolder;
 }
 #chips {
     display: flex;
     flex-flow: row;
+    margin-top: 5px;
 }
+
+
 li {
     list-style: none;
 }
-/* .mdl-list__item--two-line {
-    height: 50px;
-} */
+.search_result {
+    display: flex;
+    justify-content: center;
+    margin-top: -12px;
+}
+.product_name {
+    font-weight: bold;
+}
+.mdl-list__item-avatar {
+    height: 65px;
+    width: 55px;
+    border-radius: 10%;
+    object-fit: cover;
+}
+.mdl-list__item--two-line .mdl-list__item-primary-content {
+    line-height: 30px;
+}
 
+
+/* Second card section */
 .mdl-card__supporting-text {
     display: flex;
     flex-direction: row;
@@ -47,24 +117,123 @@ li {
     margin-top: 0;
 }
 
-#chart {
-    height: 200px;
-    width: 200px;
+.statistic {
+    background: #fff;
+    color: #fdd740;
+    height: 6em;
+    padding: 1em;
+    margin: 1em 0; /*1em 0*/
+      -webkit-transition: margin 0.5s ease,box-shadow 0.5s ease; /* Safari */
+      transition: margin 0.5s ease,box-shadow 0.5s ease; 
+    -moz-box-shadow: 0px 0.2em 0.3em rgb(0, 0, 0,0.8);
+    -webkit-box-shadow: 0px 0.2em 0.3em rgb(0, 0, 0,0.8);
+    box-shadow: 0px 0.2em 0.3em rgb(0, 0, 0,0.8);
+}
+.statistic:hover { 
+    margin-top: 0.8em;  
+    -moz-box-shadow: 0px 0.3em 0.4em rgb(0, 0, 0,0.8); 
+    -webkit-box-shadow: 0px 0.3em 0.4em rgb(0, 0, 0,0.8); 
+    box-shadow: 0px 0.3em 0.4em rgb(0, 0, 0,0.8); 
+}
+.statistic i {
+    font-size: 3.5em; 
+} 
+.statistic div{
+    width: calc(100% - 3.5em);
+    display: block;
+    float: right;
+    text-align: right;
+}
+.statistic div b {
+    font-size:2.2em;
+    width: 100%;
+    padding-top:0px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    display: block;
+}
+.statistic div span {
+    font-size: 1em;
+    width: 100%;
+    color: #616161 !important;
+    display: block;
+}
+  
+.statistic.left div { 
+    float: left;
+    text-align: left;
 }
 
-/* svg {
-    width: 450px;
-    height: auto;
-} */
 
 @media screen and (max-width: 767px){
-   
+
+    #back {
+        left: 10px;
+    }
+    
+    .mdl-grid {
+        margin-top: 7.9vh;
+    }
+
     .card-square.mdl-card {
         width: 100vw;
-        height: auto;  
+        padding: 0; /*for full width on small screens */
+        /* height: auto;   */
+    }
+    .card-square > .mdl-card__title {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%; /*for full width on small screens */
+    }
+    .mdl-shadow--2dp {
+        box-shadow: none;
+    }
+
+    #searchfield form {
+        max-height: 40px;
+    }
+    .mdl-textfield {
+        width: 270px;
+        max-width: 85%;
+    }
+    .mdl-textfield {
+        padding-bottom: 10px;
+        padding-top: 5px;
+    }
+    .mdl-textfield__label {
+        top: 14px;
+    }
+    .search_result {
+        display: flex;
+        justify-content: center;
+        margin-top: -7px;
+    }
+    
+    .statistic {
+        margin: 0 0;
+    }
+    .mdl-card__supporting-text {
+        line-height: 13px;
+    }
+    .mdl-cell--4-col button {
+        font-size: 12px;
+        line-height: 15px;
+        font-weight: 700;
+    }
+    .date_label {
+        padding-bottom: 5px;
     }
     
     .mdl-cell--12-col-phone.mdl-cell--12-col-phone {
-        width: calc(100% - 16px)
+        width: 100%;
+    }
+    .mdl-cell--6-col-phone.mdl-cell--6-col-phone {
+        width: calc(50% - 16px)
+    }
+    .mdl-cell--8-col-phone.mdl-cell--8-col-phone {
+        width: calc(70% - 16px)
+    }
+    .mdl-cell--4-col-phone.mdl-cell--4-col-phone {
+        width: calc(30% - 16px)
     }
 }

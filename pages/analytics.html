@@ -1,4 +1,11 @@
 <div class="wrapper">
+<!--Page Header-->
+<div data-ui-field="page_header" class="mdl-color-text--white mdl-cell mdl-cell--12-col header">
+    <button id="back" class="mdl-button mdl-button--colored mdl-js-button" onclick="select_page('inventory')"><i class="material-icons">arrow_back</i></button>
+    <h4 data-ui-field="title">Analitycs</h4>
+</div>
+
+
     <div class="mdl-grid">
         <div class="card-square mdl-card mdl-shadow--2dp mdl-grid">
                 <!-- <h2 class="mdl-card__title-text mdl-color-text--blue-grey-800">Edit Item</h2> -->
@@ -26,77 +33,91 @@
                         <span class="mdl-chip__text">Order date</span>
                     </button>
                 </div>
+                <div class="mdl-cell mdl-cell--12-col search_result">
+                    <li data-ui-field="list-item" class="mdl-list__item mdl-list__item--two-line">
+                        <span class="mdl-list__item-primary-content">
+                            <img data-ui-field="product-image" class="mdl-list__item-avatar"src="https://static.openfoodfacts.org/images/products/807/680/951/3753/front_fr.123.400.jpg"></img>
+                            <span data-ui-field="product-name" class="product_name">Pesto alla Genovese</span>
+                            <span data-ui-field="barcode" class="mdl-list__item-sub-title">8076809513753</span>
+                        </span>
+                    </li>
+                </div>
             </div>
                 
             <div class="mdl-card__supporting-text mdl-cell mdl-cell--12-col mdl-cell--12-col-phone">
-                <ul class="mdl-cell mdl-cell--12-col mdl-cell--12-col-phone">
-                    <li data-ui-include="templates/list_item" class="mdl-cell--12-col">
-                        <span>
-                            <img data-ui-field="product-image" src="https://static.openfoodfacts.org/images/products/073/762/806/4502/front_en.6.400.jpg"></img>
-                            <span data-ui-field="product-name">Thai Peanut Noodle kit</span>
-                            <span data-ui-field="barcode">1234567890128</span>
-                        </span>
-                        <span class="mdl-list__item-secondary-content">
-                            <span data-ui-field="in-stock">33<a class="edit" href="#" onclick="select_page('edit')"><i class="material-icons">edit</i></a></span>
-                        </span>
-                    </li>
-                </ul>
-                <img id="chart" src="/images/noun_Area Chart_2346117.svg"></img>
-                <ul class="mdl-cell mdl-cell--12-col mdl-cell--12-col-phone">
-                    <li data-ui-include="templates/list_item" class="mdl-cell--12-col">
-                        <span>
-                            <img data-ui-field="product-image" src="https://static.openfoodfacts.org/images/products/073/762/806/4502/front_en.6.400.jpg"></img>
-                            <span data-ui-field="product-name">Thai Peanut Noodle kit</span>
-                            <span data-ui-field="barcode">1234567890128</span>
-                        </span>
-                        <span class="mdl-list__item-secondary-content">
-                            <span data-ui-field="in-stock">23<a class="edit" href="#" onclick="select_page('edit')"><i class="material-icons">edit</i></a></span>
-                        </span>
-                    </li>
-                </ul> 
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-phone">
+                      <div class="statistic">
+                        <i class="material-icons icons">storefront</i>
+                        <div>
+                          <b>40</b>
+                          <span>current on stock</span>
+                        </div> 
+                      </div>
+                </div> 
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-phone">
+                      <div class="statistic">
+                        <i class="material-icons icons">local_grocery_store</i>
+                        <div>
+                          <b>41</b>
+                          <span>sold</span>
+                        </div> 
+                      </div>
+                </div> 
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-phone">
+                    <div class="statistic">
+                      <i class="material-icons icons">local_shipping</i>
+                      <div>
+                        <b>15.01.2021</b>
+                        <span>arrival of last shipment</span>
+                      </div> 
+                    </div>
+                </div> 
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-phone">
+                    <div class="statistic">
+                      <i class="material-icons icons">hourglass_empty</i>
+                    <div>
+                        <b>30.05.2022</b>
+                        <span>expiration date</span>
+                      </div> 
+                    </div>
+                </div> 
+                
+                <!-- <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-phone"> -->
+                    <div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-phone">
+                        <form data-ui-field="calendar"action="#">
+                            <label class="date_label" for="date_range"><i class="material-icons mdl-color-text--amber-A100 icons">date_range</i>Select date range</label>
+                            <input type="text" name="datefilter" id="date_range" value="" />
+                        </form>
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone">
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Show Chart</button> <!--TODO this chart https://codepen.io/ejsado/pen/cLrlm or google charts-->
+                    <!-- <img id="chart" src="/images/noun_Area Chart_2346117.svg"></img> -->
+                    </div>
+                <!-- </div>  -->
                  
             </div>
         </div>
     </div>
 </div>
 
-<!-- <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-phone">
-    <svg fill="#ffd180">
-        <use xlink:href="#chart"/>
-    </svg>
-</div> -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 1600">
-    <defs>
-      <g id="chart">
-        <g id="Gridlines">
-          <line fill="#888888" stroke="#888888" stroke-miterlimit="10" x1="0" y1="27.3" x2="468.3" y2="27.3" />
-          <line fill="#888888" stroke="#888888" stroke-miterlimit="10" x1="0" y1="66.7" x2="468.3" y2="66.7" />
-          <line fill="#888888" stroke="#888888" stroke-miterlimit="10" x1="0" y1="105.3" x2="468.3" y2="105.3" />
-          <line fill="#888888" stroke="#888888" stroke-miterlimit="10" x1="0" y1="144.7" x2="468.3" y2="144.7" />
-          <line fill="#888888" stroke="#888888" stroke-miterlimit="10" x1="0" y1="184.3" x2="468.3" y2="184.3" />
-        </g>
-        <g id="Numbers">
-          <text transform="matrix(1 0 0 1 485 29.3333)" fill="#888888" font-family="'Roboto'" font-size="9">500</text>
-          <text transform="matrix(1 0 0 1 485 69)" fill="#888888" font-family="'Roboto'" font-size="9">400</text>
-          <text transform="matrix(1 0 0 1 485 109.3333)" fill="#888888" font-family="'Roboto'" font-size="9">300</text>
-          <text transform="matrix(1 0 0 1 485 149)" fill="#888888" font-family="'Roboto'" font-size="9">200</text>
-          <text transform="matrix(1 0 0 1 485 188.3333)" fill="#888888" font-family="'Roboto'" font-size="9">100</text>
-          <text transform="matrix(1 0 0 1 0 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">1</text>
-          <text transform="matrix(1 0 0 1 78 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">2</text>
-          <text transform="matrix(1 0 0 1 154.6667 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">3</text>
-          <text transform="matrix(1 0 0 1 232.1667 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">4</text>
-          <text transform="matrix(1 0 0 1 309 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">5</text>
-          <text transform="matrix(1 0 0 1 386.6667 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">6</text>
-          <text transform="matrix(1 0 0 1 464.3333 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">7</text>
-        </g>
-        <g id="Layer_5">
-          <polygon opacity="0.36" stroke-miterlimit="10" points="0,223.3 48,138.5 154.7,169 211,88.5
-          294.5,80.5 380,165.2 437,75.5 469.5,223.3 	"/>
-        </g>
-        <g id="Layer_4">
-          <polygon stroke-miterlimit="10" points="469.3,222.7 1,222.7 48.7,166.7 155.7,188.3 212,132.7
-          296.7,128 380.7,184.3 436.7,125 	"/>
-        </g>
-      </g>
-    </defs>
-  </svg>
+<script type="text/javascript">
+//TODO maybe jquery slows down page load!!!
+    $(function() {
+    
+      $('input[name="datefilter"]').daterangepicker({
+          autoUpdateInput: false,
+          locale: {
+              cancelLabel: 'Clear'
+          }
+      });
+    
+      $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+          $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+      });
+    
+      $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+          $(this).val('');
+      });
+    
+    });
+</script>
