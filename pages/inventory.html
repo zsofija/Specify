@@ -4,21 +4,29 @@
         <div class="mdl-color-text--white mdl-cell mdl-cell--12-col">
             <h4 data-ui-field="title">My Inventory</h4>
             <span>
-              <button id="ascending" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored"><img src="/images/order-alphabetical-ascending.svg"><span class="tooltiptext">Sort ascending</span></button>
+              <button id="ascending" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" onclick="sortListAsc()"><img src="/images/order-alphabetical-ascending.svg"><span class="tooltiptext">Sort ascending</span></button>
               <button id="sortby" class="mdl-button mdl-js-button mdl-js-ripple-effect"><i class="material-icons md40px">sort</i><span class="tooltiptext">Sort by...</span></button>
+                <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect" for="sortby">
+                  <li class="mdl-menu__item">Newest First</li>
+                  <li class="mdl-menu__item">Oldest First</li>
+                  <li disabled class="mdl-menu__item">Quantity Ascending</li>
+                  <li class="mdl-menu__item">Quantity Descending</li>
+                  <li class="mdl-menu__item--full-bleed-divider"></li>
+                  <li data-ui-include="templates/category_selector" class="mdl-menu__item"></li>
+                </ul>
               <button id="descending" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored"><img src="/images/order-alphabetical-descending.svg"><span class="tooltiptext">Sort descending</span></button>
             </span>
             <h6 class="mdl-color-text--grey-600" id="stock">In Stock</h6>
         </div>
         
-        <ul class="mdl-list">
+        <ul class="mdl-list" id="product_list">
             <!--First list item with secondary info-->
             <div class="gesture" data-ui-field="list-item" data-ui-load="@lib/controllers/gesture_helper"
                   data-ui-options="gesture_options">
             <li data-ui-field="first-list-item" class="mdl-list__item mdl-list__item--two-line">
                 <span class="mdl-list__item-primary-content">
                     <img data-ui-field="product-image" class="mdl-list__item-avatar"src="https://static.openfoodfacts.org/images/products/807/680/951/3753/front_fr.123.400.jpg"></img>
-                    <span data-ui-field="product-name">Pesto alla Genovese</span>
+                    <span data-ui-field="product-name" class="product_name">Pesto alla Genovese</span>
                     <span data-ui-field="barcode" class="mdl-list__item-sub-title">8076809513753</span>
                 </span>
                 <span class="mdl-list__item-secondary-content">
@@ -35,7 +43,7 @@
             <li data-ui-include="templates/list_item" class="mdl-color--amber-50">
               <span>
                   <img data-ui-field="product-image" src="https://static.openfoodfacts.org/images/products/841/007/649/0711/front_nb.12.400.jpg"></img>
-                  <span data-ui-field="product-name">Spice Mix for Fajitas</span>
+                  <span data-ui-field="product-name" class="product_name">Spice Mix for Fajitas</span>
                   <span data-ui-field="barcode">8410076490711</span>
               </span>
               <span class="mdl-list__item-secondary-content">
@@ -49,7 +57,7 @@
             <li data-ui-include="templates/list_item">
                 <span>
                     <img data-ui-field="product-image" src="https://static.openfoodfacts.org/images/products/705/933/007/1610/front_nb.19.400.jpg"></img>
-                    <span data-ui-field="product-name">Økologisk Kokosmelk</span>
+                    <span data-ui-field="product-name" class="product_name">Økologisk Kokosmelk</span>
                     <span data-ui-field="barcode">7059330071610</span>
                 </span>
                 <span class="mdl-list__item-secondary-content">
@@ -153,6 +161,47 @@ function swipe_item(item_index,direction){
 
 //         
 
+
+
+// SORT LIST ASCENDING
+const ascBtn = document.getElementById('ascending');
+  ascBtn.addEventListener('click', function sortListAsc() {
+  var list, i, switching, b, shouldSwitch, dir, switchcount = 0;
+  list = document.getElementById("product_list");
+  switching = true;
+  // Set the sorting direction to ascending:
+  dir = "asc"; 
+  // Make a loop that will continue until no switching has been done:
+  while (switching) {
+    // start by saying: no switching is done:
+    switching = false;
+    b = list.getElementsByClassName("product_name");
+    // Loop through all list-items:
+    for (i = 0; i < (b.length - 1); i++) {
+      //start by saying there should be no switching:
+      shouldSwitch = false;
+      /* check if the next item should switch place with the current item,
+      based on the sorting direction (asc or desc): */
+      if (dir == "asc") {
+        if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+          /* if next item is alphabetically lower than current item,
+          mark as a switch and break the loop: */
+          shouldSwitch = true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      /* If a switch has been marked, make the switch
+      and mark that a switch has been done: */
+      b[i].parentNode.insertBefore(b[i + 1], b[i]);
+      switching = true;
+      // Each time a switch is done, increase switchcount by 1:
+      switchcount ++;
+    }
+  }
+  render();
+});
     
 </script>
 
