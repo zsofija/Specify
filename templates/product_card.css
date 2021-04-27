@@ -310,7 +310,7 @@ label {
     }
 }
 /* Extra Large mobile - Iphone X*/
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (min-device-height: 812px) {
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (min-device-height: 812px) and (max-device-height: 812px) {
     .mdl-layout {
         width: 100vw;
         margin-top: 0.5vh; /* was 1.5 vh but Pixel 2XL is not working*/

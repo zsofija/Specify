@@ -245,6 +245,40 @@ li {
         align-content: end;
     }
 }
+/* Tablet */
+@media only screen and (min-width: 768px) and (max-width: 786px){
+
+    #back {
+        left: 22%;
+    }
+    .mdl-cell--12-col-tablet.mdl-cell--12-col-tablet {
+        width: 100%;
+    }
+    .mdl-cell--6-col-tablet.mdl-cell--6-col-tablet {
+        width: calc(50% - 16px);
+    }
+    .mdl-cell--8-col-tablet.mdl-cell--8-col-tablet {
+        width: calc(50% - 16px);
+        margin-top: -7px;
+    }
+    .mdl-cell--4-col-tablet.mdl-cell--4-col-tablet {
+        width: calc(30% - 16px);
+        display: grid;
+    }
+    .card-square > .mdl-card__title {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%; /*for full width on small screens */
+        height: 40% !important;
+    }
+    .mdl-card__supporting-text {
+        height: 60% !important;
+    }
+    .statistic {
+        height: 7em; 
+        margin: 0.5em 0;
+    }
+}
 
 /* Pixel 2, Iphone 6/7/8 Plus */
 @media only screen and (min-device-width: 411px) and (max-device-width: 736px) and (max-device-height: 736px) {
@@ -288,21 +322,36 @@ li {
         padding-top: 0;
     }
 }
-/* Extra Large mobile - Iphone X , Pixel 2 XL*/
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (min-device-height: 812px) {
+/* Extra Large mobile - Iphone X */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (min-device-height: 812px) and (max-device-height: 812px) {
     .mdl-grid {
-        margin-top: 2.1vh; /*2.8 if only Iphone X*/
+        margin-top: 2.8vh; /*2.8 if only Iphone X*/
     }
     .card-square > .mdl-card__title {
         height: 30%; /*30*/
     }
     .mdl-card__supporting-text {
-        height: 73%; /*67*/
+        height: 72%; /*67*/
     }
     .statistic {
         margin: 0.5em 0;
     }
     
+}
+/* Extra Large mobile - Pixel 2 XL */
+@media only screen and (min-device-width: 411px) and (min-device-height: 823px) and (max-device-height: 823px) {
+    .mdl-grid {
+        margin-top: 2.1vh;
+    }
+    .card-square > .mdl-card__title {
+        height: 30%; /*30*/
+    }
+    .mdl-card__supporting-text {
+        height: 72%; /*67*/
+    }
+    .statistic {
+        margin: 0.5em 0;
+    }
 }
 /*  Moto G4, Galaxy S5 */
 @media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (max-device-height: 640px) {
@@ -350,6 +399,12 @@ li {
     }
     .mdl-list__item--two-line .mdl-list__item-primary-content {
         line-height: 28px;
+    }
+    .mdl-list__item {
+        font-size: 14px;
+    }
+    .mdl-list__item-sub-title {
+        font-size: 13px;
     }
     .statistic {
         height: 5em;

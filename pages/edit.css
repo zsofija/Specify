@@ -52,6 +52,14 @@ h4 {
         right: 10px; 
     }
 }
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    #back {
+        left: 22%;
+    }
+    #delete {
+        right: 22%; 
+    }
+}
 /* Extra small mobile */
 @media only screen and (min-device-width: 320px) and (max-device-height: 568px) {
     h4 {
