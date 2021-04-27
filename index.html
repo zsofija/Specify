@@ -88,7 +88,7 @@
 
 
 
-<body data-ui-load="@lib/controllers/header_auto_hide" data-o-header="header-bar" data-ui-load="@lib/controllers/footer_auto_hide" data-o-footer="footer-bar">
+<body>
 
 <!-- The header with profile icon button for opening the drawer layout (side menu panel) data-ui-options="options.headerBar"-->
 <header class="mdl-layout mdl-js-layout" id="header" data-ui-field="header-bar"
@@ -167,7 +167,7 @@
                 "about": document.getElementById("about"),
                 "analytics": document.getElementById("analytics")};
   const no_header =["login", "register", "verify", "company"];
-  const no_tabs =["inventory"];
+  const no_footer =["analytics"];
   const no_background=["inventory", "edit", "notifications", "about", "analytics"];
 
   function select_page(name){
@@ -195,9 +195,9 @@
       pageBody.setAttribute('class', 'withBackground');
     }
 
-    // if (no_tabs.includes(name)){
-    //   headerBar.style.display="none";
-    // }
+    if (no_footer.includes(name)){
+      footerBar.style.display="none";
+    }
 
     
   }
