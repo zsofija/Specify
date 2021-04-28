@@ -9,6 +9,7 @@
 .header {
     position: absolute; /* moved on scroll when it was fixed*/
     top: 57px;
+    left: 0;
     display: flex;
     flex-direction: row;
     /* margin-top: 6vh; */
@@ -166,10 +167,14 @@ li {
         left: 10px;
     }
     
-    .mdl-grid {
+    /* .mdl-grid {
         margin-top: 7.9vh;
+    } */
+    .wrapper {
+        display: grid;
+        align-items: center;
+        margin-top: 1.5vh;
     }
-
     .card-square.mdl-card {
         width: 100vw;
         padding: 0; /*for full width on small screens */
@@ -282,14 +287,20 @@ li {
 
 /* Pixel 2, Iphone 6/7/8 Plus */
 @media only screen and (min-device-width: 411px) and (max-device-width: 736px) and (max-device-height: 736px) {
-    .mdl-grid {
+    /* .wrapper {
         margin-top: 8vh; 
+    } */
+}
+/* Samgung Galaxy S9 */
+@media only screen and (min-device-width: 360px) and (max-device-width: 740px) and (max-device-height: 740px) {
+    .mdl-grid {
+        margin-top: 6.5vh; 
     }
 }
 /* Iphone 6/7/8 */
 @media only screen and (min-device-width: 320px) and (max-device-width: 667px) and (max-device-height: 667px) {
     .mdl-grid {
-        margin-top: 14vh; /*13*/
+        margin-top: 8vh; /*13* -> 14vh without wrapper 1.5*/
     }
     .mdl-list__item--two-line {
         height: 60px;
@@ -325,7 +336,7 @@ li {
 /* Extra Large mobile - Iphone X */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (min-device-height: 812px) and (max-device-height: 812px) {
     .mdl-grid {
-        margin-top: 2.8vh; /*2.8 if only Iphone X*/
+        margin-top: 1.2vh; /* was 2.8 if only Iphone X without wrapper 1.5*/
     }
     .card-square > .mdl-card__title {
         height: 30%; /*30*/
@@ -341,7 +352,7 @@ li {
 /* Extra Large mobile - Pixel 2 XL */
 @media only screen and (min-device-width: 411px) and (min-device-height: 823px) and (max-device-height: 823px) {
     .mdl-grid {
-        margin-top: 2.1vh;
+        margin-top: 0.6vh /* was 2.1vh; without wrapper 1.5 */
     }
     .card-square > .mdl-card__title {
         height: 30%; /*30*/
@@ -367,7 +378,7 @@ li {
 /* Extra small mobile */
 @media only screen and (min-device-width: 320px) and (max-device-height: 568px) {
     .mdl-grid {
-        margin-top: 23vh;
+        margin-top: 8.6vh /* was 23vh without wrapper 1.5 */
     }
     .card-square > .mdl-card__title {
         height: 25%;
