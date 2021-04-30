@@ -1,6 +1,13 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+}
 .header {
     position: fixed;
     top: 57px;
+    left: 0;
     display: flex;
     flex-direction: row;
     /* margin-top: 6vh; */
@@ -36,14 +43,6 @@ h4 {
     padding: 0;
 }
 
-.container {
-    /* margin-top: 15vh; */
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    height: 100vh;
-}
-
 @media screen and (max-width: 767px){
     #back {
         left: 10px;
@@ -51,6 +50,12 @@ h4 {
     #delete {
         right: 10px; 
     }
+    .wrapper {
+        display: grid;
+        align-items: center;
+        margin-top: 0vh;
+    }
+    
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
     #back {
@@ -61,8 +66,57 @@ h4 {
     }
 }
 /* Extra small mobile */
-@media only screen and (min-device-width: 320px) and (max-device-height: 568px) {
+@media only screen and (min-device-width: 320px) and (min-device-height: 568px) and (max-device-height: 568px) {
     h4 {
         line-height: 24px;
+    }
+    .mdl-grid {
+        margin-top: 6vh !important;
+    }
+}
+
+/* Pixel 2, Iphone 6/7/8 Plus */
+@media only screen and (min-device-width: 411px) and (max-device-width: 736px) and (max-device-height: 736px) {
+    .mdl-grid {
+      /* width: 100vw; */
+        margin-top: 0vh;  
+   }
+}
+/* Iphone 6/7/8 */
+@media only screen and (min-device-width: 320px) and (max-device-width: 667px) and (max-device-height: 667px) {
+   .mdl-grid {
+        margin-top: 5vh !important; /* originally 8vh; */
+   }
+}
+/* Samgung Galaxy S9 */
+@media only screen and (min-device-width: 360px) and (max-device-width: 740px) and (max-device-height: 740px) {
+    .mdl-grid {
+        margin-top: 8vh; 
+    }
+}
+/* Extra Large mobile - Iphone X */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (min-device-height: 812px) and (max-device-height: 812px) {
+    .mdl-grid {
+        margin-top: 3.2vh; 
+    }  
+}
+/* Extra Large mobile - Pixel 2 XL */
+@media only screen and (min-device-width: 411px) and (min-device-height: 823px) and (max-device-height: 823px) {
+    .mdl-grid {
+        margin-top: 3vh /* was 2.1vh; without wrapper 1.5 */
+    }
+    
+}
+/*  Moto G4, Galaxy S5 */
+@media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (max-device-height: 640px) {
+    .mdl-grid {
+        margin-top: 8vh !important; 
+    }
+
+}
+/* Galaxy Fold*/
+@media only screen and (min-device-width: 280px) and (max-device-width: 653px) and (min-device-height: 653px) and (max-device-height: 653px){
+    .mdl-grid {
+        margin-top: 5vh;
     }
 }

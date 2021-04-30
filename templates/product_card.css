@@ -1,10 +1,4 @@
-.container {
-    /* margin-top: 15vh; */
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    height: 100vh;
-}
+
 .card-square.mdl-card {
     width: 500px;
     height: 500px;
@@ -180,30 +174,29 @@ label {
 
 /* + Button */
 .card-button {
+    display: grid;
     justify-content: center;
 }
 
 
 
 @media screen and (max-width: 767px){
-    .mdl-layout {
-        width: 100vw;
-        margin-top: 1vh; /* 2vh*/
-        /* height: 100%; */
-    }
-    .container {
-        /* margin-top: 15vh; mobile */
-    }
     
     .card-square.mdl-card {
         width: 100vw;
-        height: auto;
+        height: 600px;
         border-radius: 0px;
         padding: 0; /*for full width on small screens */
+    }
+    .card-square > .mdl-card__title {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%; /*for full width on small screens */
     }
     .mdl-shadow--2dp {
         box-shadow: none;
     }
+    
     .card-square > .mdl-card__title {
         margin: 0; /*for full width on small screens */
     }
@@ -249,33 +242,15 @@ label {
     }
 }
 
-/* Pixel 2, Iphone 6/7/8 Plus */
-@media only screen and (min-device-width: 411px) and (max-device-width: 736px) and (max-device-height: 736px) {
-    .mdl-layout {
-        width: 100vw;
-        margin-top: 0vh; 
-    }
-}
 /* Iphone 6/7/8 */
 @media only screen and (min-device-width: 320px) and (max-device-width: 667px) and (max-device-height: 667px) {
-    .mdl-layout {
-        width: 100vw;
-        margin-top: 5vh; 
+    .card-square.mdl-card  {
+        height: auto;
     }
-}
-/*  Moto G4, Galaxy S5 */
-@media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (max-device-height: 640px) {
-    .mdl-layout {
-        width: 100vw;
-        margin-top: 7vh;
-    }
-}
+ }
+
 /* Extra small mobile */
 @media only screen and (min-device-width: 320px) and (max-device-height: 568px) {
-    .mdl-layout {
-        width: 100vw;
-        margin-top: 6vh; /*7 if h4 line height is default (32px)*/ 
-    }
     .mdl-card__supporting-text, .mdl-card__actions {
         margin: 5px;
         padding: 3px; /*5*/
@@ -300,10 +275,6 @@ label {
 }
 /* Extra Large mobile - Pixel 2 XL*/
 @media only screen and (min-device-width: 411px) and (min-device-height: 823px) and (max-device-height: 823px) {
-    .mdl-layout {
-        width: 100vw;
-        margin-top: 3vh; 
-    }
     .mdl-cell {
         margin: 10px;
         padding: 12px;
@@ -311,14 +282,39 @@ label {
 }
 /* Extra Large mobile - Iphone X*/
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (min-device-height: 812px) and (max-device-height: 812px) {
-    .mdl-layout {
-        width: 100vw;
-        margin-top: 0.5vh; /* was 1.5 vh but Pixel 2XL is not working*/
-    }
     .mdl-cell {
         margin: 10px;
         padding: 10px;
     }
+}
+/* Galaxy Fold */
+@media only screen and (min-device-width: 280px) and (max-device-width: 653px) and (min-device-height: 653px) and (max-device-height: 653px) {
+    .card-square.mdl-card {
+        height: auto;
+    }
+    .mdl-cell--12-col-tablet.mdl-cell--12-col-tablet {
+        width: 100%;
+    }
+    .mdl-cell--10-col-tablet.mdl-cell--10-col-tablet {
+        width: 80%;
+    }
+    .mdl-cell--2-col-tablet.mdl-cell--2-col-tablet {
+        width: 20%;
+    }
+    .mdl-cell--3-col-tablet.mdl-cell--3-col-tablet {
+        width: 30%;
+    }
+    .mdl-cell--4-col-tablet.mdl-cell--4-col-tablet {
+        width: 40%;
+    }
+    .date_input {
+        width: 130px;
+    }
+    .mdl-card__supporting-text {
+        margin: -5px;
+        padding: 0px;
+    }
+    
 }
 /* @media only screen and (max-height: 770px) and (min-width: 1920px) {
     .container {

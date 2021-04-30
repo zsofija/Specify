@@ -1,21 +1,25 @@
+<div class="wrapper">
+    <div class="mdl-grid">
 <!--Page Header-->
-    <div data-ui-field="page_header" class="mdl-color-text--white mdl-cell mdl-cell--12-col header">
-          <button id="back" class="mdl-button mdl-button--colored mdl-js-button" onclick="select_page('inventory')"><i class="material-icons">arrow_back</i></button>
-          <h4 data-ui-field="title">Edit Item</h4>
-          <button id="delete" class="mdl-button mdl-button--colored mdl-js-button" onclick="confirmFunction()"><i class="material-icons">delete</i></button>
-    </div>
-<!-- Card Container-->
-    <div data-ui-include="templates/product_card">
-        <div class="card-square mdl-card mdl-shadow--2dp mdl-grid">
-            <h5 data-ui-field="product_name" id="product_name">Thai Peanut Noodle kit</h5>
-                    <span data-ui-field="barcode"><img src="/images/barcode.svg" class="mini-icon"><span id="barcode">1234567890128</span></span>
-                    <p data-ui-field="details_text"><label>Brands:</label><span id="brand">Thai Kitchen</span></p>
-                <img data-ui-field="product-image" class="product_image" id="product_image" src="https://static.openfoodfacts.org/images/products/073/762/806/4502/front_en.6.400.jpg"></img>
-
-                <h3 data-ui-field="current-stock" class="mdl-color-text--blue-grey-700">23</h3>
-            <a data-ui-field="button"> Update</a>
+        <div data-ui-field="page_header" class="mdl-color-text--white mdl-cell mdl-cell--12-col header">
+            <button id="back" class="mdl-button mdl-button--colored mdl-js-button" onclick="select_page('inventory')"><i class="material-icons">arrow_back</i></button>
+            <h4 data-ui-field="title">Edit Item</h4>
+            <button id="delete" class="mdl-button mdl-button--colored mdl-js-button" onclick="confirmFunction()"><i class="material-icons">delete</i></button>
         </div>
+<!-- Card Container-->
+        <div data-ui-include="templates/product_card">
+            <!-- <div c"> -->
+                <h5 data-ui-field="product_name" id="product_name">Thai Peanut Noodle kit</h5>
+                        <span data-ui-field="barcode"><img src="/images/barcode.svg" class="mini-icon"><span id="barcode">1234567890128</span></span>
+                        <p data-ui-field="details_text"><label>Brands:</label><span id="brand">Thai Kitchen</span></p>
+                    <img data-ui-field="product-image" class="product_image" id="product_image" src="https://static.openfoodfacts.org/images/products/073/762/806/4502/front_en.6.400.jpg"></img>
+
+                    <h3 data-ui-field="current-stock" class="mdl-color-text--blue-grey-700">23</h3>
+                <a data-ui-field="button"> Update</a>
+            </div>
+       </div>
     </div>
+</div>
 
 <!-- <button id="scan" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
     <img src="/images/barcode-scan.png">
