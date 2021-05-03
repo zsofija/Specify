@@ -1,36 +1,128 @@
-.demo-ribbon {
+.ribbon {
     width: 100%;
     height: 40vh;
     background-color: #ff8a65;
-    flex-shrink: 0;
+    background-size: 100%;
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    position: fixed;
+    left: 0;
+    z-index: -10;
 }
 
-.demo-main {
-    margin-top: -25vh;
-    flex-shrink: 0;
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
 }
-.demo-container {
+.header {
+    position: fixed;
+    top: 57px;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    /* margin-top: 6vh; */
+    align-items: center;
+    justify-content: center;
+    background-color: #37474f;
+    background-size: 100vw 108px;
+    width: 100vw;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    z-index: 10;
+    /* margin-bottom: 5px; */
+}
+h4 {
+    margin-top: 20px; /*15*/
+    margin-bottom: 20px; /*10px with h3*/
+    text-transform: lowercase;
+    font-style: italic;
+    font-weight: bolder;  
+}
+.header i {
+    color: #fdd740 !important;
+}
+#back {
+    position: fixed;
+    left: 38%;
+    padding: 0;
+}
+
+.container {
     min-width: 1600px;
     width: calc(100% - 16px);
     margin: 0 auto;
+    justify-content: center;
+    /* margin-top: -75vh; */
 }
 
-.demo-content {
+.content {
     border-radius: 2px;
-    padding: 80px 56px;
+    padding: 80px 56px; /* 180px*/
     margin-bottom: 80px;
 }
-
+.centered {
+    text-align: center;
+}
+form {
+    display: flex;
+    justify-content: center;
+}
+h5 {
+    padding-right: 10px;
+}
+.product_textfield label {
+    display: none;
+}
+#scan {
+    height: 80px;
+    width: 80px;
+}
+#scan img {
+    width: 30px;
+}
 .demo-layout.is-small-screen .demo-content {
     padding: 40px 28px;
 }
 
-.demo-content h3 {
-    margin-top: 48px;
-}  
-
-.iconify { width: 200px; height: 200px; }
-
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 20px;
+}
+.deeporangeA200 {
+    color: #ff9e80;
+}
+.deeporangeA200:hover {
+    color: #ff6e40;
+}
+.mdl-button--primary.mdl-button--primary {
+    float: right;
+    display: flex;
+    align-items: center;
+}
+.next {
+    font-size: 60px;
+}
+@keyframes bounceArrow {
+    0% {opacity: 1; transform: translateX(0px) scale(1);}
+    25%{opacity: 0; transform:translateX(15px) scale(0.9);}
+    26%{opacity: 0; transform:translateX(-15px) scale(0.9);}
+    55% {opacity: 1; transform: translateX(0px) scale(1);}
+  }
+ 
+  .mdl-button--primary:hover .next{
+      animation-name: bounceArrow;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+  }
 
 /* Camera */
 #camera, #camera--view, #camera--sensor, #camera--output{
@@ -58,7 +150,137 @@
 }
 
 @media screen and (max-width: 767px){
+    #back {
+        left: 10px;
+    }
+
     .mdl-cell--3-col-phone {
-        width: calc(21% - 8px);
+        width: 25%; /* no background 30% ; originally calc(21% - 8px);*/
+    }
+    .container {
+        height: 100vh;
+    }
+    .content {
+        padding: 130px 15px; /* 130px 46px*/
+        margin-bottom: 0px;
+        height: 90.5vh; /* height property is not needed originally*/
+    }
+    .row {
+        padding-left: 10px;
+    }
+    .row >.material-icons-outlined {
+        margin-right: -12px;
+    }
+    h3 {
+        font-size: 30px;
+    }
+    h5 {
+        display: none;
+        font-size: 18px;
+        padding-right: 0px;
+    }
+    .product_textfield label {
+        display: inline-block;
+    }
+    .mdl-button--primary.mdl-button--primary {
+        margin-right: 0px; /*16px; if 3-col is full width with no background*/
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    #back {
+        left: 22%;
+    }
+    .mdl-cell--8-col, .mdl-cell--8-col-tablet.mdl-cell--8-col-tablet {
+        width: calc(45% - 16px);
+    }
+    .content {
+        margin-bottom: 0px;
+    }
+}
+
+
+/* Samgung Galaxy S9 */
+@media only screen and (min-device-width: 360px) and (max-device-width: 740px) and (max-device-height: 740px) {
+    .mdl-cell--3-col-phone {
+        width: 22%;
+    }
+    .content {
+        height: 96.5vh; /* height property is not needed originally*/
+    }
+}
+
+/* Pixel 2, Iphone 6/7/8 Plus */
+@media only screen and (min-device-width: 411px) and (max-device-width: 736px) and (max-device-height: 736px) {
+    .mdl-cell--3-col-phone {
+        width: 25%;
+    }
+}
+
+/* Iphone 6/7/8 */
+@media only screen and (min-device-width: 320px) and (max-device-width: 667px) and (max-device-height: 667px) {
+    .mdl-cell--3-col-phone {
+        width: 23%;
+    }
+    .content {
+        padding: 87px 15px;
+        margin-bottom: 49px;
+        margin-top: 40px;
+        height: 92vh; /* height property is not needed originally*/
+    }
+}
+/* Extra Large mobile - Iphone X */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (min-device-height: 812px) and (max-device-height: 812px) {
+    .mdl-cell--3-col-phone {
+        width: 23%;
+    }
+    .content {
+        padding: 160px 15px;
+        margin-bottom: 0;
+        height: 97vh; /* height property is not needed originally*/
+    }
+}
+/*  Moto G4, Galaxy S5 */
+@media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (max-device-height: 640px) {
+    .mdl-cell--3-col-phone {
+        width: 22%;
+    }
+    .content {
+        height: 91.5vh;
+    }
+}
+/* Extra Large mobile - Pixel 2 XL */
+@media only screen and (min-device-width: 411px) and (min-device-height: 823px) and (max-device-height: 823px) {
+    .mdl-cell--3-col-phone {
+        width: 25%;
+    }
+    .content {
+        height: 97vh; /* height property is not needed originally*/
+    }
+}
+/* Extra small mobile */
+@media only screen and (min-device-width: 320px) and (min-device-height: 568px) and (max-device-height: 568px) {
+    .mdl-cell--3-col-phone {
+        width: 20%;
+    }
+    .content {
+        padding: 100px 2px;
+        margin-bottom: 0px; 
+        margin-top: 0px;
+        height: 98vh; /* height property is not needed originally*/
+    }
+    h3 {
+        padding-top: 10px;
+    }
+}
+
+/* Galaxy Fold*/
+@media only screen and (min-device-width: 280px) and (max-device-width: 653px) and (min-device-height: 653px) and (max-device-height: 653px){
+    .mdl-cell--3-col-phone {
+        width: 17%;
+    }
+    .content {
+        padding: 130px 3px;
+        height: 97vh; /* height property is not needed originally*/
     }
 }

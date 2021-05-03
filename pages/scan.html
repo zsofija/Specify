@@ -1,40 +1,68 @@
-<div class="demo-ribbon"></div>
-<main class="demo-main mdl-layout__content">
-  <div class="demo-container mdl-grid">
-    <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
-    <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col mdl-cell--3-col-phone">
-
-        <h3 data-ui-field="title">Scan Inventory</h3>
-        <h5 data-ui-field="subtitle">Scan barcode</h5>
-        <span class="iconify" data-icon="mdi:barcode-scan" data-inline="false"></span>
-        <video id="preview"></video>
-             <!-- Camera -->
-                  <section id="camera">       
-                    <!-- Camera sensor -->
-                      <canvas id="camera--sensor"></canvas>        
-                    <!-- Camera view -->
-                      <video id="camera--view" autoplay playsinline></video>        
-                    <!-- Camera output -->
-                      <img src="//:0" alt="" id="camera--output">        
-                       
-                  </section>
-
-
-        <h5 data-ui-field="subtitle">OR</h5>
-        <form action="#">
-          <div data-ui-field="numerical-input" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
-            <label class="mdl-textfield__label" for="sample4">Input barcode</label>
-            <span class="mdl-textfield__error">Input is not a number!</span>
+<div class="ribbon mdl-cell mdl-cell--12-col"></div>
+<div class="wrapper">
+  <div class="mdl-grid">
+    <!--Page Header-->
+      <div data-ui-field="page_header" class="mdl-color-text--white mdl-cell mdl-cell--12-col header">
+          <button id="back" class="mdl-button mdl-button--colored mdl-js-button" onclick="select_page('inventory')"><i class="material-icons">arrow_back</i></button>
+          <h4 data-ui-field="title">Create Inventory</h4>
+      </div>
+    <!-- Main Content-->
+    <div class="container mdl-grid">
+      
+      <div class="content mdl-color--white mdl-shadow--4dp mdl-color-text--grey-800 mdl-cell mdl-cell--8-col mdl-cell--3-col-phone">
+          <div class="mdl-cell mdl-cell--12-col centered">
+            <h3 data-ui-field="title">Add new Item</h3>
+            <form action="#">
+              <h5 data-ui-field="subtitle">Product Name:</h5>
+              <div class="mdl-textfield mdl-js-textfield product_textfield">
+                <input class="mdl-textfield__input" type="text" id="prodname">
+                <label class="mdl-textfield__label" for="prodname">Product Name</label>
+              </div>
+            </form>
           </div>
-        </form>
-        <button data-ui-field="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="select_page('edit')" id="camera--trigger" >
-           Scan item
-        </button>
+          <div class="mdl-cell mdl-cell--12-col centered">
+              <button data-ui-field="button" id="scan" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                <img src="/images/barcode-scan.png">
+              </button>
+              <div class="mdl-color-text--deep-orange-A200 row">
+                  <i class="material-icons-outlined deeporangeA200">info</i>
+                  <p class="deeporangeA200">Scan barcode and we'll retrieve data and product image from Open Food Facts</p>
+              </div>
+          </div>
+          
+          <!-- <video id="preview"></video>
+              Camera
+                    <section id="camera">       
+                      Camera sensor
+                        <canvas id="camera--sensor"></canvas>        
+                      Camera view
+                        <video id="camera--view" autoplay playsinline></video>        
+                      Camera output
+                        <img src="//:0" alt="" id="camera--output">        
+                        
+                    </section> -->
+
+          <div class="mdl-cell mdl-cell--12-col centered">        
+              <h5 data-ui-field="subtitle">OR</h5>
+              <form action="#">
+                <div data-ui-field="numerical-input" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                  <label class="mdl-textfield__label" for="sample4">Input barcode</label>
+                  <span class="mdl-textfield__error">Input is not a number!</span>
+                </div>
+              </form>
+              <button data-ui-field="button" class="mdl-button mdl-js-button mdl-button--primary" onclick="select_page('edit')" id="camera--trigger" >
+                <i class="material-icons-outlined next">navigate_next</i>
+              </button> 
+          </div>
+        </div>
+      </div>
 
     </div>
-    
+  </div>
 </div>
+
+
 <script src="/js/instascan.min.js"></script>
 <script type="text/javascript">
   let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
@@ -81,4 +109,4 @@
 // Start the video stream when the window loads
   window.addEventListener("load", cameraStart, false);
 </script>
-</main>
+
