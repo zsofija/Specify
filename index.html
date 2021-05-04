@@ -115,10 +115,14 @@
   <!--ABOUT--> 
     <section id="about" data-ui-include="pages/about"></section>
 
-  <!-- SCAN-->
+  <!-- SCAN- Add New Item-->
       <section id="scan" data-ui-include="pages/scan"
               data-ui-component="pages/scan"></section>
       <!--div data-ui-load="pages/scan"></div-->
+
+  <!-- SCAN- Product Details-->
+  <section id="details" data-ui-include="pages/scan_details"></section>
+  
   <!-- ANALYTICS-->
     <section id="analytics" data-ui-include="pages/analytics"></section>
   
@@ -160,6 +164,7 @@
                 "verify": document.getElementById("verify"),
                 "company": document.getElementById("company"),
                 "scan": document.getElementById("scan"),
+                "details": document.getElementById("details"),
                 "edit": document.getElementById("edit"),
                 "inventory": document.getElementById("inventory"),
                 "notifications": document.getElementById("notifications"),

@@ -21,11 +21,10 @@
 }
 .header {
     position: fixed;
-    top: 57px;
+    top: 56px; /* was 57, 56 is better on ipad pro*/
     left: 0;
     display: flex;
     flex-direction: row;
-    /* margin-top: 6vh; */
     align-items: center;
     justify-content: center;
     background-color: #37474f;
@@ -35,7 +34,6 @@
     margin-right: 0;
     padding: 0;
     z-index: 10;
-    /* margin-bottom: 5px; */
 }
 h4 {
     margin-top: 20px; /*15*/
@@ -58,7 +56,6 @@ h4 {
     width: calc(100% - 16px);
     margin: 0 auto;
     justify-content: center;
-    /* margin-top: -75vh; */
 }
 
 .content {
@@ -73,81 +70,57 @@ form {
     display: flex;
     justify-content: center;
 }
-h5 {
-    padding-right: 10px;
+
+.prodpic {
+    max-width: 200px;
+    max-height: 300px;
+    margin-right: 20px;
+    object-fit: cover;
 }
-.product_textfield label {
+
+.mdl-textfield {
+    width: 100px;
+}
+.minqty_textfield label {
     display: none;
 }
-#camera--trigger {
-    height: 80px;
-    width: 80px;
-}
-#camera--trigger img {
-    width: 30px;
-}
-.demo-layout.is-small-screen .demo-content {
-    padding: 40px 28px;
-}
+
 
 .row {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    padding-top: 20px;
+    align-items: center;
 }
-.deeporangeA200 {
-    color: #ff9e80;
+.left {
+    display: flex;
+    justify-content: flex-end;
 }
-.deeporangeA200:hover {
-    color: #ff6e40;
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
+
 .mdl-button--primary.mdl-button--primary {
     float: right;
     display: flex;
     align-items: center;
 }
-.next {
+.done {
     font-size: 60px;
 }
-@keyframes bounceArrow {
-    0% {opacity: 1; transform: translateX(0px) scale(1);}
-    25%{opacity: 0; transform:translateX(15px) scale(0.9);}
-    26%{opacity: 0; transform:translateX(-15px) scale(0.9);}
-    55% {opacity: 1; transform: translateX(0px) scale(1);}
-  }
- 
-  .mdl-button--primary:hover .next{
-      animation-name: bounceArrow;
-      animation-duration: 2s;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
-  }
+h5 {
+    font-size: 24px;
+}
+h6 {
+    font-size: 20px;
+}
+p {
+    margin: 28px 0 16px;
+    font-size: 16px;
+    color: rgba(0,0,0,.60);
+}
 
-/* Camera */
-#camera, #camera--view, #camera--sensor, #camera--output{
-    position: fixed;
-    object-fit: cover;
-}
-#camera--view, #camera--sensor, #camera--output{
-    transform: scaleX(-1);
-    filter: FlipH;
-}
-/*#camera--trigger{
-    position:relative;
-    bottom: 30px;
-    left: calc(50% - 100px);
-}*/
-.taken{
-    height: 100px!important;
-    width: 100px!important;
-    transition: all 0.5s ease-in;
-    border: solid 3px white;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-    top: 20px;
-    right: 20px;
-    z-index: 2;
-}
 
 @media screen and (max-width: 767px){
     #back {
@@ -161,29 +134,54 @@ h5 {
         height: 100vh;
     }
     .content {
-        padding: 130px 15px; /* 130px 46px*/
+        padding: 130px 0px;
         margin-bottom: 0px;
         height: 90.5vh; /* height property is not needed originally*/
     }
-    .row {
-        padding-left: 10px;
+    .mdl-cell--5-col-phone.mdl-cell--5-col-phone {
+        width: calc(80% - 16px);
     }
-    .row >.material-icons-outlined {
-        margin-right: -12px;
+
+    .right {
+        margin-left: 0px !important;
+    }
+    .left {
+        margin-left: 0px !important; /*TODO: try with other image */
+        justify-content: center;
+    }
+    .prodpic {
+        max-width: 115px;
+        max-height: 300px;
+        margin-right: 0px;
+        object-fit: cover;
+    }
+    h5 {
+        margin: 40px 0 16px;
+        font-size: 20px;
     }
     h3 {
         font-size: 30px;
     }
-    h5 {
-        display: none;
-        font-size: 18px;
-        padding-right: 0px;
+    h6 {
+        font-size: 16px;
     }
-    .product_textfield label {
+    p {
+        font-size: 14px;
+    }
+    
+    #hide {
+        display: none;
+
+    }
+    .mdl-textfield {
+        width: 183px; /* 175px*/
+    }
+    .minqty_textfield label {
         display: inline-block;
     }
+    
     .mdl-button--primary.mdl-button--primary {
-        margin-right: 0px; /*16px; if 3-col is full width with no background*/
+        margin-right: 10px;
     }
 }
 
@@ -215,6 +213,9 @@ h5 {
     .mdl-cell--3-col-phone {
         width: 25%;
     }
+    .mdl-cell--5-col-phone.mdl-cell--5-col-phone {
+        width: calc(75% - 16px);
+    }
 }
 
 /* Iphone 6/7/8 */
@@ -228,6 +229,7 @@ h5 {
         margin-top: 40px;
         height: 92vh; /* height property is not needed originally*/
     }
+    
 }
 /* Extra Large mobile - Iphone X */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (min-device-height: 812px) and (max-device-height: 812px) {
@@ -257,6 +259,9 @@ h5 {
     .content {
         height: 97vh; /* height property is not needed originally*/
     }
+    .mdl-cell--5-col, .mdl-cell--5-col-phone.mdl-cell--5-col-phone {
+        width: calc(75% - 16px);
+    }
 }
 /* Extra small mobile */
 @media only screen and (min-device-width: 320px) and (min-device-height: 568px) and (max-device-height: 568px) {
@@ -272,6 +277,15 @@ h5 {
     h3 {
         padding-top: 10px;
     }
+    .prodpic {
+        max-width: 105px;
+    }
+    h6, p {
+        line-height: 20px;
+    }
+    h5 {
+        margin: 35px 0 16px;
+    }
 }
 
 /* Galaxy Fold*/
@@ -283,4 +297,15 @@ h5 {
         padding: 130px 3px;
         height: 97vh; /* height property is not needed originally*/
     }
+    .prodpic {
+        max-width: 75px;
+    }
+    h6, p {
+        line-height: 16px;
+        font-size: 14px;
+    }
+    .mdl-cell--5-col-phone.mdl-cell--5-col-phone {
+        width: calc(40% - 16px);
+    }
+    
 }
