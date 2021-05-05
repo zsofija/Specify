@@ -1,11 +1,13 @@
 
 <div class="wrapper">
     <div class="mdl-grid">
-        <div class="mdl-color-text--white mdl-cell mdl-cell--12-col">
+<!-- Page header -->
+        <div class="mdl-color-text--white mdl-cell mdl-cell--12-col header">
+          <button id="ascending" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" onclick="sortListAsc()"><img src="/images/order-alphabetical-ascending.svg"><span class="tooltiptext">Sort ascending</span></button>
             <h4 data-ui-field="title">My Inventory</h4>
-            <span>
-              <button id="ascending" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" onclick="sortListAsc()"><img src="/images/order-alphabetical-ascending.svg"><span class="tooltiptext">Sort ascending</span></button>
-              <button id="sortby" class="mdl-button mdl-js-button mdl-js-ripple-effect"><i class="material-icons md40px">sort</i><span class="tooltiptext">Sort by...</span></button>
+            <!-- <span> -->
+              
+              <button id="sortby" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored"><i class="material-icons md28px">sort</i><span class="tooltiptext">Sort by...</span></button>
                 <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect" for="sortby">
                   <li class="mdl-menu__item">Newest First</li>
                   <li class="mdl-menu__item">Oldest First</li>
@@ -14,12 +16,15 @@
                   <li class="mdl-menu__item--full-bleed-divider"></li>
                   <li data-ui-include="templates/category_selector" class="mdl-menu__item"></li>
                 </ul>
-              <button id="descending" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored"><img src="/images/order-alphabetical-descending.svg"><span class="tooltiptext">Sort descending</span></button>
-            </span>
-            <h6 class="mdl-color-text--grey-600" id="stock">In Stock</h6>
+              <!-- <button id="descending" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored"><img src="/images/order-alphabetical-descending.svg"><span class="tooltiptext">Sort descending</span></button> -->
+            <!-- </span> -->
         </div>
         
+<!-- Main content -->        
         <ul class="mdl-list" id="product_list">
+            <div class="mdl-cell mdl-cell--12-col row">
+              <h6 class="mdl-color-text--grey-600" id="stock">In Stock</h6>
+            </div>
             <!--First list item with secondary info-->
             <div class="gesture" data-ui-field="list-item" data-ui-load="@lib/controllers/gesture_helper"
                   data-ui-options="gesture_options">

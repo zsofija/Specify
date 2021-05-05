@@ -1,4 +1,4 @@
-
+/* TODO - check sort by menu placing on mobile */
 .wrapper {
     display: flex;
     margin-top: 5vh;
@@ -10,20 +10,26 @@
     justify-content: center;
       
 }
-.mdl-cell--12-col {
-    display: grid;
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
     background-color: #37474f;
     width: 100vw;
-    /* text-align: center; */
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    z-index: 10;
 }
 
 
-/* Page header */
-
 #ascending {
     position: fixed;
-    left: 34.5vw; /*660px;*/
+    /*left: 34.5vw; 660px;*/
+    left: 38%;
+    padding: 0;
 }
 #ascending .tooltiptext {
     visibility: hidden;
@@ -38,18 +44,18 @@
     /* Position the tooltip */
     z-index: 10;
     position: fixed;
-    top: 14.85vh; /* 130 -> 145*/
-    left: 35vw; /*670px;*/
+    top: 9.85vh;
+    left: 39vw;
 }  
 #ascending:hover .tooltiptext {
     visibility: visible;
 }
 
-#descending {
+/* #descending {
     position: fixed;
-    right: 34.5vw; /*660px;*/
-}
-#descending .tooltiptext {
+    right: 34.5vw; /*660px;
+} */
+/* #descending .tooltiptext {
     visibility: hidden;
     width: 60px;
     color: #fdd740b9;
@@ -59,21 +65,21 @@
     font-size: 0.9rem;
     text-transform: lowercase;
     
-    /* Position the tooltip */
+    /* Position the tooltip
     z-index: 10;
     position: fixed;
     top: 14.85vh;
-    right: 32.5vw; /*620px;*/
-}
+    right: 32.5vw; /*620px;
+} */
   
-#descending:hover .tooltiptext {
+/* #descending:hover .tooltiptext {
     visibility: visible;
-
-}
+} */
 
 #sortby {
     position: fixed;
-    left: 48vw; /*920px;*/
+    right: 37%;
+    padding: 0;
 }
 .mdl-button:hover {
     background-color: transparent;
@@ -91,8 +97,8 @@
     /* Position the tooltip */
     z-index: 10;
     position: fixed;
-    top: 14.85vh;
-    left: 49.5vw; /*950px;*/
+    top: 9.85vh;
+    right: 39vw;
 }
   
 #sortby:hover .tooltiptext {
@@ -145,20 +151,33 @@ a {
     text-decoration: none;
 }
 #stock {
-    text-align: right;
-    margin-right: -245px; /*-212px;*/
-    margin-bottom: -37px;
-    padding-top: 35px;
+    line-height: 0px;
+    margin: 8px 0 16px;
     font-size: 1rem;
 }
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: -8px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    justify-content: flex-end;
+    padding-right: 8px;
+    margin-top: -8px;
+}
+#product_list {
+    padding: 0px 0;
+}
 
-/* .secondary-info {
-     padding-right: 6px; 
-} */
 
 i.md40px {
     font-size: 40px;
     margin-right: 0; /*-31px; or -30*/
+    color:#fdd740;
+}
+i.md28px {
+    font-size: 28px;
     color:#fdd740;
 }
 /* .gesture {
@@ -166,7 +185,7 @@ i.md40px {
     max-width: 690px;
 } */
 
-.hidden-options {
+.hidden-options { 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -206,66 +225,70 @@ i.md40px {
     .mdl-list__item--two-line .mdl-list__item-primary-content {
         line-height: 28px;
     }
-    /* .mdl-list__item-secondary-info {
-        padding-right: 5px;
-    } */
-    #stock {
-        margin-right: -110px; /* was -80px; with h4*/
-        /* padding-top: 30px;    */
+    .header {
+        margin-top: 14px;
     }
+    
     .mdl-list__item {
         font-size: 14px;
     }
-    h4 {
-        margin-top: 30px;
-        margin-bottom: 10px;
-    }
+    
     #ascending {
         position: fixed;
         left: 5px;   
     }
-    #descending {
+    /* #descending {
         position: fixed;
         right: 5px;
-    }
+    } */
     #sortby {
         position: fixed;
-        left: 40%;
+        /* left: 40%; */
+        right: 5px;
     }
     #ascending .tooltiptext {
-        top: 131px;
-        left: 15px;
+        /* top: 93px;
+        left: 18px; */
+        top: 12%;
+        left: 6%;
     }
     #sortby .tooltiptext {
-        top: 133px;
-        left: 47%;
+        top: 13%;
+        /* left: 47%; */
+        right: 6%;
     } 
-    #descending .tooltiptext {
+    /* #descending .tooltiptext {
         top: 131px;
         right: 15px;
-    }
+    } */
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .wrapper {
         margin-top: 4vh;
     }
+    #ascending {
+        left: 22%;
+    }
     #sortby {
         position: fixed;
-        left: 46vw;
+        right: 21%;
+        /* left: 46vw; */
     }
     #ascending .tooltiptext {
-        top: 135px;
-        left: 35.7vw; /*670px;*/
+        top: 82px;
+        left: 23.7vw; /* 35.7vw; 670px;*/
     }
     #sortby .tooltiptext {
-        top: 135px;
-        left: 49.5vw; /*950px;*/
+        top: 93px;
+        right: 22.7vw;
+        /*left: 49.5vw; 950px;*/
+        /*right: 38.7vw ; 29.7vw;*/
     } 
-    #descending .tooltiptext {
+    /* #descending .tooltiptext {
         top: 135px;
-        right: 29.7vw; /*620px;*/
-    }
+        right: 29.7vw; /*620px;
+    } */
 }
 @media only screen and (max-height: 914px) and (min-width: 1920px) {
     #ascending .tooltiptext {
@@ -274,12 +297,13 @@ i.md40px {
     }
     #sortby .tooltiptext {
         top: 135px;
-        left: 49.5vw; /*950px;*/
+        /*left: 49.5vw; 950px;*/
+        right: 32.5vw;
     } 
-    #descending .tooltiptext {
+    /* #descending .tooltiptext {
         top: 135px;
-        right: 32.5vw; /*620px;*/
-    }
+        right: 32.5vw; /*620px;
+    } */
 }
 @media only screen and (max-height: 650px) and (min-width: 1920px) {
     .wrapper {
@@ -298,12 +322,13 @@ i.md40px {
     }
     #sortby .tooltiptext {
         top: 125px;
-        left: 49.5vw; /*950px;*/
+        /*left: 49.5vw; 950px;*/
+        right: 32.5vw;
     } 
-    #descending .tooltiptext {
+    /* #descending .tooltiptext {
         top: 125px;
-        right: 32.5vw; /*620px;*/
-    }
+        right: 32.5vw; /*620px;
+    } */
 }
 /* Extra small mobile */
 @media only screen and (min-device-width: 320px) and (max-device-height: 568px) {

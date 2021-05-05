@@ -24,8 +24,13 @@ body {
 /*Body*/
 .withBackground {
     margin: 0;
-    background: url(https://images.unsplash.com/photo-1617545146511-7b27e863c892?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80);
-    -webkit-backdrop-filter: tint(#ffffff, 0.4);
+    background: url(images/background.jpg);
+
+    /* background: url(https://images.unsplash.com/photo-1617545146511-7b27e863c892?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80); */
+    /* -webkit-backdrop-filter: tint(#ffffff, 0.4); */
+    background-color: rgba(243, 189, 11, 0.144); /* Tint color  */
+    background-blend-mode: multiply;
+    background-size: contain;
     
     
 }
