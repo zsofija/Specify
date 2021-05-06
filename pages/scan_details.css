@@ -123,6 +123,9 @@ p {
 
 
 @media screen and (max-width: 767px){
+    .header {
+        margin-top: 0px;
+    }
     #back {
         left: 10px;
     }
@@ -186,6 +189,9 @@ p {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .header {
+        margin-top: 0px;
+    }
     #back {
         left: 22%;
     }

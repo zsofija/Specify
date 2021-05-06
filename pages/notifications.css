@@ -3,10 +3,42 @@
 .mdl-grid {
     justify-content: center;  
 }
+/* Page header*/
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+}
+.header {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #37474f;
+    background-size: 100vw 108px;
+    width: 100vw;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    z-index: 2;
+}
+h4 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: lowercase;
+    font-style: italic;
+    font-weight: bolder;  
+}
+
+/* Note list */
 .mdl-list {
     width: 650px;
     height: auto;
-    margin-top: 18vh;
+    /* margin-top: 18vh; */
     row-gap: 10px;
     
 }
@@ -21,8 +53,56 @@
         height: 100%;
         margin-top: 0;
     }
+    .wrapper {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 16vh;
+    }
+    .header {
+        margin-top: 0px;
+    }
     .mdl-list {
         width: 100vw;
     }
     
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .header {
+        margin-top: 0px;
+    }
+    .wrapper {
+        align-items: flex-start;
+        margin-top: 14vh;
+    }
+}
+
+/* Iphone 6/7/8 */
+@media only screen and (min-device-width: 320px) and (max-device-width: 667px) and (max-device-height: 667px) {
+    .wrapper {
+         margin-top: 18vh;
+    }
+ }
+/*  Moto G4, Galaxy S5 */
+@media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (max-device-height: 640px) {
+    .wrapper {
+        margin-top: 19vh;
+   }
+}
+/* Extra small mobile */
+@media only screen and (min-device-width: 320px) and (min-device-height: 568px) and (max-device-height: 568px) {
+    .wrapper {
+        margin-top: 20vh;
+   }
+   p {
+    margin: 0 0 10px;
+   }
+}
+/* Galaxy Fold*/
+@media only screen and (min-device-width: 280px) and (max-device-width: 653px) and (min-device-height: 653px) and (max-device-height: 653px){
+    .wrapper {
+        margin-top: 18vh;
+   }
+   p {
+    margin: 0 0 8px;
+   }
 }

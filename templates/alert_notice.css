@@ -27,7 +27,7 @@
 }
 h6 {
     text-transform: uppercase;
-    font-weight: lighter;
+    /* font-weight: lighter; */
     color: #9e9e9e;
     letter-spacing: normal;
 }
@@ -75,6 +75,12 @@ p {
     }
     h5, h6, p {
         font-size: 1rem;
+    }
+    h5{
+        margin: 24px 0px 24px;
+    }
+    p {
+        line-height: 20px;
     }
     #notification-time {
         font-size: 0.9rem;
