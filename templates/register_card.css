@@ -46,3 +46,10 @@ a:hover {
     }
     
 }
+/* Surface Duo */
+@media only screen and (min-device-width: 540px) and (max-device-width: 720px) and (max-device-height: 720px){
+    .mdl-card {
+        width: 75vw;
+        height: auto;
+    }
+}

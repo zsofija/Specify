@@ -433,3 +433,9 @@ i.md28px {
         right: 6%;
     }
 }
+/* Surface Duo */
+@media only screen and (min-device-width: 540px) and (max-device-width: 720px) and (max-device-height: 720px){
+    .mdl-list {
+        width: 480px;
+    }
+}

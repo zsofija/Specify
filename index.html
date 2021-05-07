@@ -107,7 +107,7 @@
                               for="demo-menu-lower-right">
                           <li class="mdl-menu__item" onclick="select_page('inventory')" ><img class="icon" src="/images/inventory_24dp.svg">Inventory<div class="borderBottom"></div></li>
                           <li class="mdl-menu__item" onclick="select_page('notifications')" ><img class="icon" src="/images/notifications_active_24dp.svg">Notifications<div class="borderBottom"></div></li>
-                          <li class="mdl-menu__item" onclick="select_page('analytics')" ><img class="icon" src="/images/equalizer_24dp.svg">Analytics<div class="borderBottom"></div></li>
+                          <li class="mdl-menu__item" onclick="select_page('stats')" ><img class="icon" src="/images/equalizer_24dp.svg">Analytics<div class="borderBottom"></div></li>
                           <li class="mdl-menu__item"><img class="icon" src="/images/settings_24dp.svg">Settings<div class="borderBottom"></div></li>
                           </ul>
                       </div>
@@ -143,7 +143,8 @@
 
   <!-- SCAN- Product Details-->
   <section id="details" data-ui-include="pages/scan_details"></section>
-  
+  <!--CHOSE STATYSTIC-->
+  <section id="stats" data-ui-include="pages/stats"></section>
   <!-- ANALYTICS-->
     <section id="analytics" data-ui-include="pages/analytics"></section>
   
@@ -190,6 +191,7 @@
                 "inventory": document.getElementById("inventory"),
                 "notifications": document.getElementById("notifications"),
                 "about": document.getElementById("about"),
+                "stats": document.getElementById("stats"),
                 "analytics": document.getElementById("analytics")};
   const no_header =["login", "register", "verify", "company"];
   const no_footer =["analytics"];

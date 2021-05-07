@@ -11,7 +11,7 @@
     height: 100vh; 
 }
 .header {
-    position: fixed;
+    position: absolute;
     top: 56px;
     left: 0;
     display: flex;
@@ -105,4 +105,10 @@ h4 {
    p {
     margin: 0 0 8px;
    }
+}
+/* Surface Duo */
+@media only screen and (min-device-width: 540px) and (max-device-width: 720px) and (max-device-height: 720px){
+    .mdl-list {
+        width: 90vw;
+    }
 }

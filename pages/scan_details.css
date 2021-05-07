@@ -20,7 +20,7 @@
     height: 100vh; 
 }
 .header {
-    position: fixed;
+    position: absolute;
     top: 56px; /* was 57, 56 is better on ipad pro*/
     left: 0;
     display: flex;
@@ -33,7 +33,7 @@
     margin-left: 0;
     margin-right: 0;
     padding: 0;
-    z-index: 10;
+    z-index: 2;
 }
 h4 {
     margin-top: 20px; /*15*/

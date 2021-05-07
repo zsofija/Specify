@@ -509,3 +509,11 @@ li {
         margin-top: 0px;
     } 
 }
+/* Surface Duo */
+@media only screen and (min-device-width: 540px) and (max-device-width: 720px) and (min-device-height: 720px) and (max-device-height: 720px){
+    .card-square.mdl-card {
+        width: 73vw;
+        padding: 0;
+        height: 560px;
+    }
+}
