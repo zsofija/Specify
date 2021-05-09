@@ -1,67 +1,34 @@
-<div data-ui-load="@lib/controllers/view_pager"
-      data-ui-options="options.viewPager"
-      class="feed-pager"
-      draggable="false">
+<div class="ribbon mdl-cell mdl-cell--12-col"></div>
+<div class="wrapper">
+  <div class="mdl-grid">
+    <!--Page Header-->
+      <div data-ui-field="page_header" class="mdl-color-text--white mdl-cell mdl-cell--12-col header">
+          <h4 data-ui-field="title">Home</h4>
+      </div>
+    <!-- Main Content-->
+    <div class="container mdl-grid">
+      
+        <div class="content mdl-color--white mdl-shadow--4dp mdl-color-text--grey-800 mdl-cell mdl-cell--8-col mdl-cell--3-col-phone">
+            <div class="mdl-cell mdl-cell--12-col row">
+              <div class="mdl-cell mdl-cell--5-col left">
+                <a onclick="select_page('scan')">
+                    <img id="new_itemButton" src="/images/box1.svg">
+                </a>
+              </div>
+              <div class="mdl-cell mdl-cell--7-col right">
+                <a onclick="select_page('inventory')">
+                  <img id="inventoryButton" src="/images/box2.svg">
+                </a>
+              </div>  
+            </div>
+            <div class="mdl-cell mdl-cell--12-col centered">
+              <h3 data-ui-field="title">About us</h3>
+              <h6>Specify is an online service to count
+                inventory for your grocery shop</h6>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae perferendis in enim dignissimos officia, exercitationem facilis aliquid numquam mollitia esse asperiores magnam consequuntur laudantium iure laborum animi. Adipisci, ducimus voluptatibus!</p>
+            </div>
+        </div>
 
-    <!-- TOP STORIES -->
-    <section class="content" data-ui-load="@lib/controllers/header_auto_hide" data-ui-options="options.autoHidingBars">
-
-        <div data-ui-load="pages/home/items_list"
-             data-o-rss="http://rss.cnn.com/rss/edition.rss"></div>
-
-    </section>
-
-    <!-- WORLD -->
-    <section class="content" data-ui-load="@lib/controllers/header_auto_hide" data-ui-options="options.autoHidingBars">
-
-        <div data-ui-load="pages/home/items_list"
-             data-o-rss="http://rss.cnn.com/rss/edition_world.rss"></div>
-
-    </section>
-
-    <!-- EUROPE -->
-    <section class="content" data-ui-load="@lib/controllers/header_auto_hide" data-ui-options="options.autoHidingBars">
-
-        <div data-ui-load="pages/home/items_list"
-             data-o-rss="http://rss.cnn.com/rss/edition_europe.rss"></div>
-
-    </section>
-
-    <!-- TRAVEL -->
-    <section class="content" data-ui-load="@lib/controllers/header_auto_hide" data-ui-options="options.autoHidingBars">
-
-        <div data-ui-load="pages/home/items_list"
-             data-o-rss="http://rss.cnn.com/rss/edition_travel.rss"></div>
-
-    </section>
-
-</div>
-<div data-ui-load="@lib/components/context_menu"
-     data-ui-context="news-options-menu">
-    <div data-ui-field="menu">
-        <button layout="row center-left">
-            <i class="material-icons">bookmark_border</i>
-            <span>Save for later</span>
-        </button>
-        <button layout="row center-left">
-            <i class="material-icons">share</i>
-            <span>Share</span>
-        </button>
-        <button layout="row center-left">
-            <i class="material-icons">open_in_new</i>
-            <span>Open link</span>
-        </button>
-        <button layout="row center-left">
-            <i class="material-icons">not_interested</i>
-            <span>Hide items from this source</span>
-        </button>
-        <button layout="row center-left">
-            <i class="material-icons">thumb_up</i>
-            <span>More like this</span>
-        </button>
-        <button layout="row center-left">
-            <i class="material-icons">thumb_down</i>
-            <span>Less like this</span>
-        </button>
     </div>
+  </div>
 </div>
