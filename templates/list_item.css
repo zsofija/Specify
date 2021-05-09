@@ -2,7 +2,7 @@
     padding-top: 0;
 }
 .mdl-list__item:hover {
-    background: rgba(248, 229, 194, 0.452);
+    background: #ffd0805e; /* rgba(248, 229, 194, 0.452);*/
 }
 .mdl-list__item-avatar {
     height: 55px;

@@ -47,8 +47,8 @@
 
   <!-- Material Design-->
   <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
-  <link rel="stylesheet" href="/material.min(2).css"/>
-  <!-- <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.amber-red.min.css" />  -->
+  <link rel="stylesheet" href="/material.min.css"/>
+  <!--  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-amber.min.css" />  -->
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
  
   
@@ -106,7 +106,7 @@
                           <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect ripple_material_light mdl-color--grey-900"
                               for="demo-menu-lower-right">
                           <li class="mdl-menu__item" onclick="select_page('inventory')" ><img class="icon" src="/images/inventory_24dp.svg">Inventory<div class="borderBottom"></div></li>
-                          <li class="mdl-menu__item" onclick="select_page('notifications')" ><img class="icon" src="/images/notifications_active_24dp.svg">Notifications<div class="borderBottom"></div></li>
+                          <li class="mdl-menu__item" onclick="select_page('notifications')" ><img class="icon" src="/images/notifications_active_24dp.svg">Notifications<span class="mdl-badge" data-badge="2"></span><div class="borderBottom"></div></li>
                           <li class="mdl-menu__item" onclick="select_page('stats')" ><img class="icon" src="/images/equalizer_24dp.svg">Analytics<div class="borderBottom"></div></li>
                           <li class="mdl-menu__item"><img class="icon" src="/images/settings_24dp.svg">Settings<div class="borderBottom"></div></li>
                           </ul>
@@ -132,7 +132,8 @@
     <section id="register" data-ui-include="pages/register"></section>
   <!--REGISTER-Company--> 
     <section id="company" data-ui-include="pages/register_company"></section>
-  
+  <!--HOME-->
+    <section id="home" data-ui-include="pages/home"></section>
   <!--ABOUT--> 
     <section id="about" data-ui-include="pages/about"></section>
 
@@ -186,6 +187,7 @@
                 "verify": document.getElementById("verify"),
                 "company": document.getElementById("company"),
                 "scan": document.getElementById("scan"),
+                "home": document.getElementById("home"),
                 "details": document.getElementById("details"),
                 "edit": document.getElementById("edit"),
                 "inventory": document.getElementById("inventory"),
@@ -195,7 +197,7 @@
                 "analytics": document.getElementById("analytics")};
   const no_header =["login", "register", "verify", "company"];
   const no_footer =["analytics"];
-  const no_background=["inventory", "notifications", "about", "analytics"];
+  const no_background=["inventory", "notifications", "about"];
 
   function select_page(name){
     for (let page_name in pages){

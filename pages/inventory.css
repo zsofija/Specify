@@ -1,4 +1,7 @@
 /* TODO - check sort by menu placing on mobile */
+html {
+    scroll-behavior: smooth;
+}
 .wrapper {
     display: flex;
     margin-top: 5vh;
@@ -98,7 +101,7 @@
     z-index: 10;
     position: fixed;
     top: 9.85vh;
-    right: 39vw;
+    right: 38.5vw;
 }
   
 #sortby:hover .tooltiptext {
@@ -117,7 +120,7 @@
     padding-top: 0;
 }
 .mdl-list__item:hover {
-    background: rgba(248, 229, 194, 0.452);
+    background: #ffd0805e; /*rgba(248, 229, 194, 0.452);*/
 }
 
 .mdl-list__item-avatar {
@@ -179,6 +182,15 @@ i.md40px {
 i.md28px {
     font-size: 28px;
     color:#fdd740;
+}
+.to-top {
+    position: absolute;
+    bottom: 8px;
+    right: 5px;
+    
+}
+.to-top a:hover {
+    color: #ff0000;
 }
 /* .gesture {
     min-width: 640px;

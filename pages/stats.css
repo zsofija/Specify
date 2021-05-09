@@ -70,9 +70,14 @@ h4 {
 .last {
     border-bottom: 2px solid #fdd740;
 }
+.mdl-list {
+    display: block;
+    padding: 8px 100px; /* 8px 0px*/
+    list-style: none;
+}
 .nested-list {
     width: 400px;
-    margin-left: 10%;
+    margin-left: 15%; /* 10%*/
 }
 .nested-list > .mdl-list__item {
     padding: 5px;
@@ -104,9 +109,15 @@ h4 {
         margin-bottom: 0px;
         height: 90vh; /* 97*/
     }
+    .mdl-list {
+        padding: 8px 0px;
+    }
     .nested-list {
         width: 300px;
         margin-left: 0%;
+    }
+    .row {
+        padding-right: 10px;
     }
     .range {
         width: 380px !important;
@@ -122,6 +133,12 @@ h4 {
     }
     .content {
         margin-bottom: 0px;
+    }
+    .mdl-list {
+        padding: 8px 0px; 
+    }
+    .nested-list {
+        margin-left: 10%;
     }
 }
 /* Samgung Galaxy S9 */
@@ -208,7 +225,7 @@ h4 {
 /* Galaxy Fold*/
 @media only screen and (min-device-width: 280px) and (max-device-width: 653px) and (min-device-height: 653px) and (min-device-height: 653px) and (max-device-height: 653px){
     .mdl-cell--3-col-phone {
-        width: 17%;
+        width: 17.3%;
     }
     .content {
         padding: 130px 3px;

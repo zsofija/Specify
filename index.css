@@ -65,9 +65,9 @@ h1, h2, h3, h4, h5, h6 {
     float: right;
 }
 
-.mdl-menu__item:hover {
+/* .mdl-menu__item:hover {
     background-color: #ffd180;
-}
+} */
 
 .mdl-menu__container {
     width: 400px;
