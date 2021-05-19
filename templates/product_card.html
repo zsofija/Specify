@@ -42,7 +42,7 @@
                     <p>Discount</p>
                     <form data-ui-field="discount" id="circle" class="mdl-color--accent" action="#">
                         <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="discount">
+                        <input class="mdl-textfield__input" type="text" maxlength="3" pattern="[0-9]*" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"  id="discount" />
                         <label class="mdl-textfield__label" for="discount">%</label>
                         <span class="mdl-textfield__error">Input is not a number!</span>
                         </div>
@@ -76,8 +76,8 @@
                 </div>
         </div>
 <!--Button-->
-        <div class="mdl-card__actions mdl-card--border mdl-cell mdl-cell--12-col mdl-cell--12-col-phone card-button">
-        <a data-ui-field="button" class="mdl-button mdl-button--colored mdl-button--raised mdl-js-button mdl-js-ripple-effect">
+        <div class="mdl-card__actions mdl-card--border mdl-cell mdl-cell--12-col mdl-cell--12-col-phone card-button" onclick="select_page('inventory')">
+        <a data-ui-field="button" class="mdl-button mdl-button--colored mdl-button--raised mdl-js-button mdl-js-ripple-effect" >
             Update
         </a>
         

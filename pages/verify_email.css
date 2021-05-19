@@ -18,7 +18,7 @@
 
 .mdl-card__title {
     height: 87px; /* was 95*/
-    padding-bottom: 29px; /*was 32*/
+    padding-bottom: 23px; /*was 32*/
     
 }
 .mdl-card__supporting-text {
@@ -37,9 +37,17 @@ a, p {
 a:hover {
     cursor: pointer;
 }
+.link-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
 .button_small {
     font-size: 12px;
+    margin-right: -8px !important;
+    border: 1px solid;
+    border-radius: 3px;
 }
 
 

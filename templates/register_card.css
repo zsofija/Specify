@@ -21,7 +21,7 @@ a:hover {
 
 .mdl-card__title {
     height: 87px; /*was 95*/
-    padding-bottom: 29px;/* was 32*/
+    padding-bottom: 20px;/* was 32*/
     
 }
 @media screen and (max-width: 767px){

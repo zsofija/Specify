@@ -49,9 +49,9 @@
               <h5 data-ui-field="subtitle">OR</h5>
               <form action="#">
                 <div data-ui-field="numerical-input" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
-                  <label class="mdl-textfield__label" for="sample4">Input barcode</label>
-                  <span class="mdl-textfield__error">Input is not a number!</span>
+                  <input class="mdl-textfield__input" type="text" maxlength="13" pattern="[0-9]*" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"  id="barcodenum" />
+                  <label class="mdl-textfield__label" for="barcodenum">Input barcode</label>
+                  <!-- <span class="mdl-textfield__error">Input is not a number!</span> -->
                 </div>
               </form>
               <button data-ui-field="button" class="mdl-button mdl-js-button mdl-button--primary" onclick="select_page('details')">

@@ -85,7 +85,7 @@
                         <li class="mdl-list__item mdl-color-text--primary">
                             <form data-ui-field="calendar"action="#">
                                     <label class="date_label" for="date_range"><i class="material-icons mdl-color-text--amber-A100 icons">date_range</i>Select date range</label>
-                                    <input type="text" name="datefilter" id="date_range" value="" />
+                                    <input type="text" name="datefilter" id="date_range" value=""  pattern="[0-9]*" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" />
                             </form>
                         </li>
                     </ul>

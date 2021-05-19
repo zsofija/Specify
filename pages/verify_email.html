@@ -13,9 +13,9 @@
                     </div>
                     <form action="#">
                         <div data-ui-field="numerical-input1" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="pin">
+                            <input class="mdl-textfield__input" type="text" maxlength="4" pattern="[0-9]*" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" id="pin"/> 
                             <label class="mdl-textfield__label" for="pin">4-digit PIN</label>
-                            <span class="mdl-textfield__error">Input is not a number!</span>
+                            <!-- <span class="mdl-textfield__error">Input is not a number!</span> -->
                         </div>
                     </form>
                 </div>
@@ -26,11 +26,11 @@
                         Verify
                     </button>
                     <div class="mdl-grid">
-                        <div class="mdl-cell mdl-cell--12-col">
-                            <p data-ui-field="text" class="mdl-color-text--primary">Haven't received?<button
-                                    data-ui-field="button_small"
+                        <div class="mdl-cell mdl-cell--12-col link-row">
+                            <a data-ui-field="text" class="mdl-color-text--primary" onclick="sendagainFunction()">Haven't received?</a>
+                            <button data-ui-field="button_small"
                                     class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect button_small"
-                                    style="float:right">Send again </button></p>
+                                    onclick="sendagainFunction()">Send again </button>
                         </div>
                     </div>
                 </div>
@@ -38,3 +38,15 @@
         </div>
     </section>
 </div>
+
+<script>
+    
+    function sendagainFunction() {
+        Swal.fire({
+            icon: 'success',
+            title: 'A new email verification was sent to you',
+            showConfirmButton: false,
+            timer: 1800
+        });
+    }
+</script>

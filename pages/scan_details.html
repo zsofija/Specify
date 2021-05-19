@@ -27,9 +27,9 @@
                   <h6 id="hide">Min. stock:&nbsp;</h6>
                     <form action="#">
                       <div data-ui-field="numerical-input" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label minqty_textfield">
-                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="minqty">
+                        <input class="mdl-textfield__input" type="text" pattern="[0-9]*" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" id="minqty" />
                         <label class="mdl-textfield__label" for="minqty">Minimum stock level</label>
-                        <span class="mdl-textfield__error">Input is not a number!</span>
+                        <!-- <span class="mdl-textfield__error">Input is not a number!</span> -->
                       </div>
                     </form>
                 </span>
