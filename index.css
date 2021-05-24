@@ -99,6 +99,7 @@ h1, h2, h3, h4, h5, h6 {
 .icon {
     vertical-align: top;
     padding-top: 7px;
+    color: #212121;
 }
 .borderBottom {
     border-bottom: 1px solid #ffe082;

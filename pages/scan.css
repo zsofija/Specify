@@ -79,11 +79,11 @@ h5 {
 .product_textfield label {
     display: none;
 }
-#camera--trigger {
+.scan-button {
     height: 80px;
     width: 80px;
 }
-#camera--trigger img {
+.scan-button img {
     width: 30px;
 }
 .demo-layout.is-small-screen .demo-content {

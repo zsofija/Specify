@@ -1,10 +1,15 @@
+/* HEADER --> */
+
 .mdl-layout--fixed-header {
     display: flex;
     padding: 0;
     margin: 0;
 }
 .mdl-layout__header-row {
-  height: 65px;
+    height: 65px;
+    padding: 0 16px 6px 72px;
+    width: 100vw; /* full width*/
+    position: fixed; /* full width*/
 }
 
 .mdl-layout-title {
@@ -13,15 +18,16 @@
     left: 15px;
     font-family: 'Libre Barcode 39 Text', cursive;
     font-size: 36px;
+    cursor: pointer;
 }
 
 .mdl-button {
     float: right;
 }
 
-.mdl-menu__item:hover {
+/* .mdl-menu__item:hover {
     background-color: #ffd180;
-}
+} */
 
 .mdl-menu__container {
     width: 400px;
@@ -52,6 +58,7 @@
 .icon {
     vertical-align: top;
     padding-top: 7px;
+    color: #212121;
 }
 .borderBottom {
     border-bottom: 1px solid #ffe082;
@@ -111,5 +118,10 @@
   }
   
 }
-
+/* Galaxy Fold*/
+@media only screen and (min-device-width: 280px) and (max-device-width: 653px) and (min-device-height: 653px) and (max-device-height: 653px){
+    .mdl-menu {
+        width: 265px;
+    }
+}
 

@@ -141,6 +141,11 @@ html {
 .mdl-list__item-secondary-action {
     display: flex;
     align-items: center;
+    
+}
+.mdl-list__item-secondary-action p {
+    font-size: 16px;
+    margin: 0 0 0px;
 }
 h4 {
     margin-top: 20px; /*15*/
@@ -166,7 +171,7 @@ a {
     padding-bottom: 0px;
     padding-top: 0px;
     justify-content: flex-end;
-    padding-right: 8px;
+    padding-right: 28px; /*8*/
     margin-top: -8px;
 }
 #product_list {
@@ -183,6 +188,26 @@ i.md28px {
     font-size: 28px;
     color:#fdd740;
 }
+/*Quick edit  */
+.mdl-textfield {
+    width: 30px;
+    padding: 15px 0;
+}
+.mdl-textfield__label {
+    bottom: 0;
+    color: rgba(0, 0, 0, 0.72);
+}
+.mdl-textfield__input {
+    border: none;
+    border-bottom: none;
+}
+.material-icons-outlined { 
+    font-size: 16px;
+    margin-top: -9px;
+}
+
+
+/* Scroll to top */
 .to-top {
     position: absolute;
     bottom: 8px;
@@ -357,7 +382,7 @@ i.md28px {
         width: 320px;
     }
     #stock {
-        margin-right: -85px;
+        margin-right: -8px /*-85px;*/
     }
     .mdl-list__item--two-line .mdl-list__item-primary-content {
         line-height: 18px;

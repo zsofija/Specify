@@ -3,7 +3,7 @@
     <div class="mdl-grid">
 <!-- Page header -->
         <div class="mdl-color-text--white mdl-cell mdl-cell--12-col header">
-          <button id="ascending" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" onclick="sortListAsc()"><img src="/images/order-alphabetical-ascending.svg"><span class="tooltiptext">Sort ascending</span></button>
+          <button id="ascending" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" onclick="sortListDir()"><img src="/images/order-alphabetical-ascending.svg"><span class="tooltiptext">Sort ascending/descending</span></button>
             <h4 data-ui-field="title">My Inventory</h4>
             <!-- <span> -->
               
@@ -37,7 +37,13 @@
                 </span>
                 <span class="mdl-list__item-secondary-content">
                     <span class="secondary-info"></span>
-                    <span data-ui-field="in-stock" class="mdl-list__item-secondary-action">48<i class="material-icons md40px">chevron_left</i></span>
+                    <span data-ui-field="in-stock" class="mdl-list__item-secondary-action">
+                      <i class="material-icons-outlined mdl-color-text--grey-900">pending_actions</i>
+                      <div class="mdl-textfield mdl-js-textfield">
+                        <input data-ui-field="stock-level" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="quickedit">
+                        <label data-ui-field="current-value" class="mdl-textfield__label" for="quickedit">48</label>
+                      </div>
+                      <i class="material-icons md40px">chevron_left</i></span>
                 </span>
                 <div data-ui-field="swipe-menu" class="hidden-options"><a href="#" onclick="select_page('edit')"><i class="material-icons mdl-color-text--grey-900">edit</i></a></div>
             </li>
@@ -53,7 +59,12 @@
                   <span data-ui-field="barcode">8410076490711</span>
               </span>
               <span class="mdl-list__item-secondary-content">
-                  <span data-ui-field="in-stock">23<i class="material-icons md40px">chevron_left</i></span>
+                  <span data-ui-field="in-stock"><i class="material-icons-outlined mdl-color-text--grey-900">pending_actions</i>
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <input data-ui-field="stock-level" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="quickedit">
+                      <label data-ui-field="current-value" class="mdl-textfield__label" for="quickedit">23</label>
+                    </div>
+                    <i class="material-icons md40px">chevron_left</i></span>
               </span>
               <div data-ui-field="swipe-menu" class="hidden-options"><a href="#" onclick="select_page('edit')"><i class="material-icons mdl-color-text--grey-900">edit</i></a></div>
             </li>
@@ -67,9 +78,15 @@
                     <span data-ui-field="barcode">7059330071610</span>
                 </span>
                 <span class="mdl-list__item-secondary-content">
-                    <span data-ui-field="in-stock">31<i class="material-icons md40px">chevron_left</i></span>
+                    <span data-ui-field="in-stock"><i class="material-icons-outlined mdl-color-text--grey-900">pending_actions</i>
+                      <div class="mdl-textfield mdl-js-textfield">
+                        <input data-ui-field="stock-level" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="quickedit">
+                        <label data-ui-field="current-value" class="mdl-textfield__label" for="quickedit">31</label>
+                      </div>
+                      <i class="material-icons md40px">chevron_left</i></span>
                 </span>
                 <div data-ui-field="swipe-menu" class="hidden-options"><a href="#" onclick="select_page('edit')"><i class="material-icons mdl-color-text--grey-900">edit</i></a></div>
+                <div> <a href="#" onclick=""><i class="material-icons-outlined mdl-color-text--grey-900">pending_actions</i></a></div>
             </li>
           </div>
         </ul>
@@ -176,45 +193,48 @@ function swipe_item(item_index,direction){
 
 
 
-// SORT LIST ASCENDING
-const ascBtn = document.getElementById('ascending');
-  ascBtn.addEventListener('click', function sortListAsc() {
+// SORT LIST ASCENDING and Descending
+
+function sortListDir() {
   var list, i, switching, b, shouldSwitch, dir, switchcount = 0;
   list = document.getElementById("product_list");
   switching = true;
-  // Set the sorting direction to ascending:
-  dir = "asc"; 
-  // Make a loop that will continue until no switching has been done:
+  dir = "asc";
   while (switching) {
-    // start by saying: no switching is done:
     switching = false;
-    b = list.getElementsByClassName("product_name");
-    // Loop through all list-items:
+    b = list.getElementsByClassName("mdl-list__item");
     for (i = 0; i < (b.length - 1); i++) {
-      //start by saying there should be no switching:
       shouldSwitch = false;
-      /* check if the next item should switch place with the current item,
-      based on the sorting direction (asc or desc): */
+      
       if (dir == "asc") {
         if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
-          /* if next item is alphabetically lower than current item,
-          mark as a switch and break the loop: */
+          
           shouldSwitch = true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (b[i].innerHTML.toLowerCase() < b[i + 1].innerHTML.toLowerCase()) {
+          
+          shouldSwitch= true;
           break;
         }
       }
     }
     if (shouldSwitch) {
-      /* If a switch has been marked, make the switch
-      and mark that a switch has been done: */
       b[i].parentNode.insertBefore(b[i + 1], b[i]);
       switching = true;
-      // Each time a switch is done, increase switchcount by 1:
+      
       switchcount ++;
+    } else {
+  
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
     }
   }
-  render();
-});
-    
+}
+
+
 </script>
 

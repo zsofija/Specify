@@ -65,8 +65,10 @@
   <!-- include showdown for markdown rendering -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
 
-  <!-- InstaScan -->
-  <script type="text/javascript" src="js/instascan.min.js"></script>
+  <!-- InstaScan
+  <script type="text/javascript" src="js/instascan.min.js"></script> -->
+  <!--Barcode scanner https://github.com/iemadk/BarCode-reader-->
+  
 
   <!-- Iconofy
   <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>-->
@@ -105,10 +107,11 @@
                           </button>
                           <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect ripple_material_light mdl-color--grey-900"
                               for="demo-menu-lower-right">
-                          <li class="mdl-menu__item" onclick="select_page('inventory')" ><img class="icon" src="/images/inventory_24dp.svg">Inventory<div class="borderBottom"></div></li>
-                          <li class="mdl-menu__item" onclick="select_page('notifications')" ><img class="icon" src="/images/notifications_active_24dp.svg">Notifications<span class="mdl-badge" data-badge="2"></span><div class="borderBottom"></div></li>
-                          <li class="mdl-menu__item" onclick="select_page('stats')" ><img class="icon" src="/images/equalizer_24dp.svg">Analytics<div class="borderBottom"></div></li>
-                          <li class="mdl-menu__item"><img class="icon" src="/images/settings_24dp.svg">Settings<div class="borderBottom"></div></li>
+                          <li class="mdl-menu__item" onclick="select_page('scan')" ><i class="material-icons-outlined icon">add</i>Add new item<div class="borderBottom"></div></li>
+                          <li class="mdl-menu__item" onclick="select_page('inventory')" ><i class="material-icons-two-tone icon">inventory</i>Inventory<div class="borderBottom"></div></li>
+                          <li class="mdl-menu__item" onclick="select_page('notifications')" ><i class="material-icons-two-tone icon">notifications_active</i>Notifications<span class="mdl-badge" data-badge="2"></span><div class="borderBottom"></div></li>
+                          <li class="mdl-menu__item" onclick="select_page('stats')" ><i class="material-icons-two-tone icon">equalizer</i>Analytics<div class="borderBottom"></div></li>
+                          <li class="mdl-menu__item"><i class="material-icons-two-tone icon">settings</i>Settings<div class="borderBottom"></div></li>
                           </ul>
                       </div>
                   </header>
@@ -141,6 +144,7 @@
       <section id="scan" data-ui-include="pages/scan"
               data-ui-component="pages/scan"></section>
       <!--div data-ui-load="pages/scan"></div-->
+
 
   <!-- SCAN- Product Details-->
   <section id="details" data-ui-include="pages/scan_details"></section>
@@ -236,7 +240,7 @@
     select_page("login");
   }
 
- 
+
 
 
 </script>

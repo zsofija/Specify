@@ -22,20 +22,46 @@
     display: flex;
     align-items: center;
 }
+.mdl-list__item-secondary-action p {
+    font-size: 16px;
+    margin: 0 0 0px;
+}
 
 a {
     text-decoration: none;
 }
 
+
 /* .mdl-list__item-secondary-info {
     padding-right: 6px;
 } */
+
+
+/*Quick edit  */
+.mdl-textfield {
+    width: 30px;
+    padding: 15px 0;
+}
+.mdl-textfield__label {
+    bottom: 0;
+    color: rgba(0, 0, 0, 0.72);
+}
+.mdl-textfield__input {
+    border: none;
+    border-bottom: none;
+}
+.material-icons-outlined { 
+    font-size: 16px;
+    margin-top: -9px;
+}
+
 
 i.md40px {
     font-size: 40px;
     margin-right: 0; /*-22px;*/
     color:#fdd740;
 }
+/* for the swipe-left function */
 .hidden-options {
     display: flex;
     align-items: center;

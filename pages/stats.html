@@ -25,7 +25,7 @@
                       ABC Analysis
                     </span>
                     <span class="mdl-list__item-secondary-action">
-                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-1">
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-2">
                         <input type="checkbox" id="list-checkbox-1" class="mdl-checkbox__input" />
                       </label>
                     </span>
@@ -35,7 +35,7 @@
                       VED Analysis
                     </span>
                     <span class="mdl-list__item-secondary-action">
-                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-1">
+                      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-3">
                         <input type="checkbox" id="list-checkbox-1" class="mdl-checkbox__input" />
                       </label>
                     </span>
@@ -57,7 +57,7 @@
                             Last month
                             </span>
                             <span class="mdl-list__item-secondary-primary">
-                            <label class=" mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-1">
+                            <label class=" mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-2">
                                 <input type="radio" id="list-option-2" class="mdl-radio__button" name="options" value="2" />
                             </label>
                             </span>
@@ -67,7 +67,7 @@
                             This year
                             </span>
                             <span class="mdl-list__item-secondary-action">
-                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-1">
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-3">
                                 <input type="radio" id="list-option-3" class="mdl-radio__button" name="options" value="3" />
                             </label>
                             </span>
@@ -77,7 +77,7 @@
                             Last year
                             </span>
                             <span class="mdl-list__item-secondary-action">
-                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-1">
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-4">
                                 <input type="radio" id="list-option-4" class="mdl-radio__button" name="options" value="4" />
                             </label>
                             </span>
@@ -107,3 +107,33 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript"> // Only choose 1 checkbox
+  function getAllCheckboxes() {
+      return document.querySelectorAll('input[type=checkbox]');
+  }
+
+  function uncheckCheckboxes() {
+      var checkboxes = getAllCheckboxes();
+
+      for (var i = 0, length = checkboxes.length; i < length; i++) {
+          checkboxes[i].checked = false;
+      }
+  }
+
+  function manageClick() {
+      uncheckCheckboxes();
+
+      this.checked = true;
+  }
+
+  function init() {
+      var checkboxes = getAllCheckboxes();
+
+      for (var i = 0, length = checkboxes.length; i < length; i++) {
+          checkboxes[i].addEventListener('click', manageClick);
+      }
+  }
+
+  init();
+</script>
