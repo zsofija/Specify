@@ -10,7 +10,7 @@ function setupLiveReader(resultElement) {
   container.style.height = '100%'
   container.style.left = '0'
   container.style.top = '0'
-  container.style.background = '#474C55'
+  container.style.background = 'rgba(71, 76, 85, .5)'
   container.id = 'barcode-reader'
 
   var canvas = document.createElement('canvas')
@@ -63,7 +63,7 @@ function setupLiveReader(resultElement) {
         canvas.style.width = rect.width + 'px'
         canvas.style.top = rect.top + 'px'
         canvas.style.left = rect.left + 'px'
-        const overlayColor = 'rgba(71, 76, 85, .9)'
+        const overlayColor = 'rgba(71, 76, 85, .5)' // was .9
         context.fillStyle = overlayColor
         context.fillRect(0, 0, rect.width, rect.height)
         context.clearRect(
@@ -72,7 +72,7 @@ function setupLiveReader(resultElement) {
           canvasSetting.width,
           canvasSetting.height
         )
-        context.strokeStyle = '#ff671f'
+        context.strokeStyle = '#fdd740'
         context.strokeRect(
           canvasSetting.x,
           canvasSetting.y,

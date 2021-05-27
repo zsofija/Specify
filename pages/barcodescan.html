@@ -1,0 +1,85 @@
+<!-- Barcode scanner working - needs to be opened in https mode-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<body>
+  <div class="ribbon mdl-cell mdl-cell--12-col"></div>
+  <div class="wrapper">
+    <div class="mdl-grid">
+      <!--Page Header-->
+      <div data-ui-field="page_header" class="mdl-color-text--white mdl-cell mdl-cell--12-col header">
+        <button id="back" class="mdl-button mdl-button--colored mdl-js-button" onclick="select_page('home')"><i
+            class="material-icons">arrow_back</i></button>
+        <h4 data-ui-field="title">Create Inventory</h4>
+      </div>
+      <!-- Main Content-->
+      <div class="container mdl-grid">
+
+        <div
+          class="content mdl-color--white mdl-shadow--4dp mdl-color-text--grey-800 mdl-cell mdl-cell--8-col mdl-cell--3-col-phone">
+          <div class="mdl-cell mdl-cell--12-col centered">
+            <h3 data-ui-field="title">Add new Item</h3>
+            <form action="#">
+              <h5 data-ui-field="subtitle">Product Name:</h5>
+              <div class="mdl-textfield mdl-js-textfield product_textfield">
+                <input class="mdl-textfield__input" type="text" id="prodname">
+                <label class="mdl-textfield__label" for="prodname">Product Name</label>
+              </div>
+            </form>
+          </div>
+          <div class="mdl-cell mdl-cell--12-col centered">
+            <div class="mdl-cell mdl-cell--12-col row">
+              <button data-ui-field="button" id="camera-trigger"
+                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent scan-button"
+                onclick="barCodeScanner()">
+                <img src="/images/barcode-scan.png">
+              </button>
+            </div>
+            <div class="mdl-color-text--deep-orange-A200 row">
+              <i class="material-icons-outlined deeporangeA200">info</i>
+              <p class="deeporangeA200">Scan barcode and we'll retrieve data and product image from Open Food Facts</p>
+            </div>
+          </div>
+
+          <div class="mdl-cell mdl-cell--12-col centered">
+            <h5 data-ui-field="subtitle">OR</h5>
+            <form action="#">
+              <div data-ui-field="numerical-input" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input id="code" class="mdl-textfield__input" type="text" maxlength="13" pattern="[0-9]*"
+                  inputmode="numeric"
+                  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                  id="barcodenum" />
+                <label class="mdl-textfield__label" for="barcodenum">Input barcode</label>
+              </div>
+            </form>
+            <button data-ui-field="button" class="mdl-button mdl-js-button mdl-button--primary"
+              onclick="select_page('details')">
+              <i class="material-icons-outlined next">navigate_next</i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <script src="/BarCode-reader/BarcodeScanner.min.js"></script>
+  <script src="/BarCode-reader/app.min.js"></script>
+  <script>
+    function barCodeScanner() {
+      var resultElement = document.getElementById('code');
+      setupLiveReader(resultElement);
+    }
+  </script>
+</body>
+
+</html>

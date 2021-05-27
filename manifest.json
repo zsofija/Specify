@@ -2,7 +2,7 @@
   "name": "Speciy Inventory App",
   "short_name": "Specify",
   "description": "Inventory scanner for shops",
-  "version" : "20210429-01",
+  "version" : "20210527-01",
   "theme_color": "#f5f8fa",
   "background_color": "white",
   "display": "standalone",

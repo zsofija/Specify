@@ -53,7 +53,6 @@
  
   
 
-
   <!-- custom css -->
   <link rel="stylesheet" href="/index.css" type="text/css">
 
@@ -65,13 +64,6 @@
   <!-- include showdown for markdown rendering -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
 
-  <!-- InstaScan
-  <script type="text/javascript" src="js/instascan.min.js"></script> -->
-  <!--Barcode scanner https://github.com/iemadk/BarCode-reader-->
-  
-
-  <!-- Iconofy
-  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>-->
 
   <!-- SweetAlert-->
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -81,9 +73,13 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+  <!-- BarCode Reader https://github.com/iemadk/BarCode-reader -->
+  <script src="exif.js" type="text/javascript"></script>
   
   <!-- main app script -->
   <script src="index.js" defer type="text/javascript"></script>
+  
 
 </head>
 
@@ -108,27 +104,22 @@
                           <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect ripple_material_light mdl-color--grey-900"
                               for="demo-menu-lower-right">
                           <li class="mdl-menu__item" onclick="select_page('scan')" ><i class="material-icons-outlined icon">add</i>Add new item<div class="borderBottom"></div></li>
-                          <li class="mdl-menu__item" onclick="select_page('inventory')" ><i class="material-icons-two-tone icon">inventory</i>Inventory<div class="borderBottom"></div></li>
-                          <li class="mdl-menu__item" onclick="select_page('notifications')" ><i class="material-icons-two-tone icon">notifications_active</i>Notifications<span class="mdl-badge" data-badge="2"></span><div class="borderBottom"></div></li>
+                          <li class="mdl-menu__item" onclick="select_page('inventory')" ><img src="/images/inventory.svg" alt="inventory icon">Inventory<div class="borderBottom"></div></li>
+                          <li class="mdl-menu__item" onclick="select_page('notifications')" ><img src="/images/notifications.svg" alt="notification active icon">Notifications<span class="mdl-badge" data-badge="2"></span><div class="borderBottom"></div></li>
                           <li class="mdl-menu__item" onclick="select_page('stats')" ><i class="material-icons-two-tone icon">equalizer</i>Analytics<div class="borderBottom"></div></li>
-                          <li class="mdl-menu__item"><i class="material-icons-two-tone icon">settings</i>Settings<div class="borderBottom"></div></li>
+                          <li class="mdl-menu__item"><img src="/images/settings.svg" alt="settings icon">Settings<div class="borderBottom"></div></li>
                           </ul>
                       </div>
                   </header>
               </div>
           </header>
           
+          
 
 <main id="main_content" data-ui-field="pages" class="mdl-layout mdl-js-layout">
 
-  <!-- NOTIFICATIONS-->
-    <section id="notifications" data-ui-include="pages/notifications"></section>
-  <!--EDIT-product-->
-    <section id="edit" data-ui-include="pages/edit"></section>
-  <!--INVENTORY-->
-    <section id="inventory" data-ui-include="pages/inventory"></section>
   <!-- LOGIN -->
-    <section id="login" data-ui-include="pages/login"></section>
+  <section id="login" data-ui-include="pages/login"></section>
   <!--VERIFY-->
     <section id="verify" data-ui-include="pages/verify_email"></section>
   <!-- REGISTER-->
@@ -137,19 +128,26 @@
     <section id="company" data-ui-include="pages/register_company"></section>
   <!--HOME-->
     <section id="home" data-ui-include="pages/home"></section>
-  <!--ABOUT--> 
-    <section id="about" data-ui-include="pages/about"></section>
 
   <!-- SCAN- Add New Item-->
-      <section id="scan" data-ui-include="pages/scan"
-              data-ui-component="pages/scan"></section>
-      <!--div data-ui-load="pages/scan"></div-->
-
-
+  <section id="scan" data-ui-include="pages/barcodescan"
+  data-ui-component="pages/barcodescan"></section>
   <!-- SCAN- Product Details-->
   <section id="details" data-ui-include="pages/scan_details"></section>
-  <!--CHOSE STATYSTIC-->
-  <section id="stats" data-ui-include="pages/stats"></section>
+
+  <!--INVENTORY-->
+  <section id="inventory" data-ui-include="pages/inventory"></section>
+  <!--EDIT-product-->
+  <section id="edit" data-ui-include="pages/edit"></section>
+
+  <!-- NOTIFICATIONS-->
+    <section id="notifications" data-ui-include="pages/notifications"></section>
+   <!--CHOSE STATISTIC-->
+   <section id="stats" data-ui-include="pages/stats"></section>
+  
+  
+  <!--ABOUT--> 
+    <section id="about" data-ui-include="pages/about"></section>
   <!-- ANALYTICS-->
     <section id="analytics" data-ui-include="pages/analytics"></section>
   
@@ -157,23 +155,10 @@
 
 </main>
 
-<!-- The footer with toolbar buttons data-ui-options="options.footerBar"-->
-
 <footer id="footer" data-ui-include="layout/footer"
         data-ui-field="footer-bar"></footer>
 
-        
 
-<!--The DrawerLayout for side menu panel
-<div data-ui-load="@lib/controllers/drawer_layout"
-     data-ui-options="options.drawerLayout"
-     class="drawer"
-     draggable="false">
-  Add Navigation Drawer content 
-  <div data-ui-include="shared/main_menu"></div>
-</div>-->
-
- 
 
 <!--noscript>
   Turn on JavaScript to access this site content.
@@ -183,7 +168,6 @@
   const pageBody = document.querySelector('body');
   const headerBar = document.querySelector('header');
   const footerBar = document.querySelector('footer');
-  // const tabBar = document.getElementsByClassName('mdl-layout__tab-bar');
   // const mainContent = document.querySelector('main');
 
   const pages ={"login":document.getElementById("login"),

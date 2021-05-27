@@ -7,7 +7,7 @@
     <span class="mdl-list__item-secondary-content">
         <span data-ui-field="in-stock" class="mdl-list__item-secondary-action"><i class="material-icons-outlined mdl-color-text--grey-900">pending_actions</i>
             <div class="mdl-textfield mdl-js-textfield">
-                <input data-ui-field="stock-level" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="quickedit">
+                <input data-ui-field="stock-level" class="mdl-textfield__input" type="text" pattern="[0-9]*" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"  id="quickedit">
                 <label data-ui-field="current-value" class="mdl-textfield__label" for="quickedit">23</label>
             </div>
             <i class="material-icons md40px">chevron_left</i></span>

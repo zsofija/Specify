@@ -1,23 +1,4 @@
-/* CSS files add styling rules to your content */
 
-/* old style 
-body {
-    font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
-    font-size: 16px;
-    margin: 0; padding: 0;
-    background: white;
-    -webkit-user-select:none;
-    -moz-user-select:none;
-    -ms-user-select:none;
-    user-select:none;
-    overscroll-behavior-y: contain;
-}
-
-.drawer {
-    background: white;
-}*/
-
-@import url("/typography.css");
 @import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300&family=Roboto&family=Saira+Stencil+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;1,300;1,600;1,700&display=swap');
 

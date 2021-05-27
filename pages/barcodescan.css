@@ -124,30 +124,7 @@ h5 {
       animation-timing-function: linear;
   }
 
-/* Camera */
-#camera, #camera--view, #camera--sensor, #camera--output{
-    position: fixed;
-    object-fit: cover;
-}
-#camera--view, #camera--sensor, #camera--output{
-    transform: scaleX(-1);
-    filter: FlipH;
-}
-/*#camera--trigger{
-    position:relative;
-    bottom: 30px;
-    left: calc(50% - 100px);
-}*/
-.taken{
-    height: 100px!important;
-    width: 100px!important;
-    transition: all 0.5s ease-in;
-    border: solid 3px white;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-    top: 20px;
-    right: 20px;
-    z-index: 2;
-}
+
 
 @media screen and (max-width: 767px){
     .header {
