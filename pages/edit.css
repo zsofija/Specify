@@ -1,0 +1,150 @@
+.ribbon {
+    width: 100%;
+    height: 40vh;
+    background-color: #ff8a65;
+    background-size: 100%;
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    position: fixed;
+    left: 0;
+    z-index: -10;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+}
+.header {
+    position: absolute;
+    top: 56px;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    /* margin-top: 6vh; */
+    align-items: center;
+    justify-content: center;
+    background-color: #37474f;
+    background-size: 100vw 108px;
+    width: 100vw;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    z-index: 2;
+    /* margin-bottom: 5px; */
+}
+h4 {
+    margin-top: 20px; /*15*/
+    margin-bottom: 20px; /*10px with h3*/
+    text-transform: lowercase;
+    font-style: italic;
+    font-weight: bolder;  
+}
+.header i {
+    color: #fdd740 !important;
+}
+#back {
+    position: fixed;
+    left: 38%;
+    padding: 0;
+}
+#delete {
+    position: fixed;
+    right: 38%;
+    padding: 0;
+}
+
+@media screen and (max-width: 767px){
+    .header {
+        margin-top: 0px;
+    }
+    #back {
+        left: 10px;
+    }
+    #delete {
+        right: 10px; 
+    }
+    .wrapper {
+        display: grid;
+        align-items: center;
+        margin-top: 0vh;
+    }
+    .mdl-grid { /* new - with background as a frame*/
+        margin-top: 3vh;
+    }
+    
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .header {
+        margin-top: 0px;
+    }
+    #back {
+        left: 22%;
+    }
+    #delete {
+        right: 22%; 
+    }
+}
+/* Extra small mobile */
+@media only screen and (min-device-width: 320px) and (min-device-height: 568px) and (max-device-height: 568px) {
+    h4 {
+        line-height: 24px;
+    }
+    .mdl-grid {
+        margin-top: 8vh !important; /* 4*/
+    }
+}
+
+/* Pixel 2, Iphone 6/7/8 Plus */
+@media only screen and (min-device-width: 411px) and (max-device-width: 736px) and (max-device-height: 736px) {
+    .mdl-grid {
+      /* width: 100vw; */
+        margin-top: 0vh;  
+   }
+}
+/* Iphone 6/7/8 */
+@media only screen and (min-device-width: 320px) and (max-device-width: 667px) and (max-device-height: 667px) {
+   .mdl-grid {
+        margin-top: 8vh !important; /*4vh originally 8vh; */
+   }
+}
+/* Samgung Galaxy S9 */
+@media only screen and (min-device-width: 360px) and (max-device-width: 740px) and (max-device-height: 740px) {
+    .mdl-grid {
+        margin-top: 7.5vh; 
+    }
+}
+/* Extra Large mobile - Iphone X */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (min-device-height: 812px) and (max-device-height: 812px) {
+    .mdl-grid {
+        margin-top: 6vh; /*2.5vh; */
+    }  
+}
+/* Extra Large mobile - Pixel 2 XL */
+@media only screen and (min-device-width: 411px) and (min-device-height: 823px) and (max-device-height: 823px) {
+    .mdl-grid {
+        margin-top: 7vh /* 2 was 2.1vh; without wrapper 1.5 */
+    }   
+}
+/*  Moto G4, Galaxy S5 */
+@media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (max-device-height: 640px) {
+    .mdl-grid {
+        margin-top: 8vh !important; /* 7*/
+    }
+}
+/* Galaxy Fold*/
+@media only screen and (min-device-width: 280px) and (max-device-width: 653px) and (min-device-height: 653px) and (max-device-height: 653px){
+    .mdl-grid {
+        margin-top: 8.5vh; /*3.5vh;*/
+    }
+}
+/* Surface Duo */
+@media only screen and (min-device-width: 540px) and (max-device-width: 720px) and (min-device-height: 720px) and (max-device-height: 720px){
+    .card-square.mdl-card {
+        width: 75vw !important;
+    }
+}

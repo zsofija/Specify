@@ -1,0 +1,27 @@
+<div class="wrapper">
+    <section class="mdl-grid">
+        <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-phone mdl-cell--middle">
+            <div data-ui-include="templates/register_card">
+                <h2 data-ui-field="title">Register your company</h2>
+                <div data-ui-field="textfield1">
+                    <input class="mdl-textfield__input" id="companyname" />
+                    <label class="mdl-textfield__label" for="companyname">Company name</label>
+                </div>
+                <div data-ui-field="textfield2">
+                    <input class="mdl-textfield__input" id="adress" />
+                    <label class="mdl-textfield__label" for="adress">Address</label>
+                </div>
+                <div data-ui-field="numerical-input1">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="postcode">
+                    <label class="mdl-textfield__label" for="postcode">Postal number</label>
+                    <span class="mdl-textfield__error">Input is not a number!</span>
+                </div>
+                <div data-ui-field="textfield3">
+                    <input class="mdl-textfield__input" id="place" />
+                    <label class="mdl-textfield__label" for="place">Postal place</label>
+                </div>
+                <button data-ui-field="button" onclick="select_page('verify')">
+                    Register</button>
+        </div>
+    </section>
+</div>

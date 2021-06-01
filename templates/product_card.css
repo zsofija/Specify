@@ -1,0 +1,379 @@
+
+.card-square.mdl-card {
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+}
+.card-square > .mdl-card__title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.mdl-card__title-text {
+    align-self: flex-start;
+    color: inherit;
+}
+
+/* #scan {
+    width: 30px !important;
+} */
+.subtitle {
+    font-size: 18px;
+    font-weight: bolder;
+}
+p {
+    margin: 0 0 0;
+    color: black !important;
+}
+i, label {
+    color: black !important;
+}
+
+.product_image {
+    width: 80px;
+    border-radius: 10%;
+    object-fit: cover;
+}
+.mini-icon {
+    padding-right: 4px;
+}
+
+/* Second section with switch and calendar*/
+.mdl-card__supporting-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#sale_switch {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 5px;
+}
+#discount-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#sale_switch p {
+    padding-left: 10px;  
+}
+#discount-text p {
+    padding-right: 10px; 
+}
+.switch input {
+    position: absolute;
+    opacity: 0;
+}
+.switch {
+    display: inline-block;
+    font-size: 20px; /* 1 */
+    height: 1em;
+    width: 2em;
+    background: #BDB9A6;
+    border-radius: 1em;
+}
+  
+.switch div {
+    height: 1em;
+    width: 1em;
+    border-radius: 1em;
+    background: #FFF;
+    box-shadow: 0 0.1em 0.3em rgba(0,0,0,0.3);
+    -webkit-transition: all 300ms;
+       -moz-transition: all 300ms;
+            transition: all 300ms;
+}
+  
+.switch input:checked + div {
+    background-color: #f44336;
+    -webkit-transform: translate3d(100%, 0, 0);
+       -moz-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+}
+  
+
+#circle {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mdl-textfield__input {
+    text-align: center; 
+    font-weight: bolder;
+}
+.mdl-textfield__label {
+    text-align: center;
+    color: #f44336 !important; 
+    font-weight: 800 !important;
+}
+span, label {
+    font-family:"Helvetica","Arial",sans-serif;
+    font-size: 14px;
+    /* color: #77777f; */
+    line-height: 20px;
+}
+label {
+    font-weight: bolder;
+}
+/* Date picker*/
+
+[type="date"] {
+    background: url('https://api.iconify.design/mdi:calendar-month-outline.svg?color=%23ffca28&height=22') 97% 50% no-repeat ;
+  }
+  [type="date"]::-webkit-inner-spin-button {
+    display: none;
+  }
+  [type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+  
+.date_label {
+    display: block;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.date_input {
+    border-radius: 5px;
+    background-color: #ffffff;
+    padding: 3px 5px;
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.041);
+    width: 190px;
+}
+
+/* Third section */
+.stock-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#centered {
+    position: absolute;
+    padding-bottom: 10px;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.on-stock {
+    padding-top: 20px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mdl-card__actions .mdl-cell {
+    margin-bottom: 0px;
+}
+
+/* + Button */
+.card-button {
+    display: grid;
+    justify-content: center;
+}
+
+
+
+@media screen and (max-width: 767px){
+    
+    .card-square.mdl-card {
+        width: 98vw; /* 100vw*/
+        height: 79vh;/*615px; 600px*/
+        border-radius: 0px;
+        padding: 0; /*for full width on small screens */
+    }
+    .card-square > .mdl-card__title {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%; /*for full width on small screens */
+    }
+    .mdl-shadow--2dp {
+        box-shadow: none;
+    }
+    
+    .card-square > .mdl-card__title {
+        margin: 0; /*for full width on small screens */
+    }
+    .mdl-cell--12-col-phone.mdl-cell--12-col-phone {
+        width: calc(100% - 16px)
+    }
+    .mdl-cell--10-col-phone.mdl-cell--10-col-phone {
+        width: calc(80% - 16px);
+    }
+    .mdl-cell--2-col-phone.mdl-cell--2-col-phone {
+        width: calc(20% - 16px);
+    }
+    .mdl-cell--3-col-phone.mdl-cell--3-col-phone {
+        width: calc(30% - 16px);
+    }
+    .mdl-cell--4-col-phone.mdl-cell--4-col-phone {
+        width: calc(40% - 16px);
+    }
+    
+    .date_input {
+        width: 150px;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .mdl-cell--12-col-tablet.mdl-cell--12-col-tablet {
+        width: calc(100% - 16px)
+    }
+    .mdl-cell--10-col-tablet.mdl-cell--10-col-tablet {
+        width: calc(80% - 16px);
+    }
+    .mdl-cell--2-col-tablet.mdl-cell--2-col-tablet {
+        width: calc(20% - 16px);
+    }
+    .mdl-cell--3-col-tablet.mdl-cell--3-col-tablet {
+        width: calc(30% - 16px);
+    }
+    .mdl-cell--4-col-tablet.mdl-cell--4-col-tablet {
+        width: calc(40% - 16px);
+    }
+    
+    .date_input {
+        width: 170px;
+    }
+}
+
+/* Iphone 6/7/8 */
+@media only screen and (min-device-width: 320px) and (max-device-width: 667px) and (max-device-height: 667px) {
+    .card-square.mdl-card  {
+        height: 82vh !important;/*555px; auto;*/
+    }
+}
+/* Samgung Galaxy S9 */
+@media only screen and (min-device-width: 360px) and (max-device-width: 740px) and (max-device-height: 740px) {
+    .card-square.mdl-card { /* new - with background as a frame*/
+        height: 83vh;
+    }
+}
+/*  Moto G4, Galaxy S5 */
+@media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (max-device-height: 640px) {
+    .card-square.mdl-card { /* new - with background as a frame*/
+        height: 82vh;
+    }
+}
+
+/* Extra small mobile */
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) {
+    .card-square.mdl-card { /* new - with background as a frame*/
+        height: 465px;
+    }
+    .mdl-card__supporting-text, .mdl-card__actions {
+        margin: 5px;
+        padding: 3px; /*5*/
+    }
+    .mdl-card__title {
+        margin: -5px;
+        padding: 7px; /*10px;*/
+    }
+    .mdl-cell--12-col-phone.mdl-cell--12-col-phone {
+        width: 100vw;
+    }
+    .product_image {
+        width: 75px;
+    }
+    p, span, label {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .subtitle {
+        font-size: 16px;
+    }
+
+}
+/* Extra Large mobile - Pixel 2 XL*/
+@media only screen and (min-device-width: 411px) and (min-device-height: 823px) and (max-device-height: 823px) {
+    .mdl-cell {
+        margin: 10px;
+        padding: 12px;
+    }
+    .card-square.mdl-card { /* new - with background as a frame*/
+        width: 97vw;
+        height: 84vh;
+    }
+}
+/* Extra Large mobile - Iphone X*/
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (min-device-height: 812px) and (max-device-height: 812px) {
+    .mdl-cell {
+        margin: 10px;
+        padding: 10px;
+    }
+    .card-square.mdl-card { /* new - with background as a frame*/
+        height: 86.2vh;
+    }
+        
+}
+/* Galaxy Fold */
+@media only screen and (min-device-width: 280px) and (max-device-width: 653px) and (min-device-height: 653px) and (max-device-height: 653px) {
+    .card-square.mdl-card {
+        height: 81vh; /*auto;*/
+    }
+    .mdl-cell--12-col-tablet.mdl-cell--12-col-tablet {
+        width: 100%;
+    }
+    .mdl-cell--10-col-tablet.mdl-cell--10-col-tablet {
+        width: 80%;
+    }
+    .mdl-cell--2-col-tablet.mdl-cell--2-col-tablet {
+        width: 20%;
+    }
+    .mdl-cell--3-col-tablet.mdl-cell--3-col-tablet {
+        width: 30%;
+    }
+    .mdl-cell--4-col-tablet.mdl-cell--4-col-tablet {
+        width: 40%;
+    }
+    .date_input {
+        width: 130px;
+    }
+    .mdl-card__supporting-text {
+        margin: -5px;
+        padding: 0px;
+    }
+    
+}
+/* @media only screen and (max-height: 770px) and (min-width: 1920px) {
+    .container {
+        margin-top: 2vh;
+    }
+}
+@media only screen and (max-height: 685px) and (min-width: 1920px) {
+    .container {
+        margin-top: 7vh;
+    }
+}
+@media only screen and (max-height: 626px) and (min-width: 1920px) {
+    .container {
+        margin-top: 12vh;
+    }
+}
+@media only screen and (max-height: 615px) and (min-width: 1920px) {
+    .container {
+        margin-top: 17vh;
+    }
+}
+@media only screen and (max-height: 508px) and (min-width: 1920px) {
+    .container {
+        margin-top: 26vh;
+    }
+}
+@media only screen and (max-height: 492px) and (min-width: 1920px) {
+    .container {
+        margin-top: 30vh;
+    }
+}
+@media only screen and (max-height: 455px) and (min-width: 1920px) {
+    .container {
+        margin-top: 33vh;
+    }
+} */
+
+

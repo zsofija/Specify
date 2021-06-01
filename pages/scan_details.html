@@ -1,0 +1,71 @@
+
+<div class="ribbon mdl-cell mdl-cell--12-col"></div>
+<div class="wrapper">
+  <div class="mdl-grid">
+    <!--Page Header-->
+      <div data-ui-field="page_header" class="mdl-color-text--white mdl-cell mdl-cell--12-col header">
+          <button id="back" class="mdl-button mdl-button--colored mdl-js-button" onclick="select_page('scan')"><i class="material-icons">arrow_back</i></button>
+          <h4 data-ui-field="title">Create Inventory</h4>
+      </div>
+    <!-- Main Content-->
+    <div class="container mdl-grid">
+      
+      <div class="content mdl-color--white mdl-shadow--4dp mdl-color-text--grey-800 mdl-cell mdl-cell--8-col mdl-cell--3-col-phone">
+          <div class="mdl-cell mdl-cell--12-col centered">
+              <h3 data-ui-field="title">Product Details</h3>
+              <h5 data-ui-field="prodname">Pesto alla Genovese</h5> 
+          </div>
+          <div class="mdl-cell mdl-cell--12-col row">
+            <div class="mdl-cell mdl-cell--6-col mdl-cell--5-col-phone left">
+                <img onload="set_time()" data-ui-field="prodpic" class="prodpic" src="https://static.openfoodfacts.org/images/products/807/680/951/3753/front_fr.123.400.jpg">
+            </div>
+            <div class="mdl-cell mdl-cell--6-col mdl-cell--7-col-phone right">
+                <span class="row">
+                    <h6>EAN/GTIN:&nbsp;</h6><p data-ui-field="EAN">8076809513753</p>
+                </span>
+                <span class="row">
+                  <h6 id="hide">Min. stock:&nbsp;</h6>
+                    <form action="#">
+                      <div data-ui-field="numerical-input" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label minqty_textfield">
+                        <input class="mdl-textfield__input" type="text" pattern="[0-9]*" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" id="minqty" />
+                        <label class="mdl-textfield__label" for="minqty">Minimum stock level</label>
+                        <!-- <span class="mdl-textfield__error">Input is not a number!</span> -->
+                      </div>
+                    </form>
+                </span>
+                <span class="current_date row">
+                  <h6>Item added:&nbsp;</h6>
+                  <p id="date_time"></p>
+                </span>
+            </div>
+          </div>
+        
+          <div class="mdl-cell mdl-cell--12-col centered">        
+             <button data-ui-field="button" class="mdl-button mdl-js-button mdl-button--primary" onclick="select_page('inventory')" >
+                <i class="material-icons-outlined done">done</i>
+              </button> 
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<script> // Best to save current Date on the server side, only an example field - we can have select category or Maximum stock level
+  function set_time() {
+
+    var currentDate = new Date();
+
+    var date = currentDate.getDate().toString().padStart(2, "0")+'-'+(currentDate.getMonth()+1).toString().padStart(2, "0")+'-'+currentDate.getFullYear();
+    var time = currentDate.getHours() + ":" + currentDate.getMinutes().toString().padStart(2, "0");
+    
+    var dateTime = date+' '+time;
+
+    document.getElementById("date_time").innerHTML = dateTime;
+  }
+
+
+  
+</script>

@@ -1,0 +1,55 @@
+.mdl-card {
+    width: 350px;
+    height: 450px;
+}
+
+.mdl-card--border {
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+.mdl-card__supporting-text {
+    padding: 30px; /* was 40*/
+    width: 100%;
+  }
+
+a, p {
+    font-size: 1rem;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.mdl-card__title {
+    height: 87px; /*was 95*/
+    padding-bottom: 20px;/* was 32*/
+    
+}
+@media screen and (max-width: 767px){
+    .mdl-card {
+        width: 94vw; /* or 100vw*/
+        height: auto;  
+    }
+    .mdl-card__supporting-text {
+        padding: 30px;
+        width: 100%;
+    }
+    .mdl-cell--12-col-phone.mdl-cell--12-col-phone {
+        width: 100%;
+        padding: 0;
+    }
+    .mdl-cell--4-col-phone.mdl-cell--4-col-phone {
+        width: calc(40% - 16px);
+    }
+
+    div.mdl-card.mdl-shadow--6dp { 
+        box-shadow: none;
+    }
+    
+}
+/* Surface Duo */
+@media only screen and (min-device-width: 540px) and (max-device-width: 720px) and (max-device-height: 720px){
+    .mdl-card {
+        width: 75vw;
+        height: auto;
+    }
+}

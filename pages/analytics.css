@@ -1,0 +1,568 @@
+.ribbon {
+    width: 100%;
+    height: 40vh;
+    background-color: #ff8a65;
+    background-size: 100%;
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    position: fixed;
+    left: 0;
+    z-index: -10;
+}
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+}
+
+/* Page header */
+.header {
+    position: absolute; /* moved on scroll when it was fixed*/
+    top: 56px;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    /* margin-top: 6vh; */
+    align-items: center;
+    justify-content: center;
+    background-color: #37474f;
+    background-size: 100vw 108px;
+    width: 100vw;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    z-index: 2;
+    /* margin-bottom: 5px; */
+}
+h4 {
+    margin-top: 20px; /*15*/
+    margin-bottom: 20px; /*10px with h3*/
+    text-transform: lowercase;
+    font-style: italic;
+    font-weight: bolder;  
+}
+.header i {
+    color: #fdd740 !important;
+}
+#back {
+    position: absolute;
+    left: 38%;
+    padding: 0;
+}
+
+
+/* Card */
+
+.card-square.mdl-card {
+    width: 600px;
+    height: 600px;
+    border-radius: 10px;
+}
+/* First card section */
+.mdl-card__title {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* max-height: 150px; */
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: 0;
+    padding-right: 0;
+    margin-right: 0;
+    width: 100vw;
+    padding-left: 0;
+}
+#searchfield {
+    background-color: #fff;
+    padding: 0 20px;
+    border-radius: 50px;
+    /* margin-bottom: 10px; */
+}
+.mdl-textfield {
+    padding-bottom: 9px; /* padding: 10px 0*/
+    padding-top: 15px;
+}
+
+.mdl-chip {
+    margin-right: 5px;
+    height: 26px;
+    line-height: 26px;
+    font-weight: bolder;
+}
+#chips {
+    display: flex;
+    flex-flow: row;
+    margin-top: 5px;
+}
+
+
+li {
+    list-style: none;
+}
+.search_result {
+    display: flex;
+    justify-content: center;
+    margin-top: -12px;
+}
+.product_name {
+    font-weight: bold;
+}
+.mdl-list__item-avatar {
+    height: 65px;
+    width: 55px;
+    border-radius: 10%;
+    object-fit: cover;
+}
+.mdl-list__item--two-line .mdl-list__item-primary-content {
+    line-height: 30px;
+}
+
+
+/* Second card section */
+.mdl-card__supporting-text {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.statistic {
+    background: #fff;
+    color: #fdd740;
+    height: 6em;
+    padding: 1em;
+    margin: 1em 0; /*1em 0*/
+      -webkit-transition: margin 0.5s ease,box-shadow 0.5s ease; /* Safari */
+      transition: margin 0.5s ease,box-shadow 0.5s ease; 
+    -moz-box-shadow: 0px 0.2em 0.3em rgb(0, 0, 0,0.8);
+    -webkit-box-shadow: 0px 0.2em 0.3em rgb(0, 0, 0,0.8);
+    box-shadow: 0px 0.2em 0.3em rgb(0, 0, 0,0.8);
+}
+.statistic:hover { 
+    margin-top: 0.8em;  
+    -moz-box-shadow: 0px 0.3em 0.4em rgb(0, 0, 0,0.8); 
+    -webkit-box-shadow: 0px 0.3em 0.4em rgb(0, 0, 0,0.8); 
+    box-shadow: 0px 0.3em 0.4em rgb(0, 0, 0,0.8); 
+}
+.statistic i {
+    font-size: 3.5em; 
+} 
+.statistic div{
+    width: calc(100% - 3.5em);
+    display: block;
+    float: right;
+    text-align: right;
+}
+.statistic div b {
+    font-size:2.2em;
+    width: 100%;
+    padding-top:0px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    display: block;
+}
+.statistic div span {
+    font-size: 1em;
+    width: 100%;
+    color: #616161 !important;
+    display: block;
+}
+  
+.statistic.left div { 
+    float: left;
+    text-align: left;
+}
+
+
+@media screen and (max-width: 767px){
+    .header {
+        margin-top: 0px;
+    }
+
+    #back {
+        left: 10px;
+    }
+    
+    /* .mdl-grid {
+        margin-top: 7.9vh;
+    } */
+    .wrapper {
+        display: grid;
+        align-items: center;
+        margin-top: 0.5vh;
+    }
+    .card-square.mdl-card {
+        width: 97vw;
+        padding: 0; /*for full width on small screens */
+        /* height: auto;   */
+        border-radius: 0px;
+        height: 83.5vh;
+    }
+    .card-square > .mdl-card__title {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%; /*for full width on small screens */
+    }
+    .mdl-shadow--2dp {
+        box-shadow: none;
+    }
+
+    #searchfield form {
+        max-height: 40px;
+    }
+    .mdl-textfield {
+        width: 270px;
+        max-width: 85%;
+    }
+    .mdl-textfield {
+        padding-bottom: 10px;
+        padding-top: 5px;
+    }
+    .mdl-textfield__label {
+        top: 14px;
+    }
+    .search_result {
+        display: flex;
+        justify-content: center;
+        margin-top: -7px;
+    }
+    
+    .statistic {
+        margin: 0em 0;
+    }
+    .statistic:hover { 
+        margin-top: 0.2em;  
+        -moz-box-shadow: 0px 0.1em 0.3em rgb(0, 0, 0,0.8); 
+        -webkit-box-shadow: 0px 0.1em 0.3em rgb(0, 0, 0,0.8); 
+        box-shadow: 0px 0.1em 0.3em rgb(0, 0, 0,0.8); 
+    } 
+    .mdl-card__supporting-text {
+        line-height: 13px;
+    }
+    .mdl-cell--4-col button {
+        font-size: 12px;
+        line-height: 15px;
+        font-weight: 700;
+    }
+    .mdl-cell--8-col-phone label {
+        padding-bottom: 0px; /*5*/
+    }
+
+    /* .mdl-cell--8-col-phone form {
+        display: grid;
+        align-content: end;
+    } */
+    
+    .mdl-cell--12-col-phone.mdl-cell--12-col-phone {
+        width: 100%;
+    }
+    .mdl-cell--6-col-phone.mdl-cell--6-col-phone {
+        width: calc(50% - 16px);
+    }
+    .mdl-cell--8-col-phone.mdl-cell--8-col-phone {
+        width: calc(70% - 16px);
+    }
+    .mdl-cell--4-col-phone.mdl-cell--4-col-phone {
+        width: calc(30% - 16px);
+        display: grid;
+        align-content: end;
+    }
+}
+/* Tablet */
+@media only screen and (min-width: 768px) and (max-width: 786px){
+    .header {
+        top: 48px;
+    }
+
+    #back {
+        left: 22%;
+    }
+    .mdl-cell--12-col-tablet.mdl-cell--12-col-tablet {
+        width: 100%;
+    }
+    .mdl-cell--6-col-tablet.mdl-cell--6-col-tablet {
+        width: calc(50% - 16px);
+    }
+    .mdl-cell--8-col-tablet.mdl-cell--8-col-tablet {
+        width: calc(50% - 16px);
+        margin-top: -7px;
+    }
+    .mdl-cell--4-col-tablet.mdl-cell--4-col-tablet {
+        width: calc(30% - 16px);
+        display: grid;
+    }
+    .card-square > .mdl-card__title {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        width: 100%; /*for full width on small screens */
+        height: 40% !important;
+    }
+    .mdl-card__supporting-text {
+        height: 60% !important;
+    }
+    .statistic {
+        height: 7em; 
+        margin: 0.5em 0;
+    }
+}
+
+/* Pixel 2, Iphone 6/7/8 Plus */
+@media only screen and (min-device-width: 411px) and (max-device-width: 736px) and (max-device-height: 736px) {
+    /* .wrapper {
+        margin-top: 8vh; 
+    } */
+}
+/* Samsung Galaxy S9 */
+@media only screen and (min-device-width: 360px) and (max-device-width: 740px) and (max-device-height: 740px) {
+    .mdl-grid {
+        margin-top: 7.5vh; /* was 5vh new - with background as a frame*/
+    }
+    .card-square.mdl-card { /* new - with background as a frame*/
+        height: 82.5vh;
+    }
+}
+/* Iphone 6/7/8 */
+@media only screen and (min-device-width: 320px) and (max-device-width: 667px) and (max-device-height: 667px) {
+    .mdl-grid {
+        margin-top: 8.5vh; /*was 7vh 13* -> 14vh without wrapper 1.5*/
+    }
+    .card-square.mdl-card { /* new - with background as a frame*/
+        height: 80.5vh;
+    }
+    .mdl-list__item--two-line {
+        height: 60px;
+    }
+    .mdl-list__item-avatar {
+        height: 60px;
+        width: 50px;  
+    }
+    .search_result {
+        margin-top: -20px;
+        margin-bottom: 0px;
+    }
+    #chips {
+        margin-top: -15px;
+    }
+    .mdl-card__supporting-text .mdl-cell--6-col-phone, .mdl-card__supporting-text .mdl-cell--12-col-phone {
+        margin-bottom: -5px;
+    }
+    .card-square > .mdl-card__title {
+        height: 30%;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    .statistic {
+        height: 5.5em;
+    }
+    .mdl-card__supporting-text {
+        height: 60%;
+        margin-top: -35px;
+        padding-top: 0;
+    }
+}
+/* Extra Large mobile - Iphone X */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (min-device-height: 812px) and (max-device-height: 812px) {
+    .mdl-grid {
+        margin-top: 7vh; /*0.2 ;1.2vh was 2.8 if only Iphone X without wrapper 1.5*/
+    }
+    .card-square > .mdl-card__title {
+        height: 30%; /*30*/
+    }
+    .mdl-card__supporting-text {
+        height: 72%; /*67*/
+    }
+    .statistic {
+        margin: 0.5em 0;
+    }
+    
+}
+/* Extra Large mobile - Pixel 2 XL */
+@media only screen and (min-device-width: 411px) and (min-device-height: 823px) and (max-device-height: 823px) {
+    .mdl-grid {
+        margin-top: 6.5vh;/* was -1vh; 0.6vh  was 2.1vh; without wrapper 1.5 */
+    }
+    .card-square.mdl-card {
+        height: 84vh;
+    }
+    .card-square > .mdl-card__title {
+        height: 30%; /*30*/
+    }
+    .mdl-card__supporting-text {
+        height: 72%; /*67*/
+    }
+    .statistic {
+        margin: 0.5em 0;
+    }
+
+}
+/*  Moto G4, Galaxy S5 */
+@media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (max-device-height: 640px) {
+    .mdl-layout {
+        margin-top: 14vh;
+    }
+    .mdl-card__supporting-text {
+        height: 58%;
+        margin-top: -20px /* was -60px;*/
+    }
+    .card-square > .mdl-card__title {
+        height: 33%;
+        padding-bottom: 5px;
+    }
+}
+
+/* Extra small mobile */
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) {
+    .mdl-grid {
+        margin-top: 8.6vh /* was 23vh without wrapper 1.5 */
+    }
+    .card-square.mdl-card {
+        width: 99vw;
+        height: 456px; /* was 600px*/
+    }
+    .card-square > .mdl-card__title {
+        height: 34%; /*25%;*/
+    }
+    .mdl-card__supporting-text {
+        height: 70%; /*50%;*/
+        margin-top: -5px; /*-140px;*/
+        padding-top: 0;
+        line-height: 11px;
+    }
+
+    #searchfield form {
+        max-height: 35px;
+    }
+    #searchfield {
+        background-color: #fff;
+        padding: 0px 10px;
+    }
+    .mdl-chip {
+        height: 23px;
+        line-height: 23px;
+    }
+    .mdl-list__item--two-line {
+        height: 55px;
+    }
+    .mdl-list__item-avatar {
+        height: 55px;
+        width: 40px;
+    }
+    .mdl-list__item--two-line .mdl-list__item-primary-content {
+        line-height: 28px;
+    }
+    .mdl-list__item {
+        font-size: 14px;
+    }
+    .mdl-list__item-sub-title {
+        font-size: 13px;
+    }
+    .statistic {
+        height: 5em;
+        padding: 0.8em;
+    }
+    .statistic i {
+        font-size: 3em;
+    }
+    .statistic div b {
+        font-size: 1.8em;
+    }
+    .statistic div span {
+        font-size: 0.9em;
+    }
+    .material-icons {
+        font-size: 20px;
+    }
+    .mdl-button {
+        padding: 0 0px;
+    }
+    .mdl-button--icon {
+        margin-right: 5px;
+    }
+    .mdl-card__supporting-text form {
+        margin-right: 5px;
+    }
+    .mdl-cell--8-col-phone.mdl-cell--8-col-phone {
+        width: calc(70% - 16px);
+    }
+    
+}
+/* Galaxy Fold*/
+@media only screen and (min-device-width: 280px) and (max-device-width: 653px) and (min-device-height: 653px) and (max-device-height: 653px) {
+    .mdl-grid {
+        margin-top: 8.3vh /*7vh;*/
+    }
+    .card-square.mdl-card {
+        height: auto;
+        width: 98vw;
+    }
+    .mdl-cell--12-col-tablet.mdl-cell--12-col-tablet {
+        width: 100%;
+    }
+    .mdl-cell--10-col-tablet.mdl-cell--10-col-tablet {
+        width: 80%;
+    }
+    .mdl-cell--2-col-tablet.mdl-cell--2-col-tablet {
+        width: 20%;
+    }
+    .mdl-cell--3-col-tablet.mdl-cell--3-col-tablet {
+        width: 30%;
+    }
+    .mdl-cell--4-col-tablet.mdl-cell--4-col-tablet {
+        width: 40%;
+    }
+    .mdl-list__item--two-line .mdl-list__item-primary-content {
+        line-height: 18px;
+        padding-left: 20px;
+    }
+    .mdl-textfield__label {
+        left: 10px;
+    }
+    #searchfield {
+        background-color: #fff;
+        padding: 0px 0px;
+    }
+    .mdl-card__supporting-text {
+        line-height: 9px; /*10px*/
+        margin: 0px;
+        padding: 0px;
+        justify-content: flex-start;
+    }
+    .statistic {
+        height: 4.5em;
+    }
+    .statistic i {
+        font-size: 2.5em;
+    }
+    .statistic div b {
+        font-size: 1.8em;
+        padding-top: 0px;
+        margin-top: 2px;
+        padding-bottom: 7px;
+    }
+    .statistic div span {
+        font-size: 0.9em;
+    }
+}
+
+/* Ipad Pro */
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (max-device-height: 1366px) {
+    .header {
+        margin-top: 0px;
+    } 
+}
+/* Surface Duo */
+@media only screen and (min-device-width: 540px) and (max-device-width: 720px) and (min-device-height: 720px) and (max-device-height: 720px){
+    .card-square.mdl-card {
+        width: 73vw;
+        padding: 0;
+        height: 82.5vh; /* 560px;*/
+    }
+}

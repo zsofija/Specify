@@ -1,0 +1,49 @@
+
+<div class="wrapper">
+    <section class="mdl-grid">
+        <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone">
+            <div class="mdl-card mdl-shadow--6dp">
+                <div class="mdl-card__title mdl-color--primary mdl-color-text--white wordCarousel">
+                    <div>
+                        <ul class="flip3"> <!-- reverse order -->
+                            <h2 data-ui-field="title" class="mdl-card__title-text">Register</h2>
+                            <h2 data-ui-field="title" class="mdl-card__title-text">Login /</h2>
+                            <h3 class="mdl-card__title-text">Welcome back!</h3>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    <form action="#">
+                        <div data-ui-field="textfield" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" id="email" />
+                            <label class="mdl-textfield__label" for="email">Email</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <div class="mdl-grid">
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <p data-ui-field="text" class="mdl-color-text--primary">Enter your email and we will send you a verification code</p>
+                        </div>
+                    </div>
+                    <button data-ui-field="button"
+                        class="mdl-cell mdl-cell--12-col mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-color-text--white" onclick="select_page('verify')">
+                        Login
+                    </button>
+                    <div class="mdl-grid">
+                        <div class="mdl-cell mdl-cell--12-col link-row">
+                            <a data-ui-field="link_text" class="mdl-color-text--primary" onclick="select_page('register')">New User?</a>
+                            <button data-ui-field="button_small" onclick="select_page('register')" 
+                                    class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect button_small"
+                                    >Set Up Account</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+    

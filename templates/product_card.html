@@ -1,0 +1,122 @@
+
+
+<div class="card-square mdl-card mdl-shadow--2dp mdl-grid">
+<!--Section 1-->
+        <div class="mdl-card__title mdl-card--expand mdl-color--amber-A100 mdl-cell mdl-cell--12-col">
+            <div class="mdl-cell mdl-cell--9-col mdl-cell--9-col-tablet mdl-cell--9-col-phone">
+                <h5 data-ui-field="product_name" id="product_name" class="mdl-card__title-text subtitle">Thai Peanut Noodle kit</h5>
+                <span data-ui-field="barcode" class="mdl-color-text--blue-grey-800"><img src="/images/barcode.svg" class="mini-icon"><span id="barcode">1234567890128</span></span>
+                <p data-ui-field="details_text"><label>Brands:</label><span id="brand">Thai Kitchen</span></p>
+                <div data-ui-field="category" id="select_category" class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
+                        <label for="select_box_category" class="mdl-selectfield__label"><i class="material-icons">category</i>Category:</label>
+                        <select id="select_box_category" name="select_box_category" class="mdl-selectfield__select">
+                            <option value=""></option>
+                            <option value="1">dairy</option>
+                            <option value="2">bakery</option>
+                            <option value="3">fruit</option>
+                            <option value="4">vegetables</option>
+                            <option value="5">meat</option>
+                            <option value="6">fish & seafood</option>
+                            <option value="7">vegetarian</option>
+                            <option value="8">vegan</option>
+                            <option value="9">frozen food</option>
+                            <option value="10">ready meals</option>
+                            <option value="11">drinks</option>
+                            <option value="12">snacks & sweets</option>
+                            <option value="13">cupboard foods</option>
+                            <option value="14">cooking ingredients</option>
+                            <option value="15">exotic food</option>
+                        </select>    
+                </div>
+            </div>
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-cell--3-col-phone"><img data-ui-field="product-image" class="product_image" id="product_image" src="https://static.openfoodfacts.org/images/products/073/762/806/4502/front_en.6.400.jpg"></img></div> 
+        </div>
+<!--Section 2-->
+        <div class="mdl-card__supporting-text mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--5-col-phone">
+                <div data-ui-field="sale_toogle_switch" id="sale_switch">
+                    <label class="switch mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-color--accent"><input type="checkbox"/><div></div></label>
+                    <p>On sale</p>
+                </div>
+                <div data-ui-field="discount-textfield" id="discount-text">
+                    <p>Discount</p>
+                    <form data-ui-field="discount" id="circle" class="mdl-color--accent" action="#">
+                        <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="text" maxlength="3" pattern="[0-9]*" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"  id="discount" />
+                        <label class="mdl-textfield__label" for="discount">%</label>
+                        <span class="mdl-textfield__error">Input is not a number!</span>
+                        </div>
+                    </form>
+                </div>    
+            </div>
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--6-col-phone" id="calendar">
+                <form data-ui-field="calendar"action="#">
+                    <label class="date_label" for="expiration">Expiration Date</label>
+                    <input class="date_input" type="date" name="expiration" id="expiration">
+                </form>
+            </div>
+        </div>
+<!--Section 3-->
+        <div class="mdl-card__actions mdl-card--border mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone stock-section">
+                <div id="centered"><label>Stock Current</label></div>
+                <div class="row mdl-cell mdl-cell--12-col">
+                    <div class="mdl-cell mdl-cell--5-col mdl-cell--5-col-tablet mdl-cell--5-col-phone">
+                        <button id="substract" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" style="float:left">
+                            <i class="material-icons">remove</i>
+                        </button>
+                    </div>
+                    <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-phone on-stock">
+                        <h3 data-ui-field="current-stock" id="current" class="mdl-color-text--blue-grey-700">23</h3>
+                    </div>
+                    <div class="mdl-cell mdl-cell--5-col mdl-cell--5-col-tablet mdl-cell--5-col-phone">
+                        <button id="add" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" style="float:right">
+                            <i class="material-icons">add</i>
+                        </button> 
+                    </div>
+                </div>
+        </div>
+<!--Button-->
+        <div class="mdl-card__actions mdl-card--border mdl-cell mdl-cell--12-col mdl-cell--12-col-phone card-button" onclick="select_page('inventory')">
+        <a data-ui-field="button" class="mdl-button mdl-button--colored mdl-button--raised mdl-js-button mdl-js-ripple-effect" >
+            Update
+        </a>
+        
+</div>
+
+
+<script>
+let product_dict ={product_name: "Thai Peanut Noodle kit", barcode: 1234567890128, brand:"Thai Kitchen", product_image:"https://static.openfoodfacts.org/images/products/073/762/806/4502/front_en.6.400.jpg", sale_switch: false, discount:"", expiration:"12.08.2021", currentOnStock: 23}
+function render(){
+    document.getElementById('current').textContent = product_dict["currentOnStock"];
+    document.getElementById('product_name').textContent = product_dict["product_name"];
+    document.getElementById('barcode').textContent = product_dict["barcode"];
+    document.getElementById('brand').textContent = product_dict["brand"];
+    document.getElementById('product_image').textContent = product_dict["product_image"];
+    document.getElementById('sale_switch').checked = product_dict["sale_switch"]; // TODO: fix DOM checkbox
+    document.getElementById('discount').textContent = product_dict["discount"];
+    document.getElementById('expiration').textContent = product_dict["expiration"];
+//TODO add category
+}
+
+
+
+const addBtn = document.getElementById('add');
+const substractBtn = document.getElementById('substract');
+
+    addBtn.addEventListener('click', function (){
+        product_dict["currentOnStock"] += 1;
+        render();
+    });
+
+    substractBtn.addEventListener('click', function(){
+        product_dict["currentOnStock"] -= 1;
+        if (product_dict["currentOnStock"] < 0){
+            product_dict["currentOnStock"] = 0;  
+        }
+        render();
+        
+    });
+    
+    
+</script>
+
